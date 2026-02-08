@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets — Nassim Mehadji</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .projects-grid {
+            display: grid;
+            gap: 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .project-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .project-item:nth-child(even) { direction: rtl; }
+        .project-item:nth-child(even) > * { direction: ltr; }
+
+        .project-media {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: var(--gris-100);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--gris-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .project-media img {
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+        }
+        .project-media-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
+            height: 100%;
+            color: var(--gris-400);
+        }
+        .project-media-placeholder i { font-size: 2.5rem; }
+        .project-media-placeholder p { font-size: 0.8rem; }
+
+        .project-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .project-meta {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .project-date {
+            font-size: 0.75rem;
+            color: var(--gris-500);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+        .project-type {
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            background: var(--gris-900);
+            color: var(--blanc);
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .project-content h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--noir);
+            margin: 0;
+        }
+        .project-content p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--gris-700);
+        }
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--noir);
+            text-decoration: none;
+            border-bottom: 1px solid var(--noir);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+        .project-link:hover { opacity: 0.6; }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        /* ── GALLERY ── */
+        .gallery-section {
+            margin-top: 100px;
+            padding-top: 80px;
+            border-top: 1px solid var(--gris-200);
+        }
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .gallery-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            color: var(--noir);
+            margin-bottom: 12px;
+        }
+        .gallery-header p {
+            font-size: 1rem;
+            color: var(--gris-500);
+            font-weight: 300;
+        }
+        .gallery-carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid var(--gris-200);
+            background: var(--gris-50);
+        }
+        .gallery-track {
+            display: flex;
+            transition: transform 0.5s var(--ease);
+        }
+        .gallery-slide {
+            min-width: 100%;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+            background: var(--gris-50);
+        }
+        .gallery-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10,10,10,0.8);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 2px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+        .gallery-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--blanc);
+            border: 1px solid var(--gris-300);
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+            color: var(--noir);
+            font-size: 1rem;
+        }
+        .gallery-btn:hover {
+            background: var(--noir);
+            color: var(--blanc);
+            border-color: var(--noir);
+        }
+        .gallery-prev { left: 16px; }
+        .gallery-next { right: 16px; }
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 20px 0;
+        }
+        .gallery-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gris-300);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 0;
+        }
+        .gallery-dot.active {
+            background: var(--noir);
+            width: 24px;
+            border-radius: 4px;
+        }
+        .gallery-counter {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--gris-500);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            padding-bottom: 8px;
+        }
+
+        @media (max-width: 900px) {
+            .project-item,
+            .project-item:nth-child(even) {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+            .project-content h3 { font-size: 1.6rem; }
+            .gallery-slide { padding: 20px; }
+            .gallery-btn { width: 36px; height: 36px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+        <div class="loader-bar"></div>
+        <div class="loader-text">Chargement</div>
+    </div>
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Nassim<span>.M</span></a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="formations.html" class="nav-link">Formations</a>
+                <a href="competences.html" class="nav-link">Compétences</a>
+                <a href="experiences.html" class="nav-link">Expériences</a>
+                <a href="projets.html" class="nav-link">Projets</a>
+                <a href="interets.html" class="nav-link">Intérêts</a>
+                <a href="bilan.html" class="nav-link">Bilan</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+    </header>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">Nassim<span>.M</span></a>
+            <button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark" style="font-size:1.3rem"></i></button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html">Accueil</a>
+            <a href="formations.html">Formations</a>
+            <a href="competences.html">Compétences</a>
+            <a href="experiences.html">Expériences</a>
+            <a href="projets.html" class="active">Projets</a>
+            <a href="interets.html">Centres d'intérêt</a>
+            <a href="bilan.html">Bilan</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <!-- ═══ PAGE HERO ═══ -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label reveal">Portfolio</span>
+            <h1 class="section-title reveal reveal-d1">Mes Projets</h1>
+            <p class="section-desc reveal reveal-d2">
+                Une sélection de projets académiques et professionnels mêlant stratégie, créativité et maîtrise des outils numériques.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══ PROJECTS ═══ -->
+    <section class="page-section" style="padding-top:0;">
+        <div class="container">
+            <div class="projects-grid">
+
+                <!-- Projet 1 : Canneo -->
+                <div class="project-item reveal">
+                    <div class="project-media">
+                        <img src="images/canneo.png" alt="Logo Canneo - Canne connectée">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-date">Janvier 2026</span>
+                            <span class="project-type">WordPress</span>
+                        </div>
+                        <h3>Canneo</h3>
+                        <p>
+                            Projet de création d'un site web réalisé sur WordPress, dédié à une canne connectée innovante. Travail sur la structure du site, l'ergonomie, le contenu et la mise en valeur du produit à travers une approche orientée utilisateur et accessibilité.
+                        </p>
+                        <a href="http://sc2molo8065.universe.wf/sea4/" target="_blank" class="project-link">
+                            Voir le site <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <div class="project-tags">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">UX/UI Design</span>
+                            <span class="tag">Accessibilité</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2 : Valmoré -->
+                <div class="project-item reveal">
+                    <div class="project-media" style="background:#0a0a0a;">
+                        <img src="images/valmore.png" alt="Logo Valmoré - Montres de luxe">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-date">Mai 2025</span>
+                            <span class="project-type">E-commerce</span>
+                        </div>
+                        <h3>Valmoré</h3>
+                        <p>
+                            Valmoré est une marque de montres de luxe moderne, pensée pour une clientèle jeune, connectée et exigeante. J'ai conçu l'ensemble du site e-commerce sur Wix : identité visuelle, structure des pages, mise en avant des produits et expérience utilisateur.
+                        </p>
+                        <a href="https://nassimmehadji25.wixsite.com/my-site-6" target="_blank" class="project-link">
+                            Voir le site <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <div class="project-tags">
+                            <span class="tag">Wix</span>
+                            <span class="tag">E-commerce</span>
+                            <span class="tag">Branding</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3 : Chaufelec -->
+                <div class="project-item reveal">
+                    <div class="project-media">
+                        <img src="images/chaufelec.jpg" alt="Logo Chaufelec Oise">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-date">Février 2025</span>
+                            <span class="project-type">Site vitrine</span>
+                        </div>
+                        <h3>Chaufelec</h3>
+                        <p>
+                            Création d'un site vitrine WordPress pour une entreprise fictive spécialisée dans le chauffage et l'électricité. Travail sur la structure du site, la présentation des services, l'ergonomie et la clarté des informations.
+                        </p>
+                        <a href="http://sc2molo8065.universe.wf/Mehadji/" target="_blank" class="project-link">
+                            Voir le site <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <div class="project-tags">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">Site vitrine</span>
+                            <span class="tag">Communication</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 4 : Bouge Ton Talent -->
+                <div class="project-item reveal">
+                    <div class="project-media">
+                        <img src="images/bouge-ton-talent.png" alt="Logo Bouge Ton Talent">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-date">2024–2025</span>
+                            <span class="project-type">Communication</span>
+                        </div>
+                        <h3>Bouge Ton Talent</h3>
+                        <p>
+                            Une initiative dédiée à l'accompagnement des jeunes pour révéler leur potentiel professionnel. J'y ai piloté la communication digitale, de la gestion des réseaux sociaux à la réalisation d'interviews de terrain, notamment celle de l'artiste peintre murale Caroline Vong.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Communication digitale</span>
+                            <span class="tag">Réseaux sociaux</span>
+                            <span class="tag">Création vidéo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 5 : École Jean Trubert -->
+                <div class="project-item reveal">
+                    <div class="project-media">
+                        <img src="images/ecole-jean-trubert.jpg" alt="École Jean Trubert - École d'Art Paris">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-date">Avril — Mai 2025</span>
+                            <span class="project-type">Stage</span>
+                        </div>
+                        <h3>École Jean Trubert</h3>
+                        <p>
+                            Stage en Community Management au sein de l'École Jean Trubert, école d'art parisienne. Création de contenus pour les réseaux sociaux et le site internet, gestion du calendrier éditorial, analyse de la performance et conception de la stratégie de communication digitale pour valoriser l'image de l'établissement.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Community Management</span>
+                            <span class="tag">Création de contenu</span>
+                            <span class="tag">Stratégie digitale</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ═══ GALERIE ═══ -->
+            <div class="gallery-section reveal">
+                <div class="gallery-header">
+                    <span class="section-label">Galerie</span>
+                    <h2>Mes Réalisations en Images</h2>
+                    <p>Parcourez les visuels de mes différents projets</p>
+                </div>
+
+                <div class="gallery-carousel" id="galleryCarousel">
+                    <button class="gallery-btn gallery-prev" id="galleryPrev" aria-label="Précédent">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="gallery-btn gallery-next" id="galleryNext" aria-label="Suivant">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <div class="gallery-track" id="galleryTrack">
+                        <div class="gallery-slide">
+                            <img src="images/canneo.png" alt="Canneo">
+                            <div class="gallery-caption">Canneo — Canne connectée</div>
+                        </div>
+                        <div class="gallery-slide" style="background:#0a0a0a;">
+                            <img src="images/valmore.png" alt="Valmoré">
+                            <div class="gallery-caption">Valmoré — Montres de luxe</div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/chaufelec.jpg" alt="Chaufelec Oise">
+                            <div class="gallery-caption">Chaufelec — Chauffage & Électricité</div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/bouge-ton-talent.png" alt="Bouge Ton Talent">
+                            <div class="gallery-caption">Bouge Ton Talent — Logo</div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/ecole-jean-trubert.jpg" alt="École Jean Trubert">
+                            <div class="gallery-caption">École Jean Trubert — École d'Art Paris</div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/jean-trubert-jpo.png" alt="JPO École Jean Trubert">
+                            <div class="gallery-caption">Jean Trubert — Affiche JPO 2025</div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/jean-trubert-reels.png" alt="Reels École Jean Trubert">
+                            <div class="gallery-caption">Jean Trubert — Contenus Réseaux Sociaux</div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/bouge-ton-talent-feed.png" alt="Feed Instagram Bouge Ton Talent">
+                            <div class="gallery-caption">Bouge Ton Talent — Feed Instagram</div>
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="images/bouge-ton-talent-salon.png" alt="Salon Bouge Ton Talent">
+                            <div class="gallery-caption">Bouge Ton Talent — Salon de l'Orientation 2025</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-counter" id="galleryCounter">1 / 9</div>
+                <div class="gallery-dots" id="galleryDots">
+                    <button class="gallery-dot active" data-index="0"></button>
+                    <button class="gallery-dot" data-index="1"></button>
+                    <button class="gallery-dot" data-index="2"></button>
+                    <button class="gallery-dot" data-index="3"></button>
+                    <button class="gallery-dot" data-index="4"></button>
+                    <button class="gallery-dot" data-index="5"></button>
+                    <button class="gallery-dot" data-index="6"></button>
+                    <button class="gallery-dot" data-index="7"></button>
+                    <button class="gallery-dot" data-index="8"></button>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="reveal" style="text-align:center; margin-top:80px;">
+                <a href="assets/cv_stage_NASSIM_MEHADJI.pdf" class="btn btn-dark" download>
+                    <i class="fa-solid fa-download"></i> Télécharger mon CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <span class="footer-copy">© 2025 Nassim Mehadji — Tous droits réservés</span>
+                <div class="footer-links">
+                    <a href="bilan.html">Bilan →</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+    (function() {
+        const track = document.getElementById('galleryTrack');
+        const dots = document.querySelectorAll('.gallery-dot');
+        const counter = document.getElementById('galleryCounter');
+        const prev = document.getElementById('galleryPrev');
+        const next = document.getElementById('galleryNext');
+        if (!track) return;
+
+        let current = 0;
+        const total = track.children.length;
+
+        function goTo(i) {
+            if (i < 0) i = total - 1;
+            if (i >= total) i = 0;
+            current = i;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            dots.forEach((d, idx) => d.classList.toggle('active', idx === current));
+            if (counter) counter.textContent = (current + 1) + ' / ' + total;
+        }
+
+        prev.addEventListener('click', () => goTo(current - 1));
+        next.addEventListener('click', () => goTo(current + 1));
+        dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.index)));
+
+        // Swipe
+        let sx = 0;
+        track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+        track.addEventListener('touchend', e => {
+            const d = sx - e.changedTouches[0].clientX;
+            if (Math.abs(d) > 50) d > 0 ? goTo(current + 1) : goTo(current - 1);
+        }, { passive: true });
+
+        // Keyboard
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft') goTo(current - 1);
+            if (e.key === 'ArrowRight') goTo(current + 1);
+        });
+
+        // Autoplay
+        let ap = setInterval(() => goTo(current + 1), 5000);
+        const c = document.getElementById('galleryCarousel');
+        c.addEventListener('mouseenter', () => clearInterval(ap));
+        c.addEventListener('mouseleave', () => { ap = setInterval(() => goTo(current + 1), 5000); });
+    })();
+    </script>
+</body>
+</html>

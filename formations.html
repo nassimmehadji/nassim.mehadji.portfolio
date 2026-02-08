@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formations — Nassim Mehadji</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .formation-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        .formation-card {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 28px;
+            padding: 32px;
+            background: var(--blanc);
+            border: 1px solid var(--gris-200);
+            border-radius: 20px;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+        }
+        .formation-card:hover {
+            border-color: var(--bleu);
+            box-shadow: 0 12px 40px var(--bleu-glow);
+            transform: translateY(-2px);
+        }
+        .formation-year {
+            font-family: var(--font-display);
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--bleu);
+            background: var(--bleu-light);
+            padding: 10px 0;
+            border-radius: 10px;
+            text-align: center;
+            height: fit-content;
+        }
+        .formation-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+        .formation-school {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gris-500);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .formation-school i { color: var(--bleu); font-size: 0.8rem; }
+        .formation-desc {
+            font-size: 0.88rem;
+            color: var(--gris-500);
+            line-height: 1.7;
+        }
+        .formation-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+
+        .timeline-connector {
+            width: 2px;
+            height: 24px;
+            background: linear-gradient(to bottom, var(--bleu), var(--bleu-light));
+            margin-left: 48px;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 600px) {
+            .formation-card {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                padding: 24px;
+            }
+            .formation-year { width: fit-content; padding: 8px 18px; }
+            .timeline-connector { margin-left: 24px; }
+        }
+    </style>
+</head>
+<body>
+        <div class="loader-bar"></div>
+        <div class="loader-text">Chargement</div>
+    </div>
+
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Nassim<span>.M</span></a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="formations.html" class="nav-link">Formations</a>
+                <a href="competences.html" class="nav-link">Compétences</a>
+                <a href="experiences.html" class="nav-link">Expériences</a>
+                <a href="projets.html" class="nav-link">Projets</a>
+                <a href="interets.html" class="nav-link">Intérêts</a>
+                <a href="bilan.html" class="nav-link">Bilan</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+    </header>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">Nassim<span>.M</span></a>
+            <button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark" style="font-size:1.3rem"></i></button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html">Accueil</a>
+            <a href="formations.html" class="active">Formations</a>
+            <a href="competences.html">Compétences</a>
+            <a href="experiences.html">Expériences</a>
+            <a href="projets.html">Projets</a>
+            <a href="interets.html">Centres d'intérêt</a>
+            <a href="bilan.html">Bilan</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <!-- ═══ PAGE HERO ═══ -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label reveal">Parcours académique</span>
+            <h1 class="section-title reveal reveal-d1">Mes Formations</h1>
+            <p class="section-desc reveal reveal-d2">
+                Un parcours construit avec détermination, de la découverte du digital à la maîtrise des stratégies e-business.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══ FORMATIONS LIST ═══ -->
+    <section class="page-section" style="padding-top:0;">
+        <div class="container">
+            <div class="formation-grid">
+
+                <!-- Formation 1 : BUT TC -->
+                <div class="formation-card reveal">
+                    <div class="formation-year">2023<br>2026</div>
+                    <div class="formation-info">
+                        <h3>BUT Techniques de Commercialisation</h3>
+                        <div class="formation-school">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            UPJV - I.U.T. de l'Oise
+                        </div>
+                        <p class="formation-desc">
+                            <strong>Parcours :</strong> Marketing Digital, E-Business & Entrepreneuriat (MDEE)
+                        </p>
+                        <p class="formation-desc" style="margin-top: 12px;">
+                            Formation complète aux enjeux du commerce, du marketing et du digital. Développement de compétences en stratégie marketing, communication commerciale et gestion de projets commerciaux digitaux. Apprentissage progressif sur 3 années avec des projets concrets en partenariat avec des entreprises.
+                        </p>
+                        <div class="formation-tags">
+                            <span class="tag tag-blue">Marketing Digital</span>
+                            <span class="tag tag-blue">E-Business</span>
+                            <span class="tag tag-blue">Entrepreneuriat</span>
+                            <span class="tag">Gestion de projet</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-connector reveal"></div>
+
+                <!-- Formation 2 : Bac -->
+                <div class="formation-card reveal">
+                    <div class="formation-year">2020<br>2023</div>
+                    <div class="formation-info">
+                        <h3>Baccalauréat Général</h3>
+                        <div class="formation-school">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            Lycée Général et Technologique Jules Uhry - Creil
+                        </div>
+                        <p class="formation-desc">
+                            Obtention du baccalauréat général avec les spécialités SES (Sciences Économiques et Sociales) et HGGSP (Histoire-Géographie, Géopolitique et Sciences Politiques). Premiers pas vers la compréhension des enjeux économiques et sociaux.
+                        </p>
+                        <div class="formation-tags">
+                            <span class="tag">Spécialité SES</span>
+                            <span class="tag">Spécialité HGGSP</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <span class="footer-copy">© 2025 Nassim Mehadji — Tous droits réservés</span>
+                <div class="footer-links">
+                    <a href="competences.html">Compétences →</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

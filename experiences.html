@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expériences — Nassim Mehadji</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .exp-timeline { position: relative; max-width: 820px; margin: 0 auto; }
+        .exp-timeline::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--bleu), var(--gris-200), transparent);
+        }
+
+        .exp-item {
+            position: relative;
+            padding-left: 72px;
+            padding-bottom: 48px;
+        }
+        .exp-item:last-child { padding-bottom: 0; }
+
+        .exp-dot {
+            position: absolute;
+            left: 20px; top: 6px;
+            width: 18px; height: 18px;
+            border-radius: 50%;
+            background: var(--blanc);
+            border: 3px solid var(--bleu);
+            z-index: 2;
+        }
+        .exp-dot::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border-radius: 50%;
+            background: var(--bleu);
+        }
+
+        .exp-card {
+            padding: 28px 32px;
+            background: var(--blanc);
+            border: 1px solid var(--gris-200);
+            border-radius: 18px;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+        .exp-card:hover {
+            border-color: var(--bleu);
+            box-shadow: 0 12px 40px var(--bleu-glow);
+            transform: translateX(4px);
+        }
+
+        .exp-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .exp-date {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--bleu);
+            background: var(--bleu-light);
+            padding: 5px 14px;
+            border-radius: 8px;
+        }
+        .exp-type {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--gris-500);
+            background: var(--gris-100);
+            padding: 5px 12px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .exp-card h3 { font-size: 1.15rem; margin-bottom: 4px; }
+        .exp-company {
+            font-size: 0.9rem;
+            color: var(--gris-500);
+            font-weight: 500;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .exp-company i { color: var(--bleu); font-size: 0.8rem; }
+
+        .exp-missions {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .exp-missions li {
+            font-size: 0.85rem;
+            color: var(--gris-600);
+            line-height: 1.6;
+            padding-left: 18px;
+            position: relative;
+        }
+        .exp-missions li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 9px;
+            width: 6px; height: 6px;
+            background: var(--bleu);
+            border-radius: 2px;
+        }
+
+        .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+
+        @media (max-width: 600px) {
+            .exp-timeline::before { left: 16px; }
+            .exp-dot { left: 8px; }
+            .exp-item { padding-left: 48px; }
+            .exp-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+        <div class="loader-bar"></div>
+        <div class="loader-text">Chargement</div>
+    </div>
+
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Nassim<span>.M</span></a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="formations.html" class="nav-link">Formations</a>
+                <a href="competences.html" class="nav-link">Compétences</a>
+                <a href="experiences.html" class="nav-link">Expériences</a>
+                <a href="projets.html" class="nav-link">Projets</a>
+                <a href="interets.html" class="nav-link">Intérêts</a>
+                <a href="bilan.html" class="nav-link">Bilan</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+    </header>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">Nassim<span>.M</span></a>
+            <button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark" style="font-size:1.3rem"></i></button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html">Accueil</a>
+            <a href="formations.html">Formations</a>
+            <a href="competences.html">Compétences</a>
+            <a href="experiences.html" class="active">Expériences</a>
+            <a href="projets.html">Projets</a>
+            <a href="interets.html">Centres d'intérêt</a>
+            <a href="bilan.html">Bilan</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <!-- ═══ PAGE HERO ═══ -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label reveal">Parcours professionnel</span>
+            <h1 class="section-title reveal reveal-d1">Mes Expériences</h1>
+            <p class="section-desc reveal reveal-d2">
+                Chaque mission a renforcé ma vision du marketing digital et ma capacité à produire des résultats concrets.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══ EXPERIENCES TIMELINE ═══ -->
+    <section class="page-section" style="padding-top:0;">
+        <div class="container">
+            <div class="exp-timeline">
+
+                <!-- Expérience 1 : Stage École Jean Trubert -->
+                <div class="exp-item reveal">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-meta">
+                            <span class="exp-date">Avril — Mai 2025</span>
+                            <span class="exp-type">Stage</span>
+                        </div>
+                        <h3>Community Manager</h3>
+                        <div class="exp-company">
+                            <i class="fa-solid fa-building"></i>
+                            École Jean Trubert — École d'Art, Paris
+                        </div>
+                        <ul class="exp-missions">
+                            <li>Création de contenus pour les réseaux sociaux et le site internet</li>
+                            <li>Gestion du calendrier éditorial et analyse de la performance</li>
+                            <li>Valorisation de l'image de marque et renforcement de la notoriété de l'établissement</li>
+                            <li>Conception et animation de la stratégie de communication digitale</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="tag tag-blue">Community Management</span>
+                            <span class="tag tag-blue">Création de contenu</span>
+                            <span class="tag">Stratégie digitale</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expérience 2 : Bouge Ton Talent -->
+                <div class="exp-item reveal">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-meta">
+                            <span class="exp-date">Février — Juin 2025</span>
+                            <span class="exp-type">Projet associatif</span>
+                        </div>
+                        <h3>Chargé de communication</h3>
+                        <div class="exp-company">
+                            <i class="fa-solid fa-users"></i>
+                            "Bouge Ton Talent" — Salon d'orientation, Orry-la-Ville
+                        </div>
+                        <ul class="exp-missions">
+                            <li>Participation à l'organisation et à la communication du salon d'orientation</li>
+                            <li>Réalisation d'interviews et de contenus visuels (photos, vidéos, posts Instagram)</li>
+                            <li>Collaboration avec une équipe de communication pour assurer la visibilité sur les réseaux sociaux</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="tag tag-blue">Communication événementielle</span>
+                            <span class="tag tag-blue">Création vidéo</span>
+                            <span class="tag">Réseaux sociaux</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expérience 3 : Auchan -->
+                <div class="exp-item reveal">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-meta">
+                            <span class="exp-date">Juin — Août 2024</span>
+                            <span class="exp-type">Job d'été</span>
+                        </div>
+                        <h3>Employé Polyvalent — Caisse & Rayon</h3>
+                        <div class="exp-company">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Auchan
+                        </div>
+                        <ul class="exp-missions">
+                            <li>Gestion des encaissements en caisse traditionnelle et en caisse automatique</li>
+                            <li>Accompagnement des clients et résolution des incidents en caisse</li>
+                            <li>Facing et mise en rayon des produits pour assurer un rayon propre, lisible et attractif</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="tag">Relation client</span>
+                            <span class="tag">Polyvalence</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expérience 4 : Animateur -->
+                <div class="exp-item reveal">
+                    <div class="exp-dot"></div>
+                    <div class="exp-card">
+                        <div class="exp-meta">
+                            <span class="exp-date">Décembre 2023</span>
+                            <span class="exp-type">Animation</span>
+                        </div>
+                        <h3>Animateur</h3>
+                        <div class="exp-company">
+                            <i class="fa-solid fa-child"></i>
+                            Espace Pierre Perret — Centre de loisirs à Villers Saint-Paul
+                        </div>
+                        <ul class="exp-missions">
+                            <li>Encadrement d'enfants et animation d'activités ludiques</li>
+                            <li>Favoriser l'apprentissage par le jeu et la cohésion de groupe</li>
+                            <li>Développement de la créativité à travers des ateliers adaptés</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="tag">Animation</span>
+                            <span class="tag">Pédagogie</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA CV -->
+            <div class="reveal" style="text-align:center; margin-top:60px;">
+                <a href="assets/cv_stage_NASSIM_MEHADJI.pdf" class="btn btn-dark" download>
+                    <i class="fa-solid fa-download"></i> Télécharger mon CV complet
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <span class="footer-copy">© 2025 Nassim Mehadji — Tous droits réservés</span>
+                <div class="footer-links">
+                    <a href="projets.html">Projets →</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

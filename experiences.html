@@ -7,40 +7,94 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        .exp-timeline { position:relative; max-width:820px; margin:0 auto; }
-        .exp-timeline::before { content:''; position:absolute; left:28px; top:0; bottom:0; width:2px; background:linear-gradient(to bottom, var(--noir), var(--gris-300), transparent); }
-        .exp-item { position:relative; padding-left:72px; padding-bottom:48px; }
+        .exp-timeline { position:relative; max-width:780px; margin:0 auto; }
+        .exp-timeline::before { content:''; position:absolute; left:24px; top:0; bottom:0; width:1.5px; background:linear-gradient(to bottom, var(--black), var(--gray-6), transparent); }
+        .exp-item { position:relative; padding-left:64px; padding-bottom:40px; }
         .exp-item:last-child { padding-bottom:0; }
-        .exp-dot { position:absolute; left:20px; top:6px; width:18px; height:18px; border-radius:50%; background:var(--blanc); border:3px solid var(--noir); z-index:2; }
-        .exp-dot::after { content:''; position:absolute; inset:3px; border-radius:50%; background:var(--noir); }
-        .exp-card { padding:28px 32px; background:var(--blanc); border:1px solid var(--gris-200); border-radius:18px; transition:all 0.4s var(--ease-out-expo); }
-        .exp-card:hover { border-color:var(--gris-400); box-shadow:0 12px 40px rgba(26,26,46,0.08); transform:translateX(4px); }
-        .exp-meta { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:12px; }
-        .exp-date { font-family:var(--font-mono); font-size:0.75rem; font-weight:600; color:var(--noir); background:var(--gris-100); padding:5px 14px; border-radius:8px; }
-        .exp-type { font-family:var(--font-mono); font-size:0.7rem; font-weight:600; color:var(--gris-500); background:var(--gris-50); padding:5px 12px; border-radius:8px; text-transform:uppercase; letter-spacing:0.05em; }
-        .exp-card h3 { font-family:var(--font-display); font-size:1.15rem; font-weight:700; color:var(--noir); margin-bottom:4px; }
-        .exp-company { font-size:0.9rem; color:var(--gris-500); font-weight:500; margin-bottom:16px; display:flex; align-items:center; gap:6px; }
-        .exp-company i { color:var(--noir); font-size:0.8rem; }
-        .exp-missions { list-style:none; display:flex; flex-direction:column; gap:8px; }
-        .exp-missions li { font-size:0.85rem; color:var(--gris-600); line-height:1.6; padding-left:18px; position:relative; }
-        .exp-missions li::before { content:''; position:absolute; left:0; top:9px; width:6px; height:6px; background:var(--noir); border-radius:2px; }
-        .exp-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:16px; }
-        @media (max-width:600px) { .exp-timeline::before { left:16px; } .exp-dot { left:8px; } .exp-item { padding-left:48px; } .exp-card { padding:20px; } }
+        .exp-dot { position:absolute; left:17px; top:6px; width:16px; height:16px; border-radius:50%; background:var(--pure-white); border:2.5px solid var(--black); z-index:2; }
+        .exp-dot::after { content:''; position:absolute; inset:3px; border-radius:50%; background:var(--black); }
+        .exp-card {
+            padding:28px; background:var(--pure-white); border-radius:20px;
+            box-shadow:var(--shadow-sm); border:0.5px solid rgba(0,0,0,0.04);
+            transition:all 0.4s var(--ease-out);
+        }
+        .exp-card:hover { transform:translateX(6px); box-shadow:var(--shadow-hover); }
+        .exp-meta { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:12px; }
+        .exp-date { font-size:0.72rem; font-weight:600; color:var(--black); background:var(--gray-8); padding:5px 14px; border-radius:980px; }
+        .exp-type { font-size:0.68rem; font-weight:600; color:var(--gray-4); background:var(--gray-8); padding:5px 12px; border-radius:980px; text-transform:uppercase; letter-spacing:0.05em; }
+        .exp-card h3 { font-family:var(--font-display); font-size:1.1rem; font-weight:700; color:var(--black); letter-spacing:-0.02em; margin-bottom:4px; }
+        .exp-company { font-size:0.88rem; color:var(--gray-4); font-weight:400; margin-bottom:14px; display:flex; align-items:center; gap:6px; }
+        .exp-company i { color:var(--gray-5); font-size:0.75rem; }
+        .exp-missions { list-style:none; display:flex; flex-direction:column; gap:7px; }
+        .exp-missions li { font-size:0.84rem; color:var(--gray-3); line-height:1.6; padding-left:16px; position:relative; font-weight:300; }
+        .exp-missions li::before { content:''; position:absolute; left:0; top:9px; width:5px; height:5px; background:var(--black); border-radius:2px; }
+        .exp-tags { display:flex; flex-wrap:wrap; gap:5px; margin-top:14px; }
+        @media (max-width:600px) { .exp-timeline::before { left:14px; } .exp-dot { left:7px; } .exp-item { padding-left:44px; } .exp-card { padding:20px; } }
     </style>
 </head>
 <body>
-    <div class="loader-bar"></div><div class="loader-text">Chargement</div>
     <header class="site-header"><div class="header-inner"><a href="index.html" class="logo">Nassim<span>.M</span></a><nav class="nav-desktop"><a href="index.html" class="nav-link">Accueil</a><a href="formations.html" class="nav-link">Formations</a><a href="competences.html" class="nav-link">Compétences</a><a href="experiences.html" class="nav-link active">Expériences</a><a href="projets.html" class="nav-link">Projets</a><a href="interets.html" class="nav-link">Intérêts</a><a href="bilan.html" class="nav-link">Bilan</a><a href="contact.html" class="nav-cta">Contact</a></nav><button class="nav-toggle" id="navToggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></header>
-    <div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-header"><a href="index.html" class="logo">Nassim<span>.M</span></a><button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark" style="font-size:1.3rem"></i></button></div><nav class="mobile-nav"><a href="index.html">Accueil</a><a href="formations.html">Formations</a><a href="competences.html">Compétences</a><a href="experiences.html" class="active">Expériences</a><a href="projets.html">Projets</a><a href="interets.html">Centres d'intérêt</a><a href="bilan.html">Bilan</a><a href="contact.html">Contact</a></nav></div>
-    <section class="page-hero"><div class="container"><span class="section-label reveal">Parcours professionnel</span><h1 class="section-title reveal reveal-d1">Mes Expériences</h1><p class="section-desc reveal reveal-d2">Chaque mission a renforcé ma vision du marketing digital et ma capacité à produire des résultats concrets.</p></div></section>
+    <div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-header"><a href="index.html" class="logo">Nassim<span>.M</span></a><button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark"></i></button></div><nav class="mobile-nav"><a href="index.html">Accueil</a><a href="formations.html">Formations</a><a href="competences.html">Compétences</a><a href="experiences.html" class="active">Expériences</a><a href="projets.html">Projets</a><a href="interets.html">Centres d'intérêt</a><a href="bilan.html">Bilan</a><a href="contact.html">Contact</a></nav></div>
+
+    <section class="page-hero"><div class="container"><span class="section-label reveal">Parcours</span><h1 class="section-title reveal reveal-d1">Mes Expériences</h1><p class="section-desc reveal reveal-d2">Chaque mission a renforcé ma vision du marketing digital et ma capacité à produire des résultats concrets.</p></div></section>
+
     <section class="page-section" style="padding-top:0;"><div class="container"><div class="exp-timeline">
-        <div class="exp-item reveal"><div class="exp-dot"></div><div class="exp-card"><div class="exp-meta"><span class="exp-date">Avril — Mai 2025</span><span class="exp-type">Stage</span></div><h3>Community Manager</h3><div class="exp-company"><i class="fa-solid fa-building"></i> École Jean Trubert — École d'Art, Paris</div><ul class="exp-missions"><li>Création de contenus pour les réseaux sociaux et le site internet</li><li>Gestion du calendrier éditorial et analyse de la performance</li><li>Valorisation de l'image de marque et renforcement de la notoriété</li><li>Conception et animation de la stratégie de communication digitale</li></ul><div class="exp-tags"><span class="tag tag-blue">Community Management</span><span class="tag tag-blue">Création de contenu</span><span class="tag">Stratégie digitale</span></div></div></div>
-        <div class="exp-item reveal"><div class="exp-dot"></div><div class="exp-card"><div class="exp-meta"><span class="exp-date">Février — Juin 2025</span><span class="exp-type">Projet associatif</span></div><h3>Chargé de communication</h3><div class="exp-company"><i class="fa-solid fa-users"></i> "Bouge Ton Talent" — Salon d'orientation, Orry-la-Ville</div><ul class="exp-missions"><li>Participation à l'organisation et à la communication du salon</li><li>Réalisation d'interviews et de contenus visuels</li><li>Collaboration avec une équipe pour la visibilité sur les réseaux sociaux</li></ul><div class="exp-tags"><span class="tag tag-blue">Communication événementielle</span><span class="tag tag-blue">Création vidéo</span><span class="tag">Réseaux sociaux</span></div></div></div>
-        <div class="exp-item reveal"><div class="exp-dot"></div><div class="exp-card"><div class="exp-meta"><span class="exp-date">Juin — Août 2024</span><span class="exp-type">Job d'été</span></div><h3>Employé Polyvalent — Caisse & Rayon</h3><div class="exp-company"><i class="fa-solid fa-cart-shopping"></i> Auchan</div><ul class="exp-missions"><li>Gestion des encaissements en caisse traditionnelle et automatique</li><li>Accompagnement des clients et résolution des incidents</li><li>Facing et mise en rayon des produits</li></ul><div class="exp-tags"><span class="tag">Relation client</span><span class="tag">Polyvalence</span></div></div></div>
-        <div class="exp-item reveal"><div class="exp-dot"></div><div class="exp-card"><div class="exp-meta"><span class="exp-date">Décembre 2023</span><span class="exp-type">Animation</span></div><h3>Animateur</h3><div class="exp-company"><i class="fa-solid fa-child"></i> Espace Pierre Perret — Villers Saint-Paul</div><ul class="exp-missions"><li>Encadrement d'enfants et animation d'activités ludiques</li><li>Favoriser l'apprentissage par le jeu et la cohésion de groupe</li><li>Développement de la créativité à travers des ateliers adaptés</li></ul><div class="exp-tags"><span class="tag">Animation</span><span class="tag">Pédagogie</span></div></div></div>
+
+        <div class="exp-item reveal"><div class="exp-dot"></div><div class="exp-card">
+            <div class="exp-meta"><span class="exp-date">Fév — Juin 2026</span><span class="exp-type">Stage</span></div>
+            <h3>Chargé de Communication & Marketing</h3>
+            <div class="exp-company"><i class="fa-solid fa-building"></i> Ligue de l'Enseignement de l'Oise — Beauvais</div>
+            <ul class="exp-missions">
+                <li>Audit et élaboration d'une stratégie de modernisation web et print</li>
+                <li>Refonte de l'identité graphique de l'organisme</li>
+                <li>Production de supports visuels via Canva Pro et la Suite Adobe</li>
+            </ul>
+            <div class="exp-tags"><span class="tag tag-blue">Audit</span><span class="tag tag-blue">Stratégie web</span><span class="tag">Identité graphique</span><span class="tag">Adobe</span></div>
+        </div></div>
+
+        <div class="exp-item reveal"><div class="exp-dot"></div><div class="exp-card">
+            <div class="exp-meta"><span class="exp-date">Avril — Mai 2025</span><span class="exp-type">Stage</span></div>
+            <h3>Community Manager</h3>
+            <div class="exp-company"><i class="fa-solid fa-palette"></i> École Jean Trubert — École d'Art, Paris</div>
+            <ul class="exp-missions">
+                <li>Création de contenus pour les réseaux sociaux et le site internet</li>
+                <li>Gestion du calendrier éditorial et analyse de la performance</li>
+                <li>Animation de la stratégie de communication digitale</li>
+            </ul>
+            <div class="exp-tags"><span class="tag tag-blue">Community Management</span><span class="tag tag-blue">Contenu</span><span class="tag">Stratégie digitale</span></div>
+        </div></div>
+
+        <div class="exp-item reveal"><div class="exp-dot"></div><div class="exp-card">
+            <div class="exp-meta"><span class="exp-date">Janv — Mars 2025</span><span class="exp-type">Projet associatif</span></div>
+            <h3>Chargé de Communication</h3>
+            <div class="exp-company"><i class="fa-solid fa-users"></i> "Bouge Ton Talent" — Orry-la-Ville</div>
+            <ul class="exp-missions">
+                <li>Organisation et promotion du salon d'orientation</li>
+                <li>Réalisation d'interviews et de visuels (photos, vidéos)</li>
+                <li>Optimisation de la visibilité sur les réseaux sociaux</li>
+            </ul>
+            <div class="exp-tags"><span class="tag tag-blue">Événementiel</span><span class="tag tag-blue">Vidéo</span><span class="tag">Réseaux sociaux</span></div>
+        </div></div>
+
+        <div class="exp-item reveal"><div class="exp-dot"></div><div class="exp-card">
+            <div class="exp-meta"><span class="exp-date">Juin — Août 2024</span><span class="exp-type">Job d'été</span></div>
+            <h3>Employé Polyvalent — Caisse & Rayon</h3>
+            <div class="exp-company"><i class="fa-solid fa-cart-shopping"></i> Auchan — Nogent-sur-Oise</div>
+            <ul class="exp-missions">
+                <li>Gestion des encaissements et relation client</li>
+                <li>Résolution rapide d'incidents en caisse</li>
+                <li>Maintien de l'attractivité du rayon</li>
+            </ul>
+            <div class="exp-tags"><span class="tag">Relation client</span><span class="tag">Polyvalence</span></div>
+        </div></div>
+
     </div>
-    <div class="reveal" style="text-align:center; margin-top:60px;"><a href="assets/cv_stage_NASSIM_MEHADJI.pdf" class="btn btn-dark" download><i class="fa-solid fa-download"></i> Télécharger mon CV complet</a></div>
+    <div class="reveal" style="text-align:center; margin-top:56px;">
+        <a href="assets/NASSIM_MEHADJI_CV.pdf" class="btn btn-outline" download><i class="fa-solid fa-arrow-down-to-line" style="font-size:0.8rem;"></i> Télécharger mon CV</a>
+    </div>
     </div></section>
-    <footer class="site-footer"><div class="container"><div class="footer-inner"><span class="footer-copy">© 2025 Nassim Mehadji — Tous droits réservés</span><div class="footer-links"><a href="projets.html">Projets →</a><a href="contact.html">Contact</a></div></div></div></footer>
+
+    <footer class="site-footer"><div class="container"><div class="footer-inner"><span class="footer-copy">© 2025 Nassim Mehadji — Tous droits réservés</span><div class="footer-links"><a href="projets.html">Projets</a><a href="contact.html">Contact</a></div></div></div></footer>
     <script src="main.js"></script>
-</body></html>
+</body>
+</html>

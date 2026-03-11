@@ -7,129 +7,81 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Filter pills */
-        .filter-bar {
-            display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px;
-        }
+        .filter-bar { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:36px; }
         .filter-btn {
-            padding: 9px 20px; background: var(--gray-100); border: none;
-            color: var(--gray-500); border-radius: 999px;
-            font-family: var(--font); font-size: 0.85rem; font-weight: 500;
-            cursor: pointer; transition: all 0.2s;
+            padding:8px 20px; background:var(--gray-8); border:none; color:var(--gray-4);
+            border-radius:980px; font-family:var(--font-body); font-size:0.82rem; font-weight:500;
+            cursor:pointer; transition:all 0.25s var(--ease);
         }
-        .filter-btn:hover { color: var(--gray-700); background: var(--gray-200); }
-        .filter-btn.active { background: var(--gray-900); color: var(--white); }
+        .filter-btn:hover { color:var(--gray-2); background:var(--gray-7); }
+        .filter-btn.active { background:var(--black); color:var(--pure-white); }
 
-        /* Cards */
-        .projects-card-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px;
-        }
+        .projects-card-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(330px, 1fr)); gap:16px; }
+
         .project-card {
-            background: var(--white); border-radius: 20px;
-            border: 1px solid var(--gray-200); overflow: hidden;
-            cursor: pointer; transition: all 0.3s var(--ease);
+            background:var(--pure-white); border-radius:20px;
+            box-shadow:var(--shadow-sm); border:0.5px solid rgba(0,0,0,0.04);
+            overflow:hidden; cursor:pointer; transition:all 0.4s var(--ease-out);
         }
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-            border-color: var(--gray-300);
-        }
-        .card-media {
-            height: 200px; display: flex; align-items: center; justify-content: center;
-            background: var(--gray-50); position: relative;
-        }
-        .card-media img { max-width: 70%; max-height: 70%; object-fit: contain; position: relative; z-index: 1; }
-        .card-media .card-num {
-            position: absolute; font-size: 5rem; font-weight: 900;
-            opacity: 0.04; color: var(--gray-900);
-        }
-        .card-body { padding: 24px; }
-        .card-type { font-size: 0.75rem; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
-        .card-body h3 { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; letter-spacing: -0.01em; }
-        .card-body p {
-            font-size: 0.875rem; color: var(--gray-500); line-height: 1.6;
-            font-weight: 300; margin-bottom: 16px;
-            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-        }
-        .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-        .card-action {
-            display: flex; align-items: center; gap: 6px;
-            font-size: 0.8rem; font-weight: 600; color: var(--gray-900);
-            margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--gray-100);
-        }
+        .project-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-hover); }
+        .card-media { height:200px; display:flex; align-items:center; justify-content:center; background:var(--gray-8); position:relative; overflow:hidden; }
+        .card-media img { max-width:68%; max-height:68%; object-fit:contain; transition:transform 0.5s var(--ease-out); position:relative; z-index:1; }
+        .project-card:hover .card-media img { transform:scale(1.05); }
+        .card-media .card-num { position:absolute; font-family:var(--font-display); font-size:5rem; font-weight:900; opacity:0.035; color:var(--black); }
+        .card-body { padding:24px; }
+        .card-type { font-size:0.7rem; font-weight:600; color:var(--gray-5); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px; }
+        .card-body h3 { font-family:var(--font-display); font-size:1.05rem; font-weight:700; color:var(--black); letter-spacing:-0.02em; margin-bottom:6px; }
+        .card-body p { font-size:0.84rem; color:var(--gray-4); line-height:1.6; font-weight:300; margin-bottom:14px; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+        .card-tags { display:flex; flex-wrap:wrap; gap:5px; }
+        .card-action { display:flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:600; color:var(--black); margin-top:14px; padding-top:14px; border-top:0.5px solid var(--gray-7); }
 
-        /* Modal */
-        .modal-overlay {
-            display: none; position: fixed; inset: 0; z-index: 3000;
-            background: rgba(0,0,0,0.35); backdrop-filter: blur(8px);
-            align-items: center; justify-content: center; padding: 20px;
-        }
-        .modal-overlay.open { display: flex; }
-        .modal-card {
-            background: var(--white); border-radius: 24px; max-width: 560px; width: 100%;
-            overflow: hidden; animation: modalIn 0.25s ease-out;
-            max-height: 90vh; overflow-y: auto;
-            box-shadow: 0 24px 80px rgba(0,0,0,0.15);
-        }
-        @keyframes modalIn { from { opacity: 0; transform: scale(0.96) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
-        .modal-media { height: 200px; display: flex; align-items: center; justify-content: center; background: var(--gray-50); }
-        .modal-media img { max-width: 65%; max-height: 65%; object-fit: contain; }
-        .modal-body { padding: 28px; }
-        .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
-        .modal-header h2 { font-size: 1.35rem; font-weight: 800; color: var(--gray-900); letter-spacing: -0.02em; line-height: 1.3; flex: 1; }
-        .modal-close {
-            background: var(--gray-100); border: none; color: var(--gray-500);
-            width: 36px; height: 36px; border-radius: 999px;
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; font-size: 0.9rem; margin-left: 12px; transition: all 0.2s;
-        }
-        .modal-close:hover { background: var(--gray-200); color: var(--gray-900); }
-        .modal-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
-        .modal-desc { font-size: 0.95rem; color: var(--gray-500); line-height: 1.75; font-weight: 300; margin-bottom: 24px; }
-        .modal-actions { display: flex; gap: 10px; }
-        .modal-btn {
-            flex: 1; padding: 12px 24px; border: none; border-radius: 999px;
-            font-family: var(--font); font-size: 0.875rem; font-weight: 600;
-            cursor: pointer; text-align: center; transition: all 0.2s;
-            text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px;
-        }
-        .modal-btn-secondary { background: var(--gray-100); color: var(--gray-700); }
-        .modal-btn-secondary:hover { background: var(--gray-200); }
-        .modal-btn-primary { background: var(--gray-900); color: var(--white); }
-        .modal-btn-primary:hover { background: var(--gray-800); }
+        /* Modal — glass */
+        .modal-overlay { display:none; position:fixed; inset:0; z-index:3000; background:rgba(0,0,0,0.3); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); align-items:center; justify-content:center; padding:20px; }
+        .modal-overlay.open { display:flex; }
+        .modal-card { background:var(--pure-white); border-radius:24px; max-width:540px; width:100%; overflow:hidden; animation:modalIn 0.3s var(--ease-out); max-height:90vh; overflow-y:auto; box-shadow:0 32px 80px rgba(0,0,0,0.18); }
+        @keyframes modalIn { from { opacity:0; transform:scale(0.96) translateY(12px); } to { opacity:1; transform:scale(1) translateY(0); } }
+        .modal-media { height:200px; display:flex; align-items:center; justify-content:center; background:var(--gray-8); }
+        .modal-media img { max-width:60%; max-height:60%; object-fit:contain; }
+        .modal-body { padding:28px; }
+        .modal-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px; }
+        .modal-header h2 { font-family:var(--font-display); font-size:1.35rem; font-weight:800; color:var(--black); letter-spacing:-0.03em; line-height:1.3; flex:1; }
+        .modal-close { background:var(--gray-8); border:none; color:var(--gray-4); width:32px; height:32px; border-radius:980px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:0.85rem; margin-left:12px; transition:all 0.2s; }
+        .modal-close:hover { background:var(--gray-7); color:var(--black); }
+        .modal-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
+        .modal-desc { font-size:0.92rem; color:var(--gray-3); line-height:1.75; font-weight:300; margin-bottom:24px; }
+        .modal-actions { display:flex; gap:8px; }
+        .modal-btn { flex:1; padding:12px 20px; border:none; border-radius:980px; font-family:var(--font-body); font-size:0.85rem; font-weight:600; cursor:pointer; text-align:center; transition:all 0.25s; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px; }
+        .modal-btn-secondary { background:var(--gray-8); color:var(--gray-2); }
+        .modal-btn-secondary:hover { background:var(--gray-7); }
+        .modal-btn-primary { background:var(--black); color:var(--pure-white); }
+        .modal-btn-primary:hover { background:var(--gray-1); }
 
         /* Gallery */
-        .gallery-section { margin-top: 72px; padding-top: 56px; border-top: 1px solid var(--gray-200); }
-        .gallery-header { text-align: center; margin-bottom: 40px; }
-        .gallery-header h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--gray-900); letter-spacing: -0.02em; margin-bottom: 8px; }
-        .gallery-header p { font-size: 0.95rem; color: var(--gray-400); font-weight: 300; }
-        .gallery-carousel { position: relative; overflow: hidden; border-radius: 20px; border: 1px solid var(--gray-200); background: var(--gray-50); }
-        .gallery-track { display: flex; transition: transform 0.4s var(--ease); }
-        .gallery-slide { min-width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; padding: 40px; background: var(--gray-50); position: relative; }
-        .gallery-slide img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .gallery-caption { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); background: var(--gray-900); color: var(--white); padding: 6px 20px; border-radius: 999px; font-size: 0.75rem; font-weight: 500; white-space: nowrap; }
-        .gallery-btn {
-            position: absolute; top: 50%; transform: translateY(-50%);
-            width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
-            background: var(--white); border: 1px solid var(--gray-200); border-radius: 999px;
-            cursor: pointer; z-index: 10; transition: all 0.2s; color: var(--gray-700); font-size: 0.8rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-        .gallery-btn:hover { background: var(--gray-900); color: var(--white); border-color: var(--gray-900); }
-        .gallery-prev { left: 14px; } .gallery-next { right: 14px; }
-        .gallery-dots { display: flex; justify-content: center; gap: 6px; padding: 16px 0; }
-        .gallery-dot { width: 7px; height: 7px; border-radius: 999px; background: var(--gray-300); border: none; cursor: pointer; transition: all 0.2s; padding: 0; }
-        .gallery-dot.active { background: var(--gray-900); width: 20px; }
-        .gallery-counter { text-align: center; font-size: 0.7rem; color: var(--gray-400); font-weight: 500; letter-spacing: 0.05em; padding-bottom: 8px; }
+        .gallery-section { margin-top:72px; padding-top:56px; border-top:0.5px solid var(--gray-7); }
+        .gallery-header { text-align:center; margin-bottom:36px; }
+        .gallery-header h2 { font-family:var(--font-display); font-size:clamp(1.5rem,3vw,2rem); font-weight:800; color:var(--black); letter-spacing:-0.03em; margin-bottom:6px; }
+        .gallery-header p { font-size:0.9rem; color:var(--gray-4); font-weight:300; }
+        .gallery-carousel { position:relative; overflow:hidden; border-radius:20px; box-shadow:var(--shadow-md); }
+        .gallery-track { display:flex; transition:transform 0.45s var(--ease); }
+        .gallery-slide { min-width:100%; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; padding:40px; background:var(--gray-8); position:relative; }
+        .gallery-slide img { max-width:100%; max-height:100%; object-fit:contain; }
+        .gallery-caption { position:absolute; bottom:14px; left:50%; transform:translateX(-50%); background:var(--black); color:var(--pure-white); padding:6px 18px; border-radius:980px; font-size:0.72rem; font-weight:500; white-space:nowrap; }
+        .gallery-btn { position:absolute; top:50%; transform:translateY(-50%); width:36px; height:36px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.9); backdrop-filter:blur(8px); border:none; border-radius:980px; cursor:pointer; z-index:10; transition:all 0.25s; color:var(--black); font-size:0.75rem; box-shadow:var(--shadow-sm); }
+        .gallery-btn:hover { background:var(--black); color:var(--pure-white); transform:translateY(-50%) scale(1.06); }
+        .gallery-prev { left:12px; } .gallery-next { right:12px; }
+        .gallery-dots { display:flex; justify-content:center; gap:5px; padding:16px 0; }
+        .gallery-dot { width:6px; height:6px; border-radius:980px; background:var(--gray-6); border:none; cursor:pointer; transition:all 0.2s; padding:0; }
+        .gallery-dot.active { background:var(--black); width:18px; }
+        .gallery-counter { text-align:center; font-size:0.68rem; color:var(--gray-5); font-weight:500; letter-spacing:0.05em; padding-bottom:6px; }
 
-        @media (max-width: 700px) { .projects-card-grid { grid-template-columns: 1fr; } .gallery-slide { padding: 16px; } .modal-actions { flex-direction: column; } }
+        @media (max-width:700px) { .projects-card-grid { grid-template-columns:1fr; } .gallery-slide { padding:16px; } .modal-actions { flex-direction:column; } }
     </style>
 </head>
 <body>
     <header class="site-header"><div class="header-inner"><a href="index.html" class="logo">Nassim<span>.M</span></a><nav class="nav-desktop"><a href="index.html" class="nav-link">Accueil</a><a href="formations.html" class="nav-link">Formations</a><a href="competences.html" class="nav-link">Compétences</a><a href="experiences.html" class="nav-link">Expériences</a><a href="projets.html" class="nav-link active">Projets</a><a href="interets.html" class="nav-link">Intérêts</a><a href="bilan.html" class="nav-link">Bilan</a><a href="contact.html" class="nav-cta">Contact</a></nav><button class="nav-toggle" id="navToggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></header>
-    <div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-header"><a href="index.html" class="logo">Nassim<span>.M</span></a><button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark" style="font-size:1.2rem"></i></button></div><nav class="mobile-nav"><a href="index.html">Accueil</a><a href="formations.html">Formations</a><a href="competences.html">Compétences</a><a href="experiences.html">Expériences</a><a href="projets.html" class="active">Projets</a><a href="interets.html">Centres d'intérêt</a><a href="bilan.html">Bilan</a><a href="contact.html">Contact</a></nav></div>
+    <div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-header"><a href="index.html" class="logo">Nassim<span>.M</span></a><button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark"></i></button></div><nav class="mobile-nav"><a href="index.html">Accueil</a><a href="formations.html">Formations</a><a href="competences.html">Compétences</a><a href="experiences.html">Expériences</a><a href="projets.html" class="active">Projets</a><a href="interets.html">Centres d'intérêt</a><a href="bilan.html">Bilan</a><a href="contact.html">Contact</a></nav></div>
 
-    <section class="page-hero"><div class="container"><span class="section-label reveal">Portfolio</span><h1 class="section-title reveal reveal-d1">Mes Projets</h1><p class="section-desc reveal reveal-d2">Une sélection de projets académiques et professionnels mêlant stratégie, créativité et maîtrise des outils numériques.</p></div></section>
+    <section class="page-hero"><div class="container"><span class="section-label reveal">Portfolio</span><h1 class="section-title reveal reveal-d1">Mes Projets</h1><p class="section-desc reveal reveal-d2">Stratégie, créativité et maîtrise des outils numériques au service de projets concrets.</p></div></section>
 
     <section class="page-section" style="padding-top:0;"><div class="container">
         <div class="filter-bar reveal">
@@ -138,33 +90,35 @@
             <button class="filter-btn" data-filter="comm">Communication</button>
             <button class="filter-btn" data-filter="stage">Stages</button>
         </div>
-
         <div class="projects-card-grid stagger" id="projectsGrid">
             <div class="project-card" data-category="web" data-title="Canneo" data-desc="Projet de création d'un site web réalisé sur WordPress, dédié à une canne connectée innovante. Travail sur la structure du site, l'ergonomie, le contenu et la mise en valeur du produit à travers une approche orientée utilisateur et accessibilité." data-tags="WordPress,UX/UI Design,Accessibilité" data-link="http://sc2molo8065.universe.wf/sea4/" data-img="images/canneo.png">
                 <div class="card-media"><span class="card-num">01</span><img src="images/canneo.png" alt="Canneo"></div>
-                <div class="card-body"><div class="card-type">WordPress</div><h3>Canneo</h3><p>Site WordPress dédié à une canne connectée innovante. Structure, ergonomie et mise en valeur du produit orientée utilisateur.</p><div class="card-tags"><span class="tag">WordPress</span><span class="tag">UX/UI</span><span class="tag">Accessibilité</span></div><div class="card-action">En savoir plus <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i></div></div>
+                <div class="card-body"><div class="card-type">WordPress</div><h3>Canneo</h3><p>Site WordPress dédié à une canne connectée innovante. Structure, ergonomie et mise en valeur orientée utilisateur.</p><div class="card-tags"><span class="tag">WordPress</span><span class="tag">UX/UI</span><span class="tag">Accessibilité</span></div><div class="card-action">En savoir plus <i class="fa-solid fa-arrow-right" style="font-size:0.65rem;"></i></div></div>
             </div>
             <div class="project-card" data-category="web" data-title="Valmoré" data-desc="Valmoré est une marque de montres de luxe moderne, pensée pour une clientèle jeune, connectée et exigeante. J'ai conçu l'ensemble du site e-commerce sur Wix : identité visuelle, structure des pages, mise en avant des produits et expérience utilisateur." data-tags="Wix,E-commerce,Branding" data-link="https://nassimmehadji25.wixsite.com/my-site-6" data-img="images/valmore.png">
-                <div class="card-media" style="background:#111827;"><span class="card-num" style="color:rgba(255,255,255,0.06);">02</span><img src="images/valmore.png" alt="Valmoré"></div>
-                <div class="card-body"><div class="card-type">E-commerce</div><h3>Valmoré</h3><p>Marque de montres de luxe. Identité visuelle, structure des pages et expérience utilisateur e-commerce complète.</p><div class="card-tags"><span class="tag">Wix</span><span class="tag">E-commerce</span><span class="tag">Branding</span></div><div class="card-action">En savoir plus <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i></div></div>
+                <div class="card-media" style="background:var(--black);"><span class="card-num" style="color:rgba(255,255,255,0.05);">02</span><img src="images/valmore.png" alt="Valmoré"></div>
+                <div class="card-body"><div class="card-type">E-commerce</div><h3>Valmoré</h3><p>Montres de luxe. Identité visuelle, structure des pages et expérience e-commerce complète sur Wix.</p><div class="card-tags"><span class="tag">Wix</span><span class="tag">E-commerce</span><span class="tag">Branding</span></div><div class="card-action">En savoir plus <i class="fa-solid fa-arrow-right" style="font-size:0.65rem;"></i></div></div>
             </div>
             <div class="project-card" data-category="web" data-title="Chaufelec" data-desc="Création d'un site vitrine WordPress pour une entreprise fictive spécialisée dans le chauffage et l'électricité. Travail sur la structure du site, la présentation des services, l'ergonomie et la clarté des informations." data-tags="WordPress,Site vitrine,Communication" data-link="http://sc2molo8065.universe.wf/Mehadji/" data-img="images/chaufelec.jpg">
                 <div class="card-media"><span class="card-num">03</span><img src="images/chaufelec.jpg" alt="Chaufelec"></div>
-                <div class="card-body"><div class="card-type">Site vitrine</div><h3>Chaufelec</h3><p>Site vitrine WordPress pour une entreprise de chauffage et électricité. Structure, services et ergonomie.</p><div class="card-tags"><span class="tag">WordPress</span><span class="tag">Site vitrine</span><span class="tag">Communication</span></div><div class="card-action">En savoir plus <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i></div></div>
+                <div class="card-body"><div class="card-type">Site vitrine</div><h3>Chaufelec</h3><p>Site vitrine WordPress. Présentation des services, ergonomie et clarté des informations.</p><div class="card-tags"><span class="tag">WordPress</span><span class="tag">Site vitrine</span></div><div class="card-action">En savoir plus <i class="fa-solid fa-arrow-right" style="font-size:0.65rem;"></i></div></div>
             </div>
             <div class="project-card" data-category="comm" data-title="Bouge Ton Talent" data-desc="Une initiative dédiée à l'accompagnement des jeunes pour révéler leur potentiel professionnel. J'y ai piloté la communication digitale, de la gestion des réseaux sociaux à la réalisation d'interviews de terrain, notamment celle de l'artiste peintre murale Caroline Vong." data-tags="Communication digitale,Réseaux sociaux,Création vidéo" data-link="" data-img="images/bouge-ton-talent.png">
                 <div class="card-media"><span class="card-num">04</span><img src="images/bouge-ton-talent.png" alt="Bouge Ton Talent"></div>
-                <div class="card-body"><div class="card-type">Communication</div><h3>Bouge Ton Talent</h3><p>Communication digitale pour une initiative jeunesse. Réseaux sociaux, interviews et création de contenu vidéo.</p><div class="card-tags"><span class="tag">Communication</span><span class="tag">Réseaux sociaux</span><span class="tag">Vidéo</span></div><div class="card-action">En savoir plus <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i></div></div>
+                <div class="card-body"><div class="card-type">Communication</div><h3>Bouge Ton Talent</h3><p>Communication digitale pour une initiative jeunesse. Réseaux sociaux, interviews et contenus vidéo.</p><div class="card-tags"><span class="tag">Communication</span><span class="tag">Vidéo</span></div><div class="card-action">En savoir plus <i class="fa-solid fa-arrow-right" style="font-size:0.65rem;"></i></div></div>
             </div>
             <div class="project-card" data-category="stage" data-title="École Jean Trubert" data-desc="Stage en Community Management au sein de l'École Jean Trubert, école d'art parisienne. Création de contenus pour les réseaux sociaux et le site internet, gestion du calendrier éditorial, analyse de la performance et conception de la stratégie de communication digitale." data-tags="Community Management,Création de contenu,Stratégie digitale" data-link="" data-img="images/ecole-jean-trubert.jpg">
                 <div class="card-media"><span class="card-num">05</span><img src="images/ecole-jean-trubert.jpg" alt="École Jean Trubert"></div>
-                <div class="card-body"><div class="card-type">Stage</div><h3>École Jean Trubert</h3><p>Stage en Community Management dans une école d'art parisienne. Contenus, calendrier éditorial et stratégie digitale.</p><div class="card-tags"><span class="tag">Community Mgmt</span><span class="tag">Contenu</span><span class="tag">Stratégie</span></div><div class="card-action">En savoir plus <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i></div></div>
+                <div class="card-body"><div class="card-type">Stage</div><h3>École Jean Trubert</h3><p>Community Management dans une école d'art parisienne. Contenus, calendrier éditorial et stratégie digitale.</p><div class="card-tags"><span class="tag">CM</span><span class="tag">Contenu</span><span class="tag">Stratégie</span></div><div class="card-action">En savoir plus <i class="fa-solid fa-arrow-right" style="font-size:0.65rem;"></i></div></div>
+            </div>
+            <div class="project-card" data-category="stage" data-title="Ligue de l'Enseignement" data-desc="Réalisation d'un audit et élaboration d'une stratégie de modernisation web et print pour la Ligue de l'Enseignement de l'Oise. Refonte de l'identité graphique et production de multiples supports visuels via Canva Pro et la Suite Adobe." data-tags="Audit,Stratégie web,Identité graphique,Adobe" data-link="" data-img="">
+                <div class="card-media" style="background:linear-gradient(135deg,var(--gray-7),var(--gray-8));"><span class="card-num">06</span></div>
+                <div class="card-body"><div class="card-type">Stage 2026</div><h3>Ligue de l'Enseignement</h3><p>Audit et stratégie de modernisation web & print. Refonte de l'identité graphique via Canva Pro et Adobe.</p><div class="card-tags"><span class="tag">Audit</span><span class="tag">Stratégie web</span><span class="tag">Adobe</span></div><div class="card-action">En savoir plus <i class="fa-solid fa-arrow-right" style="font-size:0.65rem;"></i></div></div>
             </div>
         </div>
 
-        <!-- Gallery -->
         <div class="gallery-section reveal">
-            <div class="gallery-header"><span class="section-label">Galerie</span><h2>Mes Réalisations en Images</h2><p>Parcourez les visuels de mes différents projets</p></div>
+            <div class="gallery-header"><span class="section-label">Galerie</span><h2>Réalisations en images</h2><p>Parcourez les visuels de mes différents projets</p></div>
             <div class="gallery-carousel" id="galleryCarousel">
                 <button class="gallery-btn gallery-prev" id="galleryPrev"><i class="fa-solid fa-chevron-left"></i></button>
                 <button class="gallery-btn gallery-next" id="galleryNext"><i class="fa-solid fa-chevron-right"></i></button>
@@ -172,7 +126,7 @@
                     <div class="gallery-slide"><img src="images/canneo.png" alt="Canneo"><div class="gallery-caption">Canneo — Canne connectée</div></div>
                     <div class="gallery-slide" style="background:#111;"><img src="images/valmore.png" alt="Valmoré"><div class="gallery-caption">Valmoré — Montres de luxe</div></div>
                     <div class="gallery-slide"><img src="images/chaufelec.jpg" alt="Chaufelec"><div class="gallery-caption">Chaufelec — Chauffage & Électricité</div></div>
-                    <div class="gallery-slide"><img src="images/bouge-ton-talent.png" alt="BTT"><div class="gallery-caption">Bouge Ton Talent — Logo</div></div>
+                    <div class="gallery-slide"><img src="images/bouge-ton-talent.png" alt="BTT"><div class="gallery-caption">Bouge Ton Talent</div></div>
                     <div class="gallery-slide"><img src="images/ecole-jean-trubert.jpg" alt="JT"><div class="gallery-caption">École Jean Trubert — Paris</div></div>
                     <div class="gallery-slide"><img src="images/jean-trubert-jpo.png" alt="JPO"><div class="gallery-caption">Jean Trubert — JPO 2025</div></div>
                     <div class="gallery-slide"><img src="images/jean-trubert-reels.png" alt="Reels"><div class="gallery-caption">Jean Trubert — Réseaux Sociaux</div></div>
@@ -183,32 +137,23 @@
             <div class="gallery-counter" id="galleryCounter">1 / 9</div>
             <div class="gallery-dots" id="galleryDots"><button class="gallery-dot active" data-index="0"></button><button class="gallery-dot" data-index="1"></button><button class="gallery-dot" data-index="2"></button><button class="gallery-dot" data-index="3"></button><button class="gallery-dot" data-index="4"></button><button class="gallery-dot" data-index="5"></button><button class="gallery-dot" data-index="6"></button><button class="gallery-dot" data-index="7"></button><button class="gallery-dot" data-index="8"></button></div>
         </div>
-
-        <div class="reveal" style="text-align:center; margin-top:56px;">
-            <a href="assets/cv_stage_NASSIM_MEHADJI.pdf" class="btn btn-outline" download><i class="fa-solid fa-download"></i> Télécharger mon CV</a>
+        <div class="reveal" style="text-align:center; margin-top:48px;">
+            <a href="assets/NASSIM_MEHADJI_CV.pdf" class="btn btn-outline" download><i class="fa-solid fa-arrow-down-to-line" style="font-size:0.8rem;"></i> Télécharger mon CV</a>
         </div>
     </div></section>
 
-    <!-- Modal -->
-    <div class="modal-overlay" id="projectModal">
-        <div class="modal-card">
-            <div class="modal-media" id="modalMedia"><img id="modalImg" src="" alt=""></div>
-            <div class="modal-body">
-                <div class="modal-header"><h2 id="modalTitle"></h2><button class="modal-close" id="modalClose">✕</button></div>
-                <div class="modal-tags" id="modalTags"></div>
-                <p class="modal-desc" id="modalDesc"></p>
-                <div class="modal-actions"><button class="modal-btn modal-btn-secondary" id="modalCloseBtn">Fermer</button><a class="modal-btn modal-btn-primary" id="modalLink" href="#" target="_blank">Visiter le site <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i></a></div>
-            </div>
-        </div>
-    </div>
+    <div class="modal-overlay" id="projectModal"><div class="modal-card">
+        <div class="modal-media" id="modalMedia"><img id="modalImg" src="" alt=""></div>
+        <div class="modal-body"><div class="modal-header"><h2 id="modalTitle"></h2><button class="modal-close" id="modalClose">✕</button></div><div class="modal-tags" id="modalTags"></div><p class="modal-desc" id="modalDesc"></p><div class="modal-actions"><button class="modal-btn modal-btn-secondary" id="modalCloseBtn">Fermer</button><a class="modal-btn modal-btn-primary" id="modalLink" href="#" target="_blank">Visiter le site <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.7rem;"></i></a></div></div>
+    </div></div>
 
-    <footer class="site-footer"><div class="container"><div class="footer-inner"><span class="footer-copy">© 2025 Nassim Mehadji — Tous droits réservés</span><div class="footer-links"><a href="bilan.html">Bilan →</a><a href="contact.html">Contact</a></div></div></div></footer>
+    <footer class="site-footer"><div class="container"><div class="footer-inner"><span class="footer-copy">© 2025 Nassim Mehadji — Tous droits réservés</span><div class="footer-links"><a href="bilan.html">Bilan</a><a href="contact.html">Contact</a></div></div></div></footer>
 
     <script src="main.js"></script>
     <script>
-    (function(){const btns=document.querySelectorAll('.filter-btn'),cards=document.querySelectorAll('.project-card');btns.forEach(b=>{b.addEventListener('click',()=>{btns.forEach(x=>x.classList.remove('active'));b.classList.add('active');const f=b.dataset.filter;cards.forEach(c=>{if(f==='all'||c.dataset.category===f){c.style.display='';c.style.opacity='0';c.style.transform='translateY(12px)';setTimeout(()=>{c.style.transition='all 0.35s ease';c.style.opacity='1';c.style.transform='translateY(0)';},30);}else{c.style.display='none';}});});});})();
-    (function(){const m=document.getElementById('projectModal'),cards=document.querySelectorAll('.project-card'),cb=document.getElementById('modalClose'),cb2=document.getElementById('modalCloseBtn');function open(c){const d=c.dataset;document.getElementById('modalTitle').textContent=d.title;document.getElementById('modalDesc').textContent=d.desc;document.getElementById('modalImg').src=d.img;document.getElementById('modalImg').alt=d.title;const t=document.getElementById('modalTags');t.innerHTML='';d.tags.split(',').forEach(x=>{const s=document.createElement('span');s.className='tag';s.textContent=x.trim();t.appendChild(s);});const l=document.getElementById('modalLink');l.style.display=d.link?'flex':'none';if(d.link)l.href=d.link;m.classList.add('open');document.body.style.overflow='hidden';}function close(){m.classList.remove('open');document.body.style.overflow='';}cards.forEach(c=>c.addEventListener('click',()=>open(c)));cb.addEventListener('click',close);cb2.addEventListener('click',close);m.addEventListener('click',e=>{if(e.target===m)close();});document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});})();
-    (function(){const t=document.getElementById('galleryTrack'),d=document.querySelectorAll('.gallery-dot'),c=document.getElementById('galleryCounter'),p=document.getElementById('galleryPrev'),n=document.getElementById('galleryNext');if(!t)return;let cur=0;const tot=t.children.length;function go(i){if(i<0)i=tot-1;if(i>=tot)i=0;cur=i;t.style.transform='translateX(-'+(cur*100)+'%)';d.forEach((x,j)=>x.classList.toggle('active',j===cur));if(c)c.textContent=(cur+1)+' / '+tot;}p.addEventListener('click',()=>go(cur-1));n.addEventListener('click',()=>go(cur+1));d.forEach(x=>x.addEventListener('click',()=>go(+x.dataset.index)));let sx=0;t.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});t.addEventListener('touchend',e=>{const dx=sx-e.changedTouches[0].clientX;if(Math.abs(dx)>50)dx>0?go(cur+1):go(cur-1);},{passive:true});document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(cur-1);if(e.key==='ArrowRight')go(cur+1);});let ap=setInterval(()=>go(cur+1),5000);const car=document.getElementById('galleryCarousel');car.addEventListener('mouseenter',()=>clearInterval(ap));car.addEventListener('mouseleave',()=>{ap=setInterval(()=>go(cur+1),5000);});})();
+    (function(){const btns=document.querySelectorAll('.filter-btn'),cards=document.querySelectorAll('.project-card');btns.forEach(b=>{b.addEventListener('click',()=>{btns.forEach(x=>x.classList.remove('active'));b.classList.add('active');const f=b.dataset.filter;cards.forEach(c=>{if(f==='all'||c.dataset.category===f){c.style.display='';c.style.opacity='0';c.style.transform='translateY(10px)';setTimeout(()=>{c.style.transition='all 0.35s cubic-bezier(0.16,1,0.3,1)';c.style.opacity='1';c.style.transform='translateY(0)';},30);}else{c.style.display='none';}});});});})();
+    (function(){const m=document.getElementById('projectModal'),cards=document.querySelectorAll('.project-card'),cb=document.getElementById('modalClose'),cb2=document.getElementById('modalCloseBtn');function open(c){const d=c.dataset;document.getElementById('modalTitle').textContent=d.title;document.getElementById('modalDesc').textContent=d.desc;const img=document.getElementById('modalImg');if(d.img){img.src=d.img;img.alt=d.title;img.style.display='';}else{img.style.display='none';}const t=document.getElementById('modalTags');t.innerHTML='';d.tags.split(',').forEach(x=>{const s=document.createElement('span');s.className='tag';s.textContent=x.trim();t.appendChild(s);});const l=document.getElementById('modalLink');l.style.display=d.link?'flex':'none';if(d.link)l.href=d.link;m.classList.add('open');document.body.style.overflow='hidden';}function close(){m.classList.remove('open');document.body.style.overflow='';}cards.forEach(c=>c.addEventListener('click',()=>open(c)));cb.addEventListener('click',close);cb2.addEventListener('click',close);m.addEventListener('click',e=>{if(e.target===m)close();});document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});})();
+    (function(){const t=document.getElementById('galleryTrack'),d=document.querySelectorAll('.gallery-dot'),c=document.getElementById('galleryCounter'),p=document.getElementById('galleryPrev'),n=document.getElementById('galleryNext');if(!t)return;let cur=0;const tot=t.children.length;function go(i){if(i<0)i=tot-1;if(i>=tot)i=0;cur=i;t.style.transform='translateX(-'+(cur*100)+'%)';d.forEach((x,j)=>x.classList.toggle('active',j===cur));if(c)c.textContent=(cur+1)+' / '+tot;}p.addEventListener('click',()=>go(cur-1));n.addEventListener('click',()=>go(cur+1));d.forEach(x=>x.addEventListener('click',()=>go(+x.dataset.index)));let sx=0;t.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});t.addEventListener('touchend',e=>{const dx=sx-e.changedTouches[0].clientX;if(Math.abs(dx)>50)dx>0?go(cur+1):go(cur-1);},{passive:true});let ap=setInterval(()=>go(cur+1),5000);const car=document.getElementById('galleryCarousel');car.addEventListener('mouseenter',()=>clearInterval(ap));car.addEventListener('mouseleave',()=>{ap=setInterval(()=>go(cur+1),5000);});})();
     </script>
 </body>
 </html>

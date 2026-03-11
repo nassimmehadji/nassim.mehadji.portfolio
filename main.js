@@ -1,36 +1,7 @@
 /* ═══════════════════════════════════════════════════
    NASSIM MEHADJI — PORTFOLIO
-   Shared JavaScript — Enhanced Version
+   Shared JavaScript
    ═══════════════════════════════════════════════════ */
-
-// ── Loader (page d'accueil uniquement, première visite) ──
-(function() {
-    const loader = document.getElementById('siteLoader');
-    if (!loader) return;
-    
-    // Si déjà visité dans cette session, masquer immédiatement
-    if (sessionStorage.getItem('loaderShown')) {
-        loader.remove();
-        return;
-    }
-    
-    sessionStorage.setItem('loaderShown', '1');
-    
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            loader.classList.add('hidden');
-        }, 1800);
-        setTimeout(() => {
-            loader.remove();
-        }, 2500);
-    });
-    // Fallback
-    setTimeout(() => {
-        if (loader && !loader.classList.contains('hidden')) {
-            loader.classList.add('hidden');
-        }
-    }, 4000);
-})();
 
 document.addEventListener('DOMContentLoaded', () => {
 

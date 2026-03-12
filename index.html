@@ -3,133 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nassim Mehadji — Marketing Digital & E-Business</title>
+    <title>Nassim Mehadji — Marketing Digital & Communication</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        .featured-section { padding: 80px 0 96px; }
-        .featured-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 16px; margin-top: 40px; }
+        .featured-section { padding: 72px 0 88px; }
+        .featured-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 36px; }
         .featured-card {
-            background: var(--pure-white); border-radius: 20px;
-            box-shadow: var(--shadow-sm); border: 0.5px solid rgba(0,0,0,0.04);
-            overflow: hidden; transition: all 0.4s var(--ease-out);
+            background: var(--pure-white); border-radius: 18px; overflow: hidden;
+            box-shadow: var(--shadow-sm); position: relative;
+            transition: all var(--duration) var(--ease-out);
         }
-        .featured-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
-        .featured-card-img { height: 200px; display: flex; align-items: center; justify-content: center; background: var(--gray-8); overflow: hidden; }
-        .featured-card-img img { max-width: 72%; max-height: 72%; object-fit: contain; transition: transform 0.5s var(--ease-out); }
-        .featured-card:hover .featured-card-img img { transform: scale(1.04); }
-        .featured-card-body { padding: 24px; }
-        .featured-card-body h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--black); letter-spacing: -0.02em; margin-bottom: 6px; }
-        .featured-card-body p { font-size: 0.85rem; color: var(--gray-4); line-height: 1.6; font-weight: 300; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        .featured-card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-        .see-all-cta { text-align: center; margin-top: 40px; }
-        @media (max-width: 700px) { .featured-grid { grid-template-columns: 1fr; } }
+        .featured-card::before { content:''; position:absolute; inset:0; z-index:1; border-radius:18px; box-shadow:inset 0 0 0 0.5px rgba(0,0,0,0.06); pointer-events:none; }
+        .featured-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: var(--shadow-xl); }
+        .fc-img { height:190px; display:flex; align-items:center; justify-content:center; background:var(--gray-8); overflow:hidden; }
+        .fc-img img { max-width:68%; max-height:68%; object-fit:contain; transition:transform 0.6s var(--ease-out); }
+        .featured-card:hover .fc-img img { transform:scale(1.06); }
+        .fc-body { padding:22px 22px 24px; }
+        .fc-body h3 { font-family:var(--font-display); font-size:0.98rem; font-weight:700; color:var(--black); letter-spacing:-0.025em; margin-bottom:5px; }
+        .fc-body p { font-size:0.8rem; color:var(--gray-4); line-height:1.55; font-weight:300; margin-bottom:12px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+        .fc-tags { display:flex; flex-wrap:wrap; gap:4px; }
+        .see-all-cta { text-align:center; margin-top:36px; }
+        .about-teaser { padding:80px 0; text-align:center; }
+        .about-text { max-width:560px; margin:0 auto; font-size:1.15rem; font-weight:300; color:var(--gray-3); line-height:1.85; letter-spacing:-0.01em; }
+        .about-text strong { font-weight:600; color:var(--black); }
+        @media (max-width:768px) { .featured-grid { grid-template-columns:1fr; max-width:400px; margin-left:auto; margin-right:auto; } }
     </style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="index.html" class="logo">Nassim<span>.M</span></a>
-            <nav class="nav-desktop">
-                <a href="index.html" class="nav-link active">Accueil</a>
-                <a href="formations.html" class="nav-link">Formations</a>
-                <a href="competences.html" class="nav-link">Compétences</a>
-                <a href="experiences.html" class="nav-link">Expériences</a>
-                <a href="projets.html" class="nav-link">Projets</a>
-                <a href="interets.html" class="nav-link">Intérêts</a>
-                <a href="bilan.html" class="nav-link">Bilan</a>
-                <a href="contact.html" class="nav-cta">Contact</a>
-            </nav>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            </button>
-        </div>
-    </header>
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <a href="index.html" class="logo">Nassim<span>.M</span></a>
-            <button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <nav class="mobile-nav">
-            <a href="index.html" class="active">Accueil</a><a href="formations.html">Formations</a><a href="competences.html">Compétences</a><a href="experiences.html">Expériences</a><a href="projets.html">Projets</a><a href="interets.html">Centres d'intérêt</a><a href="bilan.html">Bilan</a><a href="contact.html">Contact</a>
-        </nav>
-    </div>
+    <header class="site-header"><div class="header-inner"><a href="index.html" class="logo">Nassim<span>.M</span></a><nav class="nav-desktop"><a href="index.html" class="nav-link active">Accueil</a><a href="formations.html" class="nav-link">Formations</a><a href="competences.html" class="nav-link">Compétences</a><a href="experiences.html" class="nav-link">Expériences</a><a href="projets.html" class="nav-link">Projets</a><a href="interets.html" class="nav-link">Intérêts</a><a href="bilan.html" class="nav-link">Bilan</a><a href="contact.html" class="nav-cta">Contact</a></nav><button class="nav-toggle" id="navToggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></header>
+    <div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-header"><a href="index.html" class="logo">Nassim<span>.M</span></a><button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark"></i></button></div><nav class="mobile-nav"><a href="index.html" class="active">Accueil</a><a href="formations.html">Formations</a><a href="competences.html">Compétences</a><a href="experiences.html">Expériences</a><a href="projets.html">Projets</a><a href="interets.html">Centres d'intérêt</a><a href="bilan.html">Bilan</a><a href="contact.html">Contact</a></nav></div>
 
     <section class="hero-full">
-        <div class="container">
-            <div class="hero-content">
-                <div class="reveal">
-                    <div class="hero-badge"><span class="dot"></span> Recherche un Master pour la rentrée 2026</div>
-                </div>
-
-                <h1 class="hero-title reveal reveal-d1"><span class="hero-name">Nassim Mehadji</span><span style="-webkit-text-fill-color:var(--gray-6)">.</span></h1>
-
-                <p class="hero-sub reveal reveal-d2">
-                    <strong>Marketing Digital & Communication</strong><br>
-                    <span class="line-blue">BUT TC — E-Business & Entrepreneuriat</span>
-                </p>
-
-                <div class="hero-actions reveal reveal-d3">
-                    <a href="projets.html" class="btn btn-primary">Découvrir mes projets</a>
-                    <a href="contact.html" class="btn btn-outline">Me contacter</a>
-                    <a href="assets/NASSIM_MEHADJI_CV.pdf" class="btn btn-outline" download><i class="fa-solid fa-arrow-down-to-line" style="font-size:0.8rem;"></i> CV</a>
-                </div>
-
-                <div class="stats-row reveal reveal-d4">
-                    <div class="stat-item"><h4>2023 – 2026</h4><p>Formation BUT TC</p></div>
-                    <div class="stat-item"><h4>6+</h4><p>Projets réalisés</p></div>
-                    <div class="stat-item"><h4>Oise & IDF</h4><p>Expériences terrain</p></div>
-                </div>
+        <div class="container"><div class="hero-content">
+            <div class="reveal"><div class="hero-badge"><span class="dot"></span> Recherche un Master pour la rentrée 2026</div></div>
+            <h1 class="hero-title reveal reveal-d1"><span class="hero-name">Nassim Mehadji</span><span style="color:var(--gray-6)">.</span></h1>
+            <p class="hero-sub reveal reveal-d2"><strong>Marketing Digital & Communication</strong><br><span class="line-blue">BUT TC — E-Business & Entrepreneuriat</span></p>
+            <div class="hero-actions reveal reveal-d3">
+                <a href="projets.html" class="btn btn-primary">Découvrir mes projets</a>
+                <a href="contact.html" class="btn btn-outline">Me contacter</a>
+                <a href="assets/NASSIM_MEHADJI_CV.pdf" class="btn btn-outline" download><i class="fa-solid fa-arrow-down-to-line" style="font-size:0.72rem;"></i> CV</a>
             </div>
-        </div>
+            <div class="stats-row reveal reveal-d4">
+                <div class="stat-item"><h4>2023 – 2026</h4><p>Formation BUT TC</p></div>
+                <div class="stat-item"><h4>6+</h4><p>Projets réalisés</p></div>
+                <div class="stat-item"><h4>Oise & IDF</h4><p>Expériences terrain</p></div>
+            </div>
+        </div></div>
         <div class="scroll-hint"><span>Découvrir</span><div class="mouse"></div></div>
     </section>
 
-    <section class="featured-section" style="background:var(--gray-8);">
-        <div class="container">
-            <span class="section-label reveal">Sélection</span>
-            <h2 class="section-title reveal reveal-d1" style="text-align:left;">Projets à la une</h2>
-            <p class="section-desc reveal reveal-d2" style="text-align:left; margin:0;">Une sélection de mes réalisations principales.</p>
+    <section class="about-teaser"><div class="container">
+        <p class="about-text reveal">Fort de plusieurs expériences en <strong>création de contenu</strong> et en <strong>gestion de projet</strong>, je suis un profil polyvalent, opérationnel et déterminé. Prêt à m'investir pleinement pour atteindre mes objectifs professionnels.</p>
+    </div></section>
 
-            <div class="featured-grid stagger">
-                <a href="projets.html" class="featured-card">
-                    <div class="featured-card-img"><img src="images/canneo.png" alt="Canneo"></div>
-                    <div class="featured-card-body">
-                        <h3>Canneo</h3>
-                        <p>Site WordPress dédié à une canne connectée innovante. Ergonomie et mise en valeur du produit.</p>
-                        <div class="featured-card-tags"><span class="tag">WordPress</span><span class="tag">UX/UI Design</span><span class="tag">Accessibilité</span></div>
-                    </div>
-                </a>
-                <a href="projets.html" class="featured-card">
-                    <div class="featured-card-img" style="background:var(--black);"><img src="images/valmore.png" alt="Valmoré"></div>
-                    <div class="featured-card-body">
-                        <h3>Valmoré</h3>
-                        <p>Marque de montres de luxe. Site e-commerce complet avec identité visuelle sur mesure.</p>
-                        <div class="featured-card-tags"><span class="tag">Wix</span><span class="tag">E-commerce</span><span class="tag">Branding</span></div>
-                    </div>
-                </a>
-                <a href="projets.html" class="featured-card">
-                    <div class="featured-card-img"><img src="images/bouge-ton-talent.png" alt="Bouge Ton Talent"></div>
-                    <div class="featured-card-body">
-                        <h3>Bouge Ton Talent</h3>
-                        <p>Communication digitale pour une initiative jeunesse. Réseaux sociaux et interviews.</p>
-                        <div class="featured-card-tags"><span class="tag">Communication</span><span class="tag">Réseaux sociaux</span><span class="tag">Vidéo</span></div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="see-all-cta reveal">
-                <a href="projets.html" class="btn btn-outline">Tous les projets <i class="fa-solid fa-arrow-right" style="font-size:0.75rem;"></i></a>
-            </div>
+    <section class="featured-section" style="background:var(--gray-8);"><div class="container">
+        <span class="section-label reveal">Sélection</span>
+        <h2 class="section-title reveal reveal-d1" style="text-align:left;">Projets à la une</h2>
+        <p class="section-desc reveal reveal-d2" style="text-align:left; margin:0;">Une sélection de mes réalisations principales.</p>
+        <div class="featured-grid stagger">
+            <a href="projets.html" class="featured-card"><div class="fc-img"><img src="images/canneo.png" alt="Canneo"></div><div class="fc-body"><h3>Canneo</h3><p>Site WordPress pour une canne connectée. Ergonomie et mise en valeur produit.</p><div class="fc-tags"><span class="tag">WordPress</span><span class="tag">UX/UI</span></div></div></a>
+            <a href="projets.html" class="featured-card"><div class="fc-img" style="background:var(--black);"><img src="images/valmore.png" alt="Valmoré"></div><div class="fc-body"><h3>Valmoré</h3><p>Montres de luxe. E-commerce complet avec identité visuelle sur mesure.</p><div class="fc-tags"><span class="tag">Wix</span><span class="tag">E-commerce</span></div></div></a>
+            <a href="projets.html" class="featured-card"><div class="fc-img"><img src="images/bouge-ton-talent.png" alt="Bouge Ton Talent"></div><div class="fc-body"><h3>Bouge Ton Talent</h3><p>Communication digitale pour une initiative jeunesse et orientation.</p><div class="fc-tags"><span class="tag">Communication</span><span class="tag">Vidéo</span></div></div></a>
         </div>
-    </section>
+        <div class="see-all-cta reveal"><a href="projets.html" class="btn btn-outline">Tous les projets <i class="fa-solid fa-arrow-right" style="font-size:0.68rem;"></i></a></div>
+    </div></section>
 
-    <footer class="site-footer">
-        <div class="container"><div class="footer-inner">
-            <span class="footer-copy">© 2025 Nassim Mehadji — Tous droits réservés</span>
-            <div class="footer-links"><a href="projets.html">Projets</a><a href="contact.html">Contact</a></div>
-        </div></div>
-    </footer>
+    <footer class="site-footer"><div class="container"><div class="footer-inner"><span class="footer-copy">© 2025 Nassim Mehadji — Tous droits réservés</span><div class="footer-links"><a href="projets.html">Projets</a><a href="contact.html">Contact</a></div></div></div></footer>
     <script src="main.js"></script>
-</body>
-</html>
+</body></html>

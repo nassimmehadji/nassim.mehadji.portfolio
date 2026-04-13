@@ -8,59 +8,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-
         .info-items { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
-        .info-item {
-            display: flex; align-items: center; gap: 16px;
-            padding: 16px; border-radius: 18px; transition: all 0.35s var(--ease-out);
-        }
+        .info-item { display: flex; align-items: center; gap: 16px; padding: 16px; border-radius: 18px; transition: all 0.35s var(--ease-out); }
         .info-item:hover { background: var(--gray-8); transform: translateX(4px); }
-        .info-icon {
-            width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
-            border-radius: 14px; background: var(--gray-8); color: var(--black);
-            font-size: 1rem; flex-shrink: 0; transition: all 0.3s;
-        }
+        .info-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 14px; background: var(--gray-8); color: var(--black); font-size: 1rem; flex-shrink: 0; transition: all 0.3s; }
         .info-item:hover .info-icon { background: var(--black); color: var(--pure-white); }
-        .info-text span {
-            display: block; font-size: 0.68rem; color: var(--gray-5);
-            text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 2px;
-        }
+        .info-text span { display: block; font-size: 0.68rem; color: var(--gray-5); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 2px; }
         .info-text p { font-size: 0.92rem; color: var(--black); font-weight: 500; margin: 0; }
-
-        .social-section h4 {
-            font-family: var(--font-display); font-size: 0.85rem; font-weight: 600;
-            color: var(--gray-4); margin-bottom: 14px;
-        }
+        .social-section h4 { font-family: var(--font-display); font-size: 0.85rem; font-weight: 600; color: var(--gray-4); margin-bottom: 14px; }
         .social-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .social-link {
-            display: flex; align-items: center; gap: 10px;
-            padding: 14px 18px; border-radius: 16px; background: var(--pure-white);
-            box-shadow: var(--shadow-sm); border: 0.5px solid rgba(0,0,0,0.04);
-            font-size: 0.85rem; font-weight: 500; color: var(--gray-3);
-            transition: all 0.35s var(--ease-out);
-        }
+        .social-link { display: flex; align-items: center; gap: 10px; padding: 14px 18px; border-radius: 16px; background: var(--pure-white); box-shadow: var(--shadow-sm); border: 0.5px solid rgba(0,0,0,0.04); font-size: 0.85rem; font-weight: 500; color: var(--gray-3); transition: all 0.35s var(--ease-out); }
         .social-link:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); color: var(--black); }
         .social-link i { font-size: 1.1rem; width: 20px; text-align: center; }
-
-        .contact-form-card {
-            background: var(--pure-white); border-radius: 24px; padding: 36px;
-            box-shadow: var(--shadow-md); border: 0.5px solid rgba(0,0,0,0.04);
-        }
-        .contact-form-card h3 {
-            font-family: var(--font-display); font-size: 1.15rem; font-weight: 700;
-            color: var(--black); margin-bottom: 24px; letter-spacing: -0.02em;
-        }
-
+        .contact-form-card { background: var(--pure-white); border-radius: 24px; padding: 36px; box-shadow: var(--shadow-md); border: 0.5px solid rgba(0,0,0,0.04); }
+        .contact-form-card h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--black); margin-bottom: 24px; letter-spacing: -0.02em; }
         .form-success { display: none; text-align: center; padding: 40px 0; }
         .form-success i { font-size: 2.5rem; color: #34c759; margin-bottom: 14px; }
         .form-success h4 { font-family: var(--font-display); font-size: 1.15rem; color: var(--black); margin-bottom: 6px; }
         .form-success p { font-size: 0.88rem; color: var(--gray-4); }
-
-        @media (max-width: 900px) {
-            .contact-grid { grid-template-columns: 1fr; }
-            .social-grid { grid-template-columns: 1fr; }
-            .contact-form-card { padding: 24px; }
-        }
+        @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } .social-grid { grid-template-columns: 1fr; } .contact-form-card { padding: 24px; } }
     </style>
 </head>
 <body>
@@ -103,70 +69,38 @@
     <section class="page-section" style="padding-top:0;">
         <div class="container">
             <div class="contact-grid">
-
-                <!-- Infos -->
                 <div class="reveal">
                     <div class="info-items">
                         <div class="info-item">
                             <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
-                            <div class="info-text">
-                                <span>Email</span>
-                                <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d1bfb0a2a2b8bcffbcb4b9b0b5bbb8e3e491b6bcb0b8bdffb2bebc">[email&#160;protected]</a></p>
-                            </div>
+                            <div class="info-text"><span>Email</span><p>nassim.mehadji25@gmail.com</p></div>
                         </div>
                         <div class="info-item">
                             <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
-                            <div class="info-text">
-                                <span>Téléphone</span>
-                                <p>07 69 19 06 32</p>
-                            </div>
+                            <div class="info-text"><span>Téléphone</span><p>07 69 19 06 32</p></div>
                         </div>
                         <div class="info-item">
                             <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="info-text">
-                                <span>Localisation</span>
-                                <p>Nogent-sur-Oise, France</p>
-                            </div>
+                            <div class="info-text"><span>Localisation</span><p>Nogent-sur-Oise, France</p></div>
                         </div>
                     </div>
-
                     <div class="social-section">
                         <h4>Retrouvez-moi sur</h4>
                         <div class="social-grid">
-                            <a href="https://www.linkedin.com/in/nassim-mehadji-774a1826b/" target="_blank" class="social-link">
-                                <i class="fa-brands fa-linkedin-in"></i> LinkedIn
-                            </a>
-                            <a href="https://instagram.com/bougetontalent_" target="_blank" class="social-link">
-                                <i class="fa-brands fa-instagram"></i> Instagram
-                            </a>
+                            <a href="https://www.linkedin.com/in/nassim-mehadji-774a1826b/" target="_blank" class="social-link"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                            <a href="https://instagram.com/bougetontalent_" target="_blank" class="social-link"><i class="fa-brands fa-instagram"></i> Instagram</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Formulaire -->
                 <div class="reveal reveal-d2">
                     <div class="contact-form-card">
                         <h3>Envoyer un message</h3>
                         <form id="contactForm" action="https://formspree.io/f/VOTRE_ID" method="POST">
-                            <div class="form-group">
-                                <label class="form-label" for="name">Nom complet</label>
-                                <input class="form-input" type="text" id="name" name="name" placeholder="Votre nom" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="email">Adresse email</label>
-                                <input class="form-input" type="email" id="email" name="email" placeholder="votre@email.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="subject">Sujet</label>
-                                <input class="form-input" type="text" id="subject" name="subject" placeholder="Objet de votre message">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="message">Message</label>
-                                <textarea class="form-input" id="message" name="message" rows="5" placeholder="Écrivez votre message ici..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
-                                Envoyer <i class="fa-solid fa-paper-plane"></i>
-                            </button>
+                            <div class="form-group"><label class="form-label" for="name">Nom complet</label><input class="form-input" type="text" id="name" name="name" placeholder="Votre nom" required></div>
+                            <div class="form-group"><label class="form-label" for="email">Adresse email</label><input class="form-input" type="email" id="email" name="email" placeholder="votre@email.com" required></div>
+                            <div class="form-group"><label class="form-label" for="subject">Sujet</label><input class="form-input" type="text" id="subject" name="subject" placeholder="Objet de votre message"></div>
+                            <div class="form-group"><label class="form-label" for="message">Message</label><textarea class="form-input" id="message" name="message" rows="5" placeholder="Écrivez votre message ici..." required></textarea></div>
+                            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Envoyer <i class="fa-solid fa-paper-plane"></i></button>
                         </form>
                         <div class="form-success" id="formSuccess">
                             <i class="fa-solid fa-circle-check"></i>
@@ -175,7 +109,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -184,4 +117,10 @@
         <div class="container">
             <div class="footer-inner">
                 <span class="footer-copy">© 2025 Nassim Mehadji — Tous droits réservés</span>
-                <div class="footer-links"><a href="index.html">Accueil</a><a href="proj
+                <div class="footer-links"><a href="index.html">Accueil</a><a href="projets.html">Projets</a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0B1121">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="CAP'EDUC — Ton réseau d'animateurs dans l'Oise. Actualités, emplois, formations BAFA.">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" href="/icons/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<title>CAP'EDUC — Animateurs Oise</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bricolage+Grotesque:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary:#DC2626; --primary-d:#991B1B; --primary-l:#FCA5A5;
+  --accent:#2563EB; --accent-d:#1D4ED8; --accent-l:#93C5FD;
+  --dark:#0B1121; --dark2:#111827; --dark3:#1F2937;
+  --surface:#FFFFFF; --surface2:#F8FAFC;
+  --glass:rgba(255,255,255,0.1); --glass2:rgba(255,255,255,0.05);
+  --bg:#F1F5F9; --bg2:#E2E8F0;
+  --text:#0F172A; --text2:#475569; --text3:#94A3B8;
+  --green:#059669; --orange:#D97706; --violet:#7C3AED; --rose:#E11D48;
+  --r:16px; --r2:22px; --r3:12px;
+  --shadow:0 1px 3px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.06);
+  --shadow2:0 4px 6px rgba(0,0,0,.04),0 10px 40px rgba(0,0,0,.08);
+  --shadow3:0 20px 60px rgba(0,0,0,.12);
+  --nav-h:70px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);max-width:430px;margin:0 auto;min-height:100dvh;overflow-x:hidden;position:relative;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque','Plus Jakarta Sans',system-ui,sans-serif}
+a{text-decoration:none;color:inherit}
+button{font-family:'Plus Jakarta Sans',system-ui,sans-serif;cursor:pointer;border:none}
+img{max-width:100%;display:block}
+::-webkit-scrollbar{width:0;height:0}
+
+/* ===== INSTALL BANNER ===== */
+.install-banner{background:var(--dark);padding:14px 16px;display:flex;align-items:center;gap:12px;animation:slideD .5s var(--ease) .3s both}
+.install-banner.hidden{display:none}
+.install-txt{flex:1}
+.install-txt strong{font-size:13px;color:#fff;display:block}
+.install-txt span{font-size:11px;color:rgba(255,255,255,.4)}
+.install-btn{background:var(--primary);color:#fff;border-radius:10px;padding:8px 16px;font-size:12px;font-weight:700}
+.install-close{background:none;color:rgba(255,255,255,.3);font-size:20px;padding:0 4px}
+
+/* ===== OFFLINE BAR ===== */
+.offline-bar{display:none;background:var(--orange);color:#fff;text-align:center;padding:6px;font-size:12px;font-weight:600}
+body.offline .offline-bar{display:block}
+
+/* ===== HEADER ===== */
+.header{padding:52px 20px 28px;position:relative;overflow:hidden}
+.header-home{background:var(--dark);position:relative}
+.header-home::before{content:'';position:absolute;top:-120px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(220,38,38,.18),transparent 70%);filter:blur(50px)}
+.header-home::after{content:'';position:absolute;bottom:-80px;left:-60px;width:250px;height:250px;background:radial-gradient(circle,rgba(37,99,235,.12),transparent 70%);filter:blur(40px)}
+.header-sub{background:linear-gradient(135deg,var(--dark),var(--dark2))}
+.header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;position:relative;z-index:1}
+.header-badge{display:inline-flex;align-items:center;gap:7px;background:var(--glass);backdrop-filter:blur(16px);padding:6px 14px 6px 7px;border-radius:100px;font-size:11px;color:rgba(255,255,255,.65);font-weight:600;border:1px solid rgba(255,255,255,.06)}
+.header-badge img.badge-logo{width:24px;height:24px;border-radius:7px;object-fit:cover}
+.home-logo{width:88px;height:88px;border-radius:22px;object-fit:cover;box-shadow:0 8px 32px rgba(0,0,0,.4);margin-bottom:16px;border:2px solid rgba(255,255,255,.08);position:relative;z-index:1}
+.header-status{display:flex;align-items:center;gap:5px;font-size:10px;color:#34D399;font-weight:600;background:rgba(52,211,153,.1);padding:4px 10px;border-radius:100px;border:1px solid rgba(52,211,153,.15)}
+.header-status::before{content:'';width:6px;height:6px;background:#34D399;border-radius:50%;animation:pulse 2s infinite}
+.header h1{font-size:28px;font-weight:800;color:#fff;line-height:1.12;position:relative;z-index:1}
+.header h1 .accent{color:var(--primary-l)}
+.header .subtitle{color:rgba(255,255,255,.4);font-size:12px;margin-top:10px;position:relative;z-index:1;letter-spacing:1px;text-transform:uppercase;font-family:'Plus Jakarta Sans',sans-serif;font-weight:500}
+.header-page-title{font-size:22px;font-weight:800;color:#fff;position:relative;z-index:1}
+.header-back{background:var(--glass);backdrop-filter:blur(12px);border-radius:12px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer;z-index:1;flex-shrink:0;color:#fff;border:1px solid rgba(255,255,255,.06);transition:all .15s}
+.header-back:active{transform:scale(.9);background:rgba(255,255,255,.16)}
+
+/* ===== STATS ===== */
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:-14px 14px 24px;position:relative;z-index:10}
+.stat{background:var(--surface);padding:16px 8px;text-align:center;border-radius:var(--r);box-shadow:var(--shadow)}
+.stat-n{font-family:'Bricolage Grotesque';font-size:26px;font-weight:800;color:var(--primary)}
+.stat-l{font-size:9px;color:var(--text3);margin-top:4px;font-weight:600;text-transform:uppercase;letter-spacing:.6px}
+
+/* ===== SECTION ===== */
+.section{padding:0 14px;margin-bottom:28px}
+.section-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.section-hd h2{font-size:18px;font-weight:800}
+.section-hd a{font-size:12px;color:var(--accent);font-weight:600;cursor:pointer}
+
+/* ===== GRID ===== */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid-card{background:var(--surface);border-radius:var(--r);padding:18px 14px;box-shadow:var(--shadow);cursor:pointer;position:relative;overflow:hidden;transition:transform .15s var(--ease)}
+.grid-card:active{transform:scale(.96)}
+.grid-card-badge{position:absolute;top:8px;right:8px;background:var(--primary);color:#fff;font-size:9px;font-weight:700;padding:3px 8px;border-radius:8px}
+.grid-card-icon{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:10px}
+.grid-card h3{font-size:13.5px;font-weight:700}
+.grid-card p{font-size:10.5px;color:var(--text3);margin-top:2px}
+
+/* ===== JOB CARD ===== */
+.job-card{background:var(--surface);border-radius:var(--r);padding:14px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;cursor:pointer;margin-bottom:8px;transition:transform .15s var(--ease)}
+.job-card:active{transform:scale(.98)}
+.job-logo{width:44px;height:44px;border-radius:12px;flex-shrink:0;object-fit:cover}
+.job-info{flex:1;min-width:0}
+.job-title{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.job-meta{font-size:11px;color:var(--text3);margin-top:2px}
+.badge{font-size:9.5px;font-weight:700;padding:4px 10px;border-radius:8px;white-space:nowrap}
+
+/* ===== CTA ===== */
+.cta-block{margin:0 14px 28px;border-radius:var(--r2);padding:24px 22px;cursor:pointer;position:relative;overflow:hidden}
+.cta-red{background:linear-gradient(135deg,var(--primary),var(--primary-d));box-shadow:0 8px 32px rgba(220,38,38,.2)}
+.cta-red::before{content:'';position:absolute;top:-30px;right:-30px;width:140px;height:140px;background:rgba(255,255,255,.06);border-radius:50%}
+.cta-block h3{font-size:16px;font-weight:800;color:#fff;margin-bottom:6px;position:relative;z-index:1}
+.cta-block p{color:rgba(255,255,255,.5);font-size:12px;margin-bottom:16px;position:relative;z-index:1}
+.cta-block button{background:#fff;color:var(--primary);border-radius:12px;padding:12px 22px;font-size:13px;font-weight:700;position:relative;z-index:1}
+
+/* ===== COMMUNITY ===== */
+.community{margin:0 14px 28px;background:var(--surface);border-radius:var(--r2);padding:22px;box-shadow:var(--shadow)}
+.community h3{font-size:16px;font-weight:800;margin-bottom:12px}
+.community-avatars{display:flex;margin-bottom:12px}
+.community-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;margin-left:-8px;border:2.5px solid var(--bg)}
+.community-av:first-child{margin-left:0}
+.community p{font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:14px}
+.community button{display:inline-flex;align-items:center;gap:6px;background:var(--bg);color:var(--accent-d);border-radius:12px;padding:11px 18px;font-size:12px;font-weight:700}
+
+/* ===== ACTU CARDS ===== */
+.actu-hero{background:var(--surface);border-radius:var(--r2);overflow:hidden;box-shadow:var(--shadow2);margin-bottom:14px;cursor:pointer;transition:transform .15s var(--ease)}
+.actu-hero:active{transform:scale(.98)}
+.actu-hero-img{width:100%;height:180px;object-fit:cover}
+.actu-hero-body{padding:16px 18px 18px}
+.actu-hero-tag{display:inline-block;font-size:10px;font-weight:700;padding:4px 10px;border-radius:8px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px}
+.actu-hero h3{font-size:17px;font-weight:800;line-height:1.3;margin-bottom:5px}
+.actu-hero p{font-size:12px;color:var(--text2);line-height:1.5}
+.actu-hero-date{font-size:11px;color:var(--text3);margin-top:10px}
+
+.actu-card{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);display:flex;gap:0;cursor:pointer;margin-bottom:10px;transition:transform .15s var(--ease);overflow:hidden}
+.actu-card:active{transform:scale(.98)}
+.actu-card-thumb{width:90px;min-height:90px;flex-shrink:0;object-fit:cover}
+.actu-card-body{flex:1;min-width:0;padding:14px}
+.actu-card-tag{font-size:9px;font-weight:700;padding:3px 8px;border-radius:6px;display:inline-block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.3px}
+.actu-card h4{font-size:12.5px;font-weight:700;line-height:1.35;margin-bottom:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.actu-card p{font-size:10.5px;color:var(--text3)}
+
+/* ===== ACTU FILTERS ===== */
+.actu-filters{display:flex;gap:6px;overflow-x:auto;padding:0 0 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.actu-filters::-webkit-scrollbar{display:none}
+.actu-filter{flex-shrink:0;padding:7px 14px;border-radius:10px;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;background:var(--surface);color:var(--text2);box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.actu-filter.active{background:var(--dark);color:#fff;box-shadow:0 2px 8px rgba(11,17,33,.2)}
+
+/* ===== ASTUCE CARD ===== */
+.astuce-card{background:var(--surface);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);cursor:pointer;transition:transform .15s var(--ease)}
+.astuce-card:active{transform:scale(.96)}
+.astuce-card-ico{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:10px}
+.astuce-card h3{font-size:12px;font-weight:700;line-height:1.35;margin-bottom:6px}
+
+/* ===== FORMATION CARD ===== */
+.formation-card{background:var(--surface);border-radius:var(--r);padding:18px;box-shadow:var(--shadow);margin-bottom:10px;cursor:pointer;transition:transform .15s var(--ease);border-left:3px solid var(--accent)}
+.formation-card:active{transform:scale(.98)}
+.formation-card h3{font-size:15px;font-weight:800;margin-bottom:6px}
+.formation-meta{display:flex;gap:10px;font-size:11.5px;color:var(--text2);margin-bottom:10px;flex-wrap:wrap}
+.progress-bar{flex:1;height:5px;background:var(--bg2);border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;border-radius:4px;transition:width .6s var(--ease)}
+.formation-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+.formation-prix{font-size:20px;font-weight:800;color:var(--accent-d)}
+.formation-btn{background:var(--dark);color:#fff;border-radius:10px;padding:9px 16px;font-size:12px;font-weight:700}
+
+/* ===== VALEUR CARD ===== */
+.valeur-card{background:var(--surface);border-radius:var(--r);padding:18px;box-shadow:var(--shadow);margin-bottom:10px}
+.valeur-card-ico{font-size:26px;margin-bottom:6px}
+.valeur-card h3{font-size:15px;font-weight:800;margin-bottom:5px}
+.valeur-card p{font-size:12.5px;color:var(--text2);line-height:1.6}
+
+/* ===== INFO BOX ===== */
+.info-box{border-radius:var(--r);padding:16px;margin-top:10px}
+.info-box strong{display:block;font-size:13px;margin-bottom:4px}
+.info-box p{font-size:12px;line-height:1.55}
+
+/* ===== MODAL ===== */
+.modal-overlay{position:fixed;inset:0;z-index:200;display:none;align-items:flex-end;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal-bg{position:absolute;inset:0;background:rgba(11,17,33,.6);backdrop-filter:blur(8px)}
+.modal-content{position:relative;width:100%;max-width:430px;background:#fff;border-radius:24px 24px 0 0;padding:8px 20px max(20px,env(safe-area-inset-bottom));max-height:85dvh;overflow-y:auto;animation:slideU .35s var(--ease)}
+.modal-handle{width:36px;height:4px;background:var(--bg2);border-radius:4px;margin:8px auto 16px}
+.modal-close{position:absolute;top:14px;right:16px;background:var(--bg);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;color:var(--text2)}
+.modal-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.modal-section{background:var(--bg);border-radius:var(--r3);padding:14px;margin-bottom:8px}
+.modal-section-label{font-size:10px;font-weight:700;color:var(--text3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.modal-btn{width:100%;padding:15px;border-radius:var(--r3);font-size:14px;font-weight:700;color:#fff;margin-top:12px}
+
+/* ===== iOS TUTO ===== */
+.ios-tuto{margin:0 14px 28px;background:var(--surface);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);display:none}
+.ios-tuto.show{display:block}
+.ios-tuto h3{font-size:14px;font-weight:800;margin-bottom:8px}
+.ios-tuto ol{padding-left:18px;font-size:12px;color:var(--text2);line-height:2}
+.ios-tuto .close-tuto{background:none;color:var(--text3);font-size:12px;font-weight:600;margin-top:8px;padding:0}
+
+/* ===== BOTTOM NAV ===== */
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(0,0,0,.04);display:flex;padding:2px 2px max(2px,env(safe-area-inset-bottom));z-index:100}
+.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;padding:8px 0 6px;cursor:pointer;color:var(--text3);transition:color .2s;position:relative}
+.nav-item.active{color:var(--primary)}
+.nav-item.active::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:24px;height:2.5px;background:var(--primary);border-radius:0 0 4px 4px}
+.nav-item span{font-size:18px;line-height:1;margin-bottom:1px}
+.nav-item small{font-size:9px;font-weight:600}
+
+.page-content{padding-bottom:calc(var(--nav-h) + 8px)}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideD{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideU{from{transform:translateY(100%)}to{transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn .4s var(--ease) both}
+.fd1{animation-delay:.05s}.fd2{animation-delay:.1s}.fd3{animation-delay:.15s}.fd4{animation-delay:.2s}.fd5{animation-delay:.25s}
+</style>
+</head>
+<body>
+<div class="offline-bar">📡 Mode hors-ligne</div>
+<div class="install-banner" id="installBanner">
+  <img src="data:image/png;base64,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" alt="" style="width:38px;height:38px;border-radius:12px;flex-shrink:0">
+  <div class="install-txt"><strong>Installer CAP'EDUC</strong><span>Ajouter à l'écran d'accueil</span></div>
+  <button class="install-btn" id="installBtn">Installer</button>
+  <button class="install-close" id="installClose">&times;</button>
+</div>
+<header class="header" id="header"></header>
+<main class="page-content" id="main"></main>
+<div class="modal-overlay" id="modal"><div class="modal-bg" id="modalBg"></div><div class="modal-content" id="modalContent"></div></div>
+<nav class="bottom-nav">
+  <div class="nav-item active" data-page="home"><span>🏠</span><small>Accueil</small></div>
+  <div class="nav-item" data-page="actus"><span>📰</span><small>Actus</small></div>
+  <div class="nav-item" data-page="emplois"><span>💼</span><small>Emplois</small></div>
+  <div class="nav-item" data-page="formations"><span>📚</span><small>BAFA</small></div>
+  <div class="nav-item" data-page="astuces"><span>🎯</span><small>Astuces</small></div>
+  <div class="nav-item" data-page="valeurs"><span>✊</span><small>Valeurs</small></div>
+</nav>
+<script>
+const LOGO_120="data:image/png;base64,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";
+const LOGO_28="data:image/png;base64,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";
+
+const ACTU_IMGS = {
+  1:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDAwIDIwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojQzQxRTJBIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzdCMTAxOCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9InVybCgjZykiLz4KICA8Y2lyY2xlIGN4PSIzNDAiIGN5PSI0MCIgcj0iNjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiLz4KICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjE3MCIgcj0iNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNCkiLz4KICA8dGV4dCB4PSIyMDAiIHk9Ijk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjUyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuOSkiPvCfjqo8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIxMzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNSkiIGxldHRlci1zcGFjaW5nPSIyIj7DiVbDiU5FTUVOVDwvdGV4dD4KPC9zdmc+",
+  2:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDAwIDIwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMjU2M0VCIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFFNDBBRiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9InVybCgjZykiLz4KICA8Y2lyY2xlIGN4PSIzNDAiIGN5PSI0MCIgcj0iNjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiLz4KICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjE3MCIgcj0iNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNCkiLz4KICA8dGV4dCB4PSIyMDAiIHk9Ijk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjUyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuOSkiPvCfjpM8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIxMzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNSkiIGxldHRlci1zcGFjaW5nPSIyIj5GT1JNQVRJT048L3RleHQ+Cjwvc3ZnPg==",
+  3:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDAwIDIwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDU5NjY5Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzA0Nzg1NyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9InVybCgjZykiLz4KICA8Y2lyY2xlIGN4PSIzNDAiIGN5PSI0MCIgcj0iNjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiLz4KICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjE3MCIgcj0iNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNCkiLz4KICA8dGV4dCB4PSIyMDAiIHk9Ijk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjUyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuOSkiPvCflKw8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIxMzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNSkiIGxldHRlci1zcGFjaW5nPSIyIj5JTk5PVkFUSU9OPC90ZXh0Pgo8L3N2Zz4=",
+  4:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDAwIDIwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojRDk3NzA2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I0I0NTMwOSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9InVybCgjZykiLz4KICA8Y2lyY2xlIGN4PSIzNDAiIGN5PSI0MCIgcj0iNjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiLz4KICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjE3MCIgcj0iNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNCkiLz4KICA8dGV4dCB4PSIyMDAiIHk9Ijk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjUyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuOSkiPuKdpO+4jzwvdGV4dD4KICA8dGV4dCB4PSIyMDAiIHk9IjEzNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMTMiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgbGV0dGVyLXNwYWNpbmc9IjIiPlNPTElEQVJJVMOJPC90ZXh0Pgo8L3N2Zz4=",
+  5:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDAwIDIwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojN0MzQUVEIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzVCMjFCNiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9InVybCgjZykiLz4KICA8Y2lyY2xlIGN4PSIzNDAiIGN5PSI0MCIgcj0iNjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiLz4KICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjE3MCIgcj0iNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNCkiLz4KICA8dGV4dCB4PSIyMDAiIHk9Ijk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjUyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuOSkiPvCfpJ08L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIxMzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNSkiIGxldHRlci1zcGFjaW5nPSIyIj5FTkdBR0VNRU5UPC90ZXh0Pgo8L3N2Zz4=",
+  6:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDAwIDIwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojREMyNjI2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6Izk5MUIxQiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9InVybCgjZykiLz4KICA8Y2lyY2xlIGN4PSIzNDAiIGN5PSI0MCIgcj0iNjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiLz4KICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjE3MCIgcj0iNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNCkiLz4KICA8dGV4dCB4PSIyMDAiIHk9Ijk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjUyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuOSkiPvCfk5o8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIxMzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjEzIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNSkiIGxldHRlci1zcGFjaW5nPSIyIj7DiURVQ0FUSU9OPC90ZXh0Pgo8L3N2Zz4="
+};
+
+const ORG_LOGOS = {
+  "Mairie de Beauvais":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSI0NCIgdmlld0JveD0iMCAwIDQ0IDQ0Ij4KICA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxRTNBNUYiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMyNTYzRUIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDQiIGhlaWdodD0iNDQiIHJ4PSIxMiIgZmlsbD0idXJsKCNnKSIvPgogIDx0ZXh0IHg9IjIyIiB5PSIyOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IndoaXRlIj5CPC90ZXh0Pgo8L3N2Zz4=",
+  "Vacances pour tous":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSI0NCIgdmlld0JveD0iMCAwIDQ0IDQ0Ij4KICA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwNTk2NjkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxMEI5ODEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDQiIGhlaWdodD0iNDQiIHJ4PSIxMiIgZmlsbD0idXJsKCNnKSIvPgogIDx0ZXh0IHg9IjIyIiB5PSIyOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IndoaXRlIj5WPC90ZXh0Pgo8L3N2Zz4=",
+  "Centre de loisirs Creil":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSI0NCIgdmlld0JveD0iMCAwIDQ0IDQ0Ij4KICA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM0QTkwRDkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM2RkIzRjIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDQiIGhlaWdodD0iNDQiIHJ4PSIxMiIgZmlsbD0idXJsKCNnKSIvPgogIDx0ZXh0IHg9IjIyIiB5PSIyOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IndoaXRlIj5DPC90ZXh0Pgo8L3N2Zz4=",
+  "Classes de découverte Oise":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSI0NCIgdmlld0JveD0iMCAwIDQ0IDQ0Ij4KICA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNEOTc3MDYiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNGNTlFMEIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDQiIGhlaWdodD0iNDQiIHJ4PSIxMiIgZmlsbD0idXJsKCNnKSIvPgogIDx0ZXh0IHg9IjIyIiB5PSIyOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IndoaXRlIj5DRDwvdGV4dD4KPC9zdmc+",
+  "USEP Oise":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSI0NCIgdmlld0JveD0iMCAwIDQ0IDQ0Ij4KICA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM3QzNBRUQiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM4QjVDRjYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDQiIGhlaWdodD0iNDQiIHJ4PSIxMiIgZmlsbD0idXJsKCNnKSIvPgogIDx0ZXh0IHg9IjIyIiB5PSIyOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IndoaXRlIj5VPC90ZXh0Pgo8L3N2Zz4=",
+  "Ligue 60 — Service Civique":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSI0NCIgdmlld0JveD0iMCAwIDQ0IDQ0Ij4KICA8ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNDNDFFMkEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNFRjQ0NDQiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDQiIGhlaWdodD0iNDQiIHJ4PSIxMiIgZmlsbD0idXJsKCNnKSIvPgogIDx0ZXh0IHg9IjIyIiB5PSIyOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IndoaXRlIj5MNjA8L3RleHQ+Cjwvc3ZnPg=="
+};
+
+const JOBS = [
+  {id:1,title:"Animateur·rice périscolaire",org:"Mairie de Beauvais",type:"CDD été",tag:"Urgent",tagColor:"#DC2626",icon:"🏕️",desc:"Encadrement d'enfants 6-12 ans dans le cadre des activités périscolaires. Activités ludiques, sportives et culturelles. BAFA obligatoire. Expérience en centre de loisirs appréciée.",lieu:"Beauvais (60)",date:"Juillet-Août 2026",contact:"rh@beauvais.fr"},
+  {id:2,title:"Directeur·rice adjoint·e",org:"Vacances pour tous",type:"Juillet-Août",tag:"Nouveau",tagColor:"#059669",icon:"🌊",desc:"Colonie de vacances en Bretagne, 40 enfants (8-14 ans). Gestion d'équipe de 6 animateurs. BAFD en cours accepté. Logé nourri.",lieu:"Bretagne (départ Beauvais)",date:"1er juil. – 28 août 2026",contact:"recrutement@laligue60.fr"},
+  {id:3,title:"Animateur·rice activités",org:"Centre de loisirs Creil",type:"Mercredis + vacances",tag:"CDI",tagColor:"#2563EB",icon:"🎨",desc:"Animation périscolaire les mercredis et pendant les vacances scolaires. Public 3-11 ans. Activités manuelles, sportives et d'expression.",lieu:"Creil (60)",date:"Dès mars 2026",contact:"alsh.creil@mairie-creil.fr"},
+  {id:4,title:"Animateur·rice nature",org:"Classes de découverte Oise",type:"Printemps 2026",tag:"Saisonnier",tagColor:"#D97706",icon:"🌿",desc:"Accompagnement de classes en sorties nature dans l'Oise. Animation d'ateliers faune/flore pour des scolaires (CE2-CM2).",lieu:"Forêt de Compiègne",date:"Avril-Juin 2026",contact:"classes@laligue60.fr"},
+  {id:5,title:"Animateur·rice sportif·ve",org:"USEP Oise",type:"Temps partiel",tag:"Mi-temps",tagColor:"#7C3AED",icon:"⚽",desc:"Animation sportive dans les écoles primaires de l'Oise. Organisation de rencontres inter-écoles et événements sportifs.",lieu:"Département Oise",date:"Dès septembre 2026",contact:"usep@laligue60.fr"},
+  {id:6,title:"Référent·e jeunesse",org:"Ligue 60 — Service Civique",type:"8 mois",tag:"Service Civique",tagColor:"#2563EB",icon:"🤝",desc:"Mission de Service Civique : accompagnement des jeunes dans leurs projets d'engagement citoyen. Indemnité 620€/mois.",lieu:"Beauvais + déplacements",date:"Octobre 2026",contact:"sc@laligue60.fr"},
+];
+
+const ACTUS = [
+  {id:1,cat:"Événement",tag:"À la une",color:"#DC2626",title:"Destination Apprentissage : l'événement carrière du 31 mars",desc:"Une journée immersive inspirée du Squid Game pour faire découvrir les métiers aux collégiens. 9 zones professionnelles !",date:"28 février 2026",full:"Le 31 mars 2026 au Lycée Jules Uhry de Creil, la Ligue 60 organise Destination Apprentissage. Inspiré du Squid Game (rebaptisé Calamari Game), cette journée plonge les élèves dans un parcours gamifié à travers 9 zones pro : BTP, Mécanique, Logistique, Aide à la personne, Hippique, Restauration, Esthétique, Maroquinerie et Numérique. Mini-jeux éducatifs, jetons, Prison, Jokers et Kahoot final !"},
+  {id:2,cat:"Formation",tag:"Inscriptions",color:"#2563EB",title:"Sessions BAFA avril 2026 : plus que 8 places !",desc:"La prochaine formation générale BAFA démarre le 14 avril à Beauvais. Inscrivez-vous vite !",date:"25 février 2026",full:"Formation générale BAFA du 14 au 21 avril 2026 à Beauvais. 8 places restantes sur 30. Programme : connaissance de l'enfant, vie quotidienne, activités, sécurité, réglementation. 520€ avant aides (CAF 200€, Pass BAFA CD60 jusqu'à 300€)."},
+  {id:3,cat:"Innovation",tag:"Nouveau",color:"#059669",title:"Le Sonar à Creil : un an déjà !",desc:"Le tiers-lieu fête son premier anniversaire. Fablab, biolab, ateliers ouverts : retour sur une année d'innovations.",date:"20 février 2026",full:"Inauguré en septembre 2024 rue Jules Uhry à Creil, Le Sonar est devenu le tiers-lieu de référence du sud de l'Oise. Fablab, biolab (mycélium, éco-rénovation), bureaux partagés, ateliers ouverts, stages makers. Vision de la Ligue : apprendre en faisant ensemble."},
+  {id:4,cat:"Solidarité",tag:"Terrain",color:"#D97706",title:"Famili'Bus : le LAEP itinérant qui rapproche les familles",desc:"Un bus aménagé pour rencontrer les familles isolées à Laversines, Savignies et Méru.",date:"15 février 2026",full:"Le Famili'Bus est un LAEP itinérant de la Ligue 60. Bus aménagé avec tapis de jeux et professionnelles petite enfance. Gratuit, sans inscription. Étapes : Laversines, Savignies, Méru. Parents et enfants s'y retrouvent et tissent des liens."},
+  {id:5,cat:"Engagement",tag:"Jeunesse",color:"#7C3AED",title:"Forum engagement jeunes : 12 partenaires à Clermont",desc:"Le 27 novembre, gendarmerie, pompiers, missions locales et EPIDE réunis pour l'engagement citoyen.",date:"10 février 2026",full:"Le 27 novembre 2024, Forum de l'engagement à Clermont. 12 partenaires : gendarmerie, pompiers, missions locales, EPIDE, UFOLEP. Stands VR, jeux de plateau, quizz. Le DASEN présent. Livret des dispositifs créé et diffusé gratuitement."},
+  {id:6,cat:"Éducation",tag:"Impact",color:"#DC2626",title:"Trace Ton Avenir : 14 jeunes accompagnés vers l'emploi",desc:"Le programme 16-25 ans en rupture : 300 jeunes approchés, 14 parcours complets.",date:"5 février 2026",full:"Trace Ton Avenir accompagne les 16-25 ans en rupture. 300 jeunes approchés, 41 entretiens, 14 parcours complets : ateliers logement, mobilité, estime de soi, théâtre, sport, découverte métiers, séjours de remobilisation et accompagnement Mission Locale."},
+];
+
+const ASTUCES = [
+  {id:1,title:"5 jeux pour capter l'attention en 30 sec",cat:"Gestion de groupe",icon:"⚡",color:"#DC2626",content:"1. Le chef d'orchestre silencieux — un meneur fait des gestes, le groupe reproduit.\n\n2. 1-2-3 soleil version turbo — élimination en 10 secondes chrono.\n\n3. Le miroir collectif — face à face, reproduire les gestes de son binôme.\n\n4. La bombe à retardement — compter ensemble jusqu'à 20 sans se chevaucher.\n\n5. Le téléphone arabe express — un mot fait le tour du cercle en 15 sec.\n\n💡 Aucun matériel nécessaire, fonctionne avec 8 à 30 enfants."},
+  {id:2,title:"La météo des émotions : rituel du matin",cat:"Bien-être",icon:"☀️",color:"#D97706",content:"Chaque matin, les enfants indiquent leur humeur :\n\n☀️ Je me sens bien\n⛅ Ça va moyen\n🌧️ Pas top aujourd'hui\n⛈️ J'ai besoin d'aide\n\n📌 Permet d'identifier rapidement les enfants qui ont besoin d'attention.\n\n⚠️ Ne jamais forcer un enfant à s'expliquer devant le groupe."},
+  {id:3,title:"Organiser un grand jeu sans matériel",cat:"Jeux",icon:"🎲",color:"#059669",content:"Le grand jeu de la cité perdue :\n\n• Divisez en 4 équipes (couleurs)\n• 5 indices cachés par équipe\n• Chaque indice = une énigme à résoudre\n\n⏱ Durée : 1h30\n👶 Âges : 7-14 ans\n📦 Matériel : AUCUN"},
+  {id:4,title:"Gérer un conflit entre enfants : 4 étapes",cat:"Pédagogie",icon:"🤝",color:"#7C3AED",content:"1. SÉPARER — Éloigner physiquement les enfants.\n\n2. ÉCOUTER — Chacun raconte SA version sans être interrompu.\n\n3. REFORMULER — « Si j'ai bien compris, toi tu as ressenti... »\n\n4. TROUVER ENSEMBLE — « Qu'est-ce qu'on pourrait faire pour que ça n'arrive plus ? »\n\n❌ Ne jamais chercher un coupable.\n✅ Toujours chercher une solution."},
+  {id:5,title:"Rédiger un projet d'animation en 5 parties",cat:"Méthodo",icon:"📝",color:"#2563EB",content:"Structure type :\n\n1. CONTEXTE — public, lieu, durée, effectif\n\n2. OBJECTIFS — 3 maximum, mesurables\n\n3. DÉROULÉ — timing minute par minute\n\n4. MOYENS — matériel, humains, budget\n\n5. ÉVALUATION — comment savoir si ça a marché ?\n\n💡 Commencez toujours par les objectifs."},
+  {id:6,title:"3 activités manuelles zéro déchet",cat:"Créativité",icon:"♻️",color:"#059669",content:"1. 🚀 Fusée en rouleau de papier toilette + papier journal\n\n2. 🎭 Masque en assiette carton + feutres\n\n3. 🎵 Maracas en bouteille plastique remplie de riz\n\n📌 Demander aux familles de garder leurs emballages 1 semaine avant."},
+];
+
+const FORMATIONS = [
+  {id:1,title:"BAFA Formation Générale",dates:"14 – 21 avril 2026",lieu:"Beauvais",places:8,total:30,prix:"520€",desc:"8 jours pour acquérir les bases de l'animation : connaissance de l'enfant, vie quotidienne, activités, sécurité, réglementation. Méthodes actives et mises en situation.",aides:"Aide CAF Oise (200€) + Pass BAFA Citoyen CD60 (jusqu'à 300€ contre 35h de bénévolat)",url:"https://bafa.laligue60.fr/produit/formation-generale-bafa/"},
+  {id:2,title:"BAFA Appro — Petite Enfance",dates:"7 – 12 juillet 2026",lieu:"Compiègne",places:15,total:25,prix:"390€",desc:"6 jours de spécialisation dans l'accueil des 3-6 ans. Développement de l'enfant, activités d'éveil, aménagement des espaces.",aides:"Aide CAF Oise (200€)",url:"https://bafa.laligue60.fr/produit/formation-generale-bafa/"},
+  {id:3,title:"BAFA Appro — Jeux & Grands Jeux",dates:"21 – 26 octobre 2026",lieu:"Beauvais",places:20,total:25,prix:"390€",desc:"6 jours pour devenir expert en conception de grands jeux, escape games pédagogiques et animations de veillée.",aides:"Aide CAF Oise (200€)",url:"https://bafa.laligue60.fr/produit/formation-generale-bafa/"},
+  {id:4,title:"BAFD Formation Base",dates:"19 – 28 juin 2026",lieu:"Beauvais",places:4,total:20,prix:"680€",desc:"10 jours pour devenir directeur·rice : gestion d'équipe, projet pédagogique, réglementation, budget, relations familles.",aides:"Aide CAF + prise en charge employeur possible",url:"https://bafa.laligue60.fr/produit/formation-generale-bafa/"},
+];
+const CONTACT = {email:"bafa-sc@laligue60.fr",tel:"03 44 48 16 81",preinscription:"https://bafa-bafd.jeunes.gouv.fr/baf-candidat/app/pre-inscription"};
+
+const VALEURS = [
+  {icon:"🏛️",title:"Laïcité",desc:"La laïcité garantit la liberté de conscience et l'égalité de tous. En animation, elle se traduit par le respect de chaque enfant, quelles que soient ses origines ou croyances.",color:"#2563EB"},
+  {icon:"🤝",title:"Solidarité",desc:"L'éducation populaire combat les inégalités par l'action collective. Chaque animateur·rice rend accessibles vacances, loisirs et culture à tous les enfants, sans distinction.",color:"#DC2626"},
+  {icon:"🌍",title:"Émancipation",desc:"Permettre à chacun de trouver sa place, de comprendre le monde et d'agir pour le transformer. L'animation est un outil d'émancipation puissant.",color:"#059669"},
+  {icon:"🎭",title:"Culture pour tous",desc:"L'accès à la culture, au sport et aux loisirs est un droit fondamental. Nous le rendons concret chaque jour dans les centres, les colos et les écoles de l'Oise.",color:"#7C3AED"},
+  {icon:"🌱",title:"Transition écologique",desc:"Éduquer les jeunes générations à la citoyenneté planétaire. Nos animations intègrent le respect de l'environnement et les pratiques écoresponsables.",color:"#059669"},
+  {icon:"🗳️",title:"Démocratie",desc:"Faire vivre la démocratie au quotidien : conseils d'enfants, débats, prise de décision collective. Chaque voix compte.",color:"#D97706"},
+];
+
+let currentPage='home';let currentActuFilter='Tout';
+const $=id=>document.getElementById(id);
+
+function navigate(page){currentPage=page;renderHeader();renderPage();document.querySelectorAll('.nav-item').forEach(n=>{n.classList.toggle('active',n.dataset.page===page)});window.scrollTo({top:0,behavior:'instant'})}
+document.querySelectorAll('.nav-item').forEach(n=>{n.addEventListener('click',()=>navigate(n.dataset.page))});
+
+function renderHeader(){
+  const h=$('header');
+  const badge=`<div class="header-badge"><img class="badge-logo" src="${LOGO_28}" alt=""> CAP'EDUC</div>`;
+  const status=`<div class="header-status">En ligne</div>`;
+  if(currentPage==='home'){
+    h.className='header header-home';
+    h.innerHTML=`<div class="header-top">${badge}${status}</div><img class="home-logo" src="${LOGO_120}" alt="CAP'EDUC"><h1>Ton réseau<br>d'<span class="accent">animateurs</span><br>dans l'Oise</h1><p class="subtitle">Animation · Éducation · Solidarité</p>`;
+  } else {
+    h.className='header header-sub';
+    const titles={emplois:'💼 Offres d\'emploi',astuces:'🎯 Astuces animation',formations:'📚 Formations BAFA',valeurs:'✊ Nos valeurs',actus:'📰 Actualités'};
+    const back=`<div class="header-back" onclick="navigate('home')">←</div>`;
+    h.innerHTML=`<div class="header-top">${back}<div style="flex:1;text-align:center">${badge}</div><div style="width:38px"></div></div><h1 class="header-page-title">${titles[currentPage]||''}</h1>`;
+  }
+}
+
+function renderPage(){
+  const m=$('main');
+  switch(currentPage){
+    case 'home':m.innerHTML=renderHome();break;
+    case 'actus':m.innerHTML=renderActus();break;
+    case 'emplois':m.innerHTML=renderEmplois();break;
+    case 'astuces':m.innerHTML=renderAstuces();break;
+    case 'formations':m.innerHTML=renderFormations();break;
+    case 'valeurs':m.innerHTML=renderValeurs();break;
+  }
+}
+
+function renderHome(){
+  return `
+    <div class="stats">
+      <div class="stat fade-in"><div class="stat-n">530</div><div class="stat-l">Stagiaires BAFA</div></div>
+      <div class="stat fade-in fd1"><div class="stat-n">565</div><div class="stat-l">BAFA &amp; BAFD</div></div>
+      <div class="stat fade-in fd2"><div class="stat-n">89%</div><div class="stat-l">Réussite</div></div>
+    </div>
+    <div class="section fade-in">
+      <div class="section-hd"><h2>Explorer</h2></div>
+      <div class="grid">
+        <div class="grid-card fd1" onclick="navigate('actus')" style="background:linear-gradient(160deg,#FEF2F2,#FFF)">
+          <div class="grid-card-badge">Nouveau</div>
+          <div class="grid-card-icon" style="background:#FEE2E2">📰</div>
+          <h3>Actualités</h3><p>Ligue 60 en direct</p>
+        </div>
+        <div class="grid-card fd2" onclick="navigate('emplois')">
+          <div class="grid-card-badge">${JOBS.length} offres</div>
+          <div class="grid-card-icon" style="background:#DBEAFE">💼</div>
+          <h3>Offres d'emploi</h3><p>Jobs dans l'Oise</p>
+        </div>
+        <div class="grid-card fd3" onclick="navigate('formations')">
+          <div class="grid-card-icon" style="background:#D1FAE5">📚</div>
+          <h3>Formations</h3><p>BAFA · BAFD · BPJEPS</p>
+        </div>
+        <div class="grid-card fd4" onclick="navigate('astuces')">
+          <div class="grid-card-icon" style="background:#EDE9FE">🎯</div>
+          <h3>Astuces</h3><p>Fiches pratiques</p>
+        </div>
+      </div>
+    </div>
+    <div class="section fade-in fd2">
+      <div class="section-hd"><h2>📰 Dernières actus</h2><a onclick="navigate('actus')">Tout voir →</a></div>
+      ${ACTUS.slice(0,2).map(a=>`<div class="actu-card" onclick="openActu(${a.id})"><img class="actu-card-thumb" src="${ACTU_IMGS[a.id]}"><div class="actu-card-body"><span class="actu-card-tag" style="background:${a.color}12;color:${a.color}">${a.cat}</span><h4>${a.title}</h4><p>${a.date}</p></div></div>`).join('')}
+    </div>
+    <div class="section fade-in fd3">
+      <div class="section-hd"><h2>🔥 Offres récentes</h2><a onclick="navigate('emplois')">Voir tout →</a></div>
+      ${JOBS.slice(0,3).map(j=>jobCard(j)).join('')}
+    </div>
+    <div class="cta-block cta-red fade-in fd4" onclick="window.open('https://bafa.laligue60.fr/','_blank')">
+      <h3>Passe ton BAFA avec la Ligue 60</h3>
+      <p>Prochaine session → Avril 2026 · ${FORMATIONS[0].places} places restantes</p>
+      <button>S'inscrire sur bafa.laligue60.fr →</button>
+    </div>
+    <div id="iosTuto" class="ios-tuto">
+      <h3>📱 Installer CAP'EDUC sur iPhone</h3>
+      <ol><li>Appuie sur <strong>partage</strong> ↑ en bas de Safari</li><li>Appuie sur <strong>« Sur l'écran d'accueil »</strong></li><li>Appuie <strong>« Ajouter »</strong> !</li></ol>
+      <button class="close-tuto" onclick="this.parentElement.classList.remove('show')">J'ai compris ✓</button>
+    </div>
+    <div class="community fade-in fd5">
+      <h3>Rejoins la communauté 🤝</h3>
+      <div class="community-avatars">
+        <div class="community-av" style="background:linear-gradient(135deg,#DC2626,#F87171)">👩</div>
+        <div class="community-av" style="background:linear-gradient(135deg,#2563EB,#60A5FA)">👨</div>
+        <div class="community-av" style="background:linear-gradient(135deg,#059669,#34D399)">👩</div>
+        <div class="community-av" style="background:linear-gradient(135deg,#D97706,#FBBF24)">👨</div>
+        <div class="community-av" style="background:#E2E8F0;font-size:10px;color:var(--text2);font-weight:700">+526</div>
+      </div>
+      <p>530 animateurs de l'Oise sont déjà connectés. Partage tes astuces, trouve des missions et rejoins le mouvement.</p>
+      <button onclick="window.open('https://instagram.com/capeduc_ligue60','_blank')">📸 Suivre sur Instagram →</button>
+    </div>`;
+}
+
+function renderActus(){
+  const cats=['Tout',...new Set(ACTUS.map(a=>a.cat))];
+  const filtered=currentActuFilter==='Tout'?ACTUS:ACTUS.filter(a=>a.cat===currentActuFilter);
+  const hero=filtered[0];const rest=filtered.slice(1);
+  return `<div style="padding:16px 14px">
+    <div class="actu-filters fade-in">${cats.map(c=>`<div class="actu-filter ${c===currentActuFilter?'active':''}" onclick="filterActus('${c}')">${c}</div>`).join('')}</div>
+    ${hero?`<div class="actu-hero fade-in fd1" onclick="openActu(${hero.id})">
+      <img class="actu-hero-img" src="${ACTU_IMGS[hero.id]}" alt="">
+      <div class="actu-hero-body">
+        <span class="actu-hero-tag" style="background:${hero.color}12;color:${hero.color}">${hero.tag}</span>
+        <h3>${hero.title}</h3>
+        <p>${hero.desc}</p>
+        <div class="actu-hero-date">📅 ${hero.date}</div>
+      </div>
+    </div>`:''}
+    ${rest.map((a,i)=>`<div class="actu-card fade-in fd${Math.min(i+2,5)}" onclick="openActu(${a.id})">
+      <img class="actu-card-thumb" src="${ACTU_IMGS[a.id]}" alt="">
+      <div class="actu-card-body"><span class="actu-card-tag" style="background:${a.color}12;color:${a.color}">${a.cat}</span><h4>${a.title}</h4><p>${a.date}</p></div>
+    </div>`).join('')}
+    <div style="text-align:center;margin-top:20px;padding:14px">
+      <p style="font-size:12px;color:var(--text3);margin-bottom:8px">Toute l'actualité de la Ligue 60</p>
+      <button onclick="window.open('https://laligue60.fr','_blank')" style="background:var(--dark);color:#fff;border-radius:12px;padding:12px 22px;font-size:13px;font-weight:700">Visiter laligue60.fr →</button>
+    </div>
+  </div>`;
+}
+function filterActus(cat){currentActuFilter=cat;renderPage()}
+
+function renderEmplois(){
+  return `<div style="padding:16px 14px">
+    <p style="font-size:13px;color:var(--text2);margin-bottom:16px">${JOBS.length} offres disponibles dans l'Oise</p>
+    ${JOBS.map((j,i)=>`<div class="fade-in" style="animation-delay:${i*.04}s">${jobCard(j)}</div>`).join('')}
+    <div style="text-align:center;margin-top:20px;padding:18px">
+      <p style="font-size:12px;color:var(--text3);margin-bottom:8px">Tu recrutes dans l'animation ?</p>
+      <a href="mailto:bafa-sc@laligue60.fr?subject=Publier%20offre%20CAPEDUC"><button style="background:var(--dark);color:#fff;border-radius:12px;padding:12px 22px;font-size:13px;font-weight:700">Publier une offre →</button></a>
+    </div>
+  </div>`;
+}
+
+function renderAstuces(){
+  return `<div style="padding:16px 14px">
+    <p style="font-size:13px;color:var(--text2);margin-bottom:16px">Fiches pratiques pour animer comme un pro</p>
+    <div class="grid">${ASTUCES.map((a,i)=>`<div class="astuce-card fade-in" style="animation-delay:${i*.04}s" onclick="openAstuce(${a.id})"><div class="astuce-card-ico" style="background:${a.color}12">${a.icon}</div><h3>${a.title}</h3><span class="badge" style="background:${a.color}12;color:${a.color}">${a.cat}</span></div>`).join('')}</div>
+  </div>`;
+}
+
+function renderFormations(){
+  return `<div style="padding:16px 14px">
+    <p style="font-size:13px;color:var(--text2);margin-bottom:16px">Prochaines sessions dans l'Oise</p>
+    ${FORMATIONS.map((f,i)=>{
+      const pct=((f.total-f.places)/f.total*100);const col=f.places<6?'var(--rose)':'var(--green)';
+      return `<div class="formation-card fade-in" style="animation-delay:${i*.05}s" onclick="openFormation(${f.id})">
+        <h3>${f.title}</h3>
+        <div class="formation-meta"><span>📅 ${f.dates}</span><span>📍 ${f.lieu}</span></div>
+        <div style="display:flex;align-items:center;gap:10px"><div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${col}"></div></div><span style="font-size:12px;font-weight:700;color:${col}">${f.places} places</span></div>
+        <div class="formation-bottom"><div class="formation-prix">${f.prix}</div><button class="formation-btn">Détails →</button></div>
+      </div>`;
+    }).join('')}
+    <div class="info-box fade-in" style="background:#F0FDF4"><strong style="color:var(--green)">💡 Aides financières</strong><p>CAF Oise : jusqu'à 200€. Pass BAFA Citoyen CD60 : jusqu'à 300€ supplémentaires (contre 35h bénévolat).</p></div>
+    <div class="info-box fade-in" style="background:#EFF6FF;margin-top:10px"><strong style="color:var(--accent)">📞 Une question ?</strong><p>Contacte l'équipe BAFA :</p><div style="display:flex;gap:8px;margin-top:8px"><a href="mailto:${CONTACT.email}" style="flex:1"><button style="width:100%;padding:10px;background:#fff;border:1px solid #E2E8F0;border-radius:10px;font-size:11px;font-weight:600;color:var(--text);cursor:pointer">✉️ ${CONTACT.email}</button></a><a href="tel:${CONTACT.tel.replace(/ /g,'')}"><button style="padding:10px 14px;background:#fff;border:1px solid #E2E8F0;border-radius:10px;font-size:11px;font-weight:600;color:var(--text);cursor:pointer">📞 Appeler</button></a></div></div>
+  </div>`;
+}
+
+function renderValeurs(){
+  return `<div style="padding:16px 14px">
+    <p style="font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.6">La Ligue de l'enseignement, mouvement d'éducation populaire fondé en 1866.</p>
+    ${VALEURS.map((v,i)=>`<div class="valeur-card fade-in" style="border-left:3px solid ${v.color};animation-delay:${i*.04}s"><div class="valeur-card-ico">${v.icon}</div><h3>${v.title}</h3><p>${v.desc}</p></div>`).join('')}
+    <div style="text-align:center;margin-top:18px;padding:14px"><button onclick="window.open('https://laligue60.fr','_blank')" style="background:var(--dark);color:#fff;border-radius:12px;padding:12px 22px;font-size:13px;font-weight:700">Visiter laligue60.fr →</button></div>
+  </div>`;
+}
+
+function jobCard(j){
+  const logo=ORG_LOGOS[j.org]||'';
+  return `<div class="job-card" onclick="openJob(${j.id})">
+    ${logo?`<img class="job-logo" src="${logo}" alt="${j.org}">`:`<div style="width:44px;height:44px;border-radius:12px;background:${j.tagColor}12;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">${j.icon}</div>`}
+    <div class="job-info"><div class="job-title">${j.title}</div><div class="job-meta">${j.org} · ${j.type}</div></div>
+    <span class="badge" style="background:${j.tagColor}12;color:${j.tagColor}">${j.tag}</span>
+  </div>`;
+}
+
+function openModal(html){$('modalContent').innerHTML=`<div class="modal-handle"></div><div class="modal-close" onclick="closeModal()">✕</div>${html}`;$('modal').classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){$('modal').classList.remove('open');document.body.style.overflow=''}
+$('modalBg').addEventListener('click',closeModal);
+
+function openJob(id){
+  const j=JOBS.find(x=>x.id===id);if(!j)return;
+  const logo=ORG_LOGOS[j.org]||'';
+  openModal(`
+    ${logo?`<img src="${logo}" style="width:52px;height:52px;border-radius:14px;margin-bottom:12px">`:`<div style="font-size:40px;margin-bottom:12px">${j.icon}</div>`}
+    <h2 style="font-size:20px;font-weight:800;margin-bottom:4px">${j.title}</h2>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:12px">${j.org}</p>
+    <div class="modal-badges"><span class="badge" style="background:${j.tagColor}12;color:${j.tagColor}">${j.tag}</span><span class="badge" style="background:#EFF6FF;color:var(--accent-d)">📍 ${j.lieu}</span><span class="badge" style="background:#EFF6FF;color:var(--accent-d)">📅 ${j.date}</span></div>
+    <p style="font-size:13.5px;line-height:1.7;margin-bottom:16px">${j.desc}</p>
+    <div class="modal-section"><div class="modal-section-label">Contact recruteur</div><div style="font-size:14px;font-weight:600;color:var(--accent-d)">${j.contact}</div></div>
+    <a href="mailto:${j.contact}?subject=Candidature%20${encodeURIComponent(j.title)}%20-%20CAPEDUC"><button class="modal-btn" style="background:var(--primary)">Envoyer ma candidature →</button></a>
+    <a href="tel:0344481681"><button style="width:100%;margin-top:8px;padding:13px;background:var(--bg);border:1px solid #E2E8F0;border-radius:var(--r3);font-size:13px;font-weight:600;color:var(--text);cursor:pointer">📞 Appeler la Ligue 60</button></a>
+  `);
+}
+
+function openActu(id){
+  const a=ACTUS.find(x=>x.id===id);if(!a)return;
+  openModal(`
+    <img src="${ACTU_IMGS[a.id]}" style="width:calc(100% + 44px);margin:-16px -22px 16px;height:160px;object-fit:cover;border-radius:0">
+    <span class="badge" style="background:${a.color}12;color:${a.color}">${a.cat}</span>
+    <span style="font-size:11px;color:var(--text3);margin-left:8px">📅 ${a.date}</span>
+    <h2 style="font-size:19px;font-weight:800;margin:10px 0 14px;line-height:1.3">${a.title}</h2>
+    <div style="font-size:13.5px;line-height:1.75;color:var(--text2);background:var(--bg);border-radius:var(--r);padding:16px">${a.full}</div>
+    <button class="modal-btn" style="background:var(--dark)" onclick="closeModal()">Fermer</button>
+  `);
+}
+
+function openAstuce(id){
+  const a=ASTUCES.find(x=>x.id===id);if(!a)return;
+  openModal(`
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><div style="width:46px;height:46px;border-radius:13px;background:${a.color}12;display:flex;align-items:center;justify-content:center;font-size:24px">${a.icon}</div><span class="badge" style="background:${a.color}12;color:${a.color}">${a.cat}</span></div>
+    <h2 style="font-size:19px;font-weight:800;margin-bottom:14px;line-height:1.3">${a.title}</h2>
+    <div style="font-size:13.5px;line-height:1.75;white-space:pre-line;background:var(--bg);border-radius:var(--r);padding:16px">${a.content}</div>
+    <button class="modal-btn" style="background:${a.color}" onclick="closeModal()">Compris ✓</button>
+  `);
+}
+
+function openFormation(id){
+  const f=FORMATIONS.find(x=>x.id===id);if(!f)return;
+  const pct=((f.total-f.places)/f.total*100);const col=f.places<6?'var(--rose)':'var(--green)';
+  openModal(`
+    <h2 style="font-size:20px;font-weight:800;margin-bottom:8px">${f.title}</h2>
+    <div class="modal-badges"><span class="badge" style="background:#EFF6FF;color:var(--accent-d)">📅 ${f.dates}</span><span class="badge" style="background:#EFF6FF;color:var(--accent-d)">📍 ${f.lieu}</span></div>
+    <p style="font-size:13.5px;line-height:1.7;margin-bottom:14px">${f.desc}</p>
+    <div class="modal-section"><div class="modal-section-label">Places disponibles</div><div style="display:flex;align-items:center;gap:10px;margin-top:6px"><div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${col}"></div></div><span style="font-size:14px;font-weight:700;color:${col}">${f.places}/${f.total}</span></div></div>
+    <div class="modal-section"><div class="modal-section-label">Aides financières</div><p style="font-size:12.5px;line-height:1.6;margin-top:4px">${f.aides}</p></div>
+    <div class="modal-section" style="background:#FEF2F2;border:1px solid #FECACA"><div class="modal-section-label" style="color:var(--primary)">⚠️ Avant de t'inscrire</div><p style="font-size:12.5px;line-height:1.6;margin-top:4px">Pré-inscription obligatoire sur le site du Ministère.</p><a href="${CONTACT.preinscription}" target="_blank" style="display:inline-block;margin-top:6px;background:rgba(220,38,38,.08);color:var(--primary);border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700">Pré-inscription Ministère →</a></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin:14px 0 4px"><div style="font-size:26px;font-weight:800;color:var(--accent-d)">${f.prix}</div><span style="font-size:11px;color:var(--text3)">avant aides</span></div>
+    <a href="${f.url}" target="_blank"><button class="modal-btn" style="background:var(--accent)">S'inscrire sur bafa.laligue60.fr →</button></a>
+    <div style="display:flex;gap:6px;margin-top:8px"><a href="mailto:${CONTACT.email}" style="flex:1"><button style="width:100%;padding:11px;background:var(--bg);border:1px solid #E2E8F0;border-radius:10px;font-size:12px;font-weight:600;color:var(--text);cursor:pointer">✉️ ${CONTACT.email}</button></a><a href="tel:${CONTACT.tel.replace(/ /g,'')}"><button style="padding:11px 14px;background:var(--bg);border:1px solid #E2E8F0;border-radius:10px;font-size:12px;font-weight:600;color:var(--text);cursor:pointer">📞</button></a></div>
+  `);
+}
+
+let deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;$('installBanner').classList.remove('hidden')});
+$('installBtn').addEventListener('click',async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null}$('installBanner').classList.add('hidden')});
+$('installClose').addEventListener('click',()=>{$('installBanner').classList.add('hidden')});
+if(window.matchMedia('(display-mode:standalone)').matches||navigator.standalone){$('installBanner').classList.add('hidden')}
+const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream;
+if(isIOS&&!navigator.standalone){setTimeout(()=>{const t=document.getElementById('iosTuto');if(t)t.classList.add('show')},2000)}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+window.addEventListener('online',()=>document.body.classList.remove('offline'));
+window.addEventListener('offline',()=>document.body.classList.add('offline'));
+const urlPage=new URLSearchParams(window.location.search).get('page');
+if(urlPage&&['emplois','astuces','formations','valeurs','actus'].includes(urlPage)){navigate(urlPage)}else{navigate('home')}
+</script>
+</body>
+</html>

@@ -6,38 +6,146 @@
     <title>Bilan — Nassim Mehadji</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        .bilan-block { padding:40px; background:var(--blanc); border:1px solid var(--gris-200); border-radius:20px; margin-bottom:24px; transition:all 0.4s var(--ease-out-expo); }
-        .bilan-block:hover { border-color:var(--gris-300); box-shadow:0 8px 32px rgba(26,26,46,0.06); }
-        .bilan-label { font-family:var(--font-mono); font-size:0.72rem; color:var(--noir); font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; }
-        .bilan-block h3 { font-family:var(--font-display); font-size:1.3rem; font-weight:700; color:var(--noir); margin-bottom:16px; }
-        .bilan-block p { font-size:0.92rem; line-height:1.85; color:var(--gris-600); }
-        .stats-bar { display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:16px; margin-bottom:48px; }
-        .stat-card { text-align:center; padding:28px 20px; background:var(--gris-50); border:1px solid var(--gris-200); border-radius:16px; transition:all 0.3s; }
-        .stat-card:hover { border-color:var(--noir); background:var(--gris-100); }
-        .stat-num { font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--noir); line-height:1; margin-bottom:6px; }
-        .stat-card p { font-size:0.78rem; color:var(--gris-500); margin:0; }
-        .bilan-quote { padding:48px; background:var(--noir); color:var(--blanc); border-radius:20px; margin-top:40px; position:relative; }
-        .bilan-quote::before { content:'"'; font-family:var(--font-display); font-size:8rem; color:var(--gris-700); position:absolute; top:-10px; left:32px; line-height:1; opacity:0.3; }
-        .bilan-quote p { font-size:1.2rem; color:rgba(255,255,255,0.85); font-style:italic; line-height:1.8; position:relative; z-index:1; }
-        .bilan-quote .author { margin-top:16px; font-style:normal; font-size:0.85rem; color:var(--gris-400); font-weight:600; }
-        @media (max-width:600px) { .bilan-block, .bilan-quote { padding:24px; } .stats-bar { grid-template-columns:repeat(2, 1fr); } }
-    </style>
 </head>
 <body>
-    
-    <header class="site-header"><div class="header-inner"><a href="index.html" class="logo">Nassim<span>.M</span></a><nav class="nav-desktop"><a href="index.html" class="nav-link">Accueil</a><a href="formations.html" class="nav-link">Formations</a><a href="competences.html" class="nav-link">Compétences</a><a href="experiences.html" class="nav-link">Expériences</a><a href="projets.html" class="nav-link">Projets</a><a href="interets.html" class="nav-link">Intérêts</a><a href="bilan.html" class="nav-link active">Bilan</a><a href="contact.html" class="nav-cta">Contact</a></nav><button class="nav-toggle" id="navToggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></header>
-    <div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-header"><a href="index.html" class="logo">Nassim<span>.M</span></a><button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark" style="font-size:1.3rem"></i></button></div><nav class="mobile-nav"><a href="index.html">Accueil</a><a href="formations.html">Formations</a><a href="competences.html">Compétences</a><a href="experiences.html">Expériences</a><a href="projets.html">Projets</a><a href="interets.html">Centres d'intérêt</a><a href="bilan.html" class="active">Bilan</a><a href="contact.html">Contact</a></nav></div>
-    <section class="page-hero"><div class="container"><span class="section-label reveal">Rétrospective</span><h1 class="section-title reveal reveal-d1">Bilan des 3 Années</h1><p class="section-desc reveal reveal-d2">Un regard sur mon parcours, mes apprentissages et ma vision pour la suite.</p></div></section>
-    <section class="page-section" style="padding-top:0;"><div class="container-narrow">
-        <div class="stats-bar stagger"><div class="stat-card"><div class="stat-num">3</div><p>Années de formation</p></div><div class="stat-card"><div class="stat-num">8+</div><p>Projets réalisés</p></div><div class="stat-card"><div class="stat-num">5+</div><p>Compétences clés</p></div><div class="stat-card"><div class="stat-num">∞</div><p>Motivation</p></div></div>
-        <div class="bilan-block reveal"><span class="bilan-label">Apprentissages</span><h3>Ce que j'ai appris</h3><p>Au cours de ces trois années en Marketing Digital & E-Business, j'ai développé une compréhension profonde des mécanismes du digital. De la stratégie de contenu au référencement, en passant par la gestion de projets e-commerce, chaque expérience a renforcé ma conviction : le digital est un levier puissant quand il est maîtrisé avec méthode et créativité.</p><p style="margin-top:12px;">J'ai appris à analyser des marchés, à concevoir des stratégies adaptées et à produire des contenus qui engagent. Mais surtout, j'ai compris l'importance de travailler en équipe et de s'adapter en permanence.</p></div>
-        <div class="bilan-block reveal"><span class="bilan-label">Compétences acquises</span><h3>Mes savoir-faire développés</h3><p>Maîtrise des outils de création (Adobe Suite, Canva, Figma), pilotage de campagnes publicitaires (Google Ads, Meta Ads), analyse de données et optimisation de conversion (Google Analytics), gestion de projets e-commerce (Shopify, WordPress).</p><p style="margin-top:12px;">Au-delà des compétences techniques, j'ai développé des soft skills essentielles : gestion du temps, communication orale et écrite, capacité d'adaptation, travail sous pression et esprit d'initiative.</p></div>
-        <div class="bilan-block reveal"><span class="bilan-label">Moments marquants</span><h3>Les temps forts</h3><p>Parmi les moments qui ont marqué ces trois années : l'organisation de l'événement EPHAD Chantilly, la création de la publicité S-fives qui a révélé ma passion pour le montage vidéo, et le projet e-commerce Valmoré.</p></div>
-        <div class="bilan-block reveal"><span class="bilan-label">Vision</span><h3>Mon avenir professionnel</h3><p>Je souhaite continuer à évoluer dans un environnement où l'innovation digitale est au cœur de la stratégie. Mon objectif : devenir un acteur clé dans la transformation digitale des entreprises, en alliant data, créativité et performance.</p><p style="margin-top:12px;">Je suis ouvert à des opportunités de stage ou d'alternance qui me permettront de continuer à grandir dans le domaine du marketing digital, de l'e-commerce ou de la gestion de projet digital.</p></div>
-        <div class="bilan-quote reveal"><p>Le succès, c'est d'aller d'échec en échec sans perdre son enthousiasme.</p><span class="author">— Winston Churchill</span></div>
-        <div class="reveal" style="text-align:center; margin-top:48px;"><a href="contact.html" class="btn btn-primary">Discutons ensemble <i class="fa-solid fa-arrow-right"></i></a></div>
-    </div></section>
-    <footer class="site-footer"><div class="container"><div class="footer-inner"><span class="footer-copy">© 2025 Nassim Mehadji — Tous droits réservés</span><div class="footer-links"><a href="contact.html">Contact →</a><a href="index.html">Accueil</a></div></div></div></footer>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Nassim<span>.M</span></a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="formations.html" class="nav-link">Formations</a>
+                <a href="competences.html" class="nav-link">Compétences</a>
+                <a href="experiences.html" class="nav-link">Expériences</a>
+                <a href="projets.html" class="nav-link">Projets</a>
+                <a href="interets.html" class="nav-link">Intérêts</a>
+                <a href="bilan.html" class="nav-link active">Bilan</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">Nassim<span>.M</span></a>
+            <button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html">Accueil</a>
+            <a href="formations.html">Formations</a>
+            <a href="competences.html">Compétences</a>
+            <a href="experiences.html">Expériences</a>
+            <a href="projets.html">Projets</a>
+            <a href="interets.html">Centres d'intérêt</a>
+            <a href="bilan.html" class="active">Bilan</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <section class="page-hero">
+        <div style="position:absolute; inset:0; background:linear-gradient(to bottom right, rgba(99,102,241,0.05), transparent, rgba(244,63,94,0.05)); filter:blur(60px); z-index:0;"></div>
+        <div class="shapes-bg">
+            <div class="elegant-shape shape-indigo" style="--delay:0.3s; --rotate-from:-3deg; --rotate-to:12deg; width:500px; height:120px; left:-10%; top:20%;"></div>
+            <div class="elegant-shape shape-rose" style="--delay:0.5s; --rotate-from:-30deg; --rotate-to:-15deg; width:400px; height:100px; right:-5%; top:60%;"></div>
+            <div class="elegant-shape shape-violet" style="--delay:0.4s; --rotate-from:-23deg; --rotate-to:-8deg; width:250px; height:70px; left:8%; bottom:10%;"></div>
+            <div class="elegant-shape shape-amber" style="--delay:0.6s; --rotate-from:5deg; --rotate-to:20deg; width:180px; height:50px; right:18%; top:15%;"></div>
+        </div>
+        <div class="container" style="position:relative; z-index:10;">
+            <span class="section-label reveal">Rétrospective</span>
+            <h1 class="section-title reveal reveal-d1">Bilan des <em>3 années</em></h1>
+            <p class="section-desc reveal reveal-d2">Un regard sur mon parcours, mes apprentissages et ma vision pour la suite.</p>
+        </div>
+        <div class="vignette"></div>
+    </section>
+
+    <section class="page-section">
+        <div class="container" style="max-width:960px;">
+
+            <div class="stats-bar stagger">
+                <div class="stat-card">
+                    <div class="stat-num"><span data-count="3">3</span></div>
+                    <p>Années de formation</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num"><span data-count="10" data-suffix="+">10+</span></div>
+                    <p>Projets réalisés</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num"><span data-count="6" data-suffix="+">6+</span></div>
+                    <p>Compétences clés</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">∞</div>
+                    <p>Motivation</p>
+                </div>
+            </div>
+
+            <div class="bilan-block reveal">
+                <span class="bilan-label">01 · Apprentissages</span>
+                <div>
+                    <h3>Ce que j'ai appris</h3>
+                    <p>Au cours de ces trois années en Marketing Digital &amp; E-Business, j'ai développé une compréhension profonde des mécanismes du digital. De la stratégie de contenu au référencement, en passant par la gestion de projets e-commerce, chaque expérience a renforcé ma conviction : le digital est un levier puissant quand il est maîtrisé avec méthode et créativité.</p>
+                    <p>J'ai appris à analyser des marchés, concevoir des stratégies adaptées et produire des contenus qui engagent. Mais surtout, j'ai compris l'importance de travailler en équipe et de s'adapter en permanence.</p>
+                </div>
+            </div>
+
+            <div class="bilan-block reveal">
+                <span class="bilan-label">02 · Savoir-faire</span>
+                <div>
+                    <h3>Mes compétences développées</h3>
+                    <p>Maîtrise des outils de création (Adobe Suite, Canva, Figma), pilotage de campagnes publicitaires (Google Ads, Meta Ads), intégration de l'IA dans les workflows, gestion de projets e-commerce (Shopify, WordPress).</p>
+                    <p>Au-delà des compétences techniques, j'ai développé des soft skills essentielles : gestion du temps, communication, capacité d'adaptation, travail sous pression et esprit d'initiative.</p>
+                </div>
+            </div>
+
+            <div class="bilan-block reveal">
+                <span class="bilan-label">03 · Temps forts</span>
+                <div>
+                    <h3>Les moments marquants</h3>
+                    <p>Parmi les moments qui ont marqué ces trois années : l'organisation du salon Bouge Ton Talent, la production vidéo pour l'École Jean Trubert qui a révélé ma passion pour le montage, le projet e-commerce Canneo en SAÉ 6.01, et surtout mon stage de fin d'études à la Ligue de l'enseignement de l'Oise — 16 semaines, 13 missions menées en parallèle et une proposition d'alternance reçue à mi-parcours.</p>
+                </div>
+            </div>
+
+            <div class="bilan-block reveal">
+                <span class="bilan-label">04 · Vision</span>
+                <div>
+                    <h3>Mon avenir professionnel</h3>
+                    <p>Je souhaite continuer à évoluer dans un environnement où l'innovation digitale est au cœur de la stratégie. Mon objectif : devenir un acteur clé dans la transformation digitale des entreprises, en alliant data, créativité, IA et performance.</p>
+                    <p>À plus long terme, je veux lancer ma propre agence web marketing spécialisée en création de sites, contenus visuels/vidéos et marketing intégrant l'IA.</p>
+                </div>
+            </div>
+
+            <div class="bilan-quote reveal">
+                <p>Le succès, c'est d'aller d'échec en échec sans perdre son enthousiasme.</p>
+                <span class="author">— Winston Churchill</span>
+            </div>
+
+            <div class="reveal" style="text-align:center; margin-top:60px;">
+                <a href="contact.html" class="btn btn-primary">
+                    Discutons ensemble
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <span class="footer-copy">© <span data-year>2026</span> Nassim Mehadji — Tous droits réservés</span>
+                <div class="footer-links">
+                    <a href="contact.html">Contact →</a>
+                    <a href="index.html">Accueil</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
     <script src="main.js"></script>
-</body></html>
+</body>
+</html>

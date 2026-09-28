@@ -1,20 +1,27 @@
-PORTFOLIO NASSIM MEHADJI — AZURITE v7
+PORTFOLIO NASSIM MEHADJI — v7 « ATELIER »
+Master GPLA · Marketing Industriel & Communication · Senlis · Alternance
 
-À FAIRE APRÈS DÉCOMPRESSION :
-- Place le fichier "Logo_Ligue_CMJN.jpg" dans /images/ 
-  (c'est le logo de la Ligue de l'Enseignement que tu m'as partagé)
-  Le site fera référence à /images/Logo_Ligue_CMJN.jpg
-- Déploie sur Netlify (drag & drop du dossier)
+INSTALLATION
+1. Dans ton dossier portfolio (celui qui contient déjà /images, /realisations
+   et NASSIM_MEHADJI_CV.pdf), remplace les 8 fichiers .html + style.css + main.js
+   par ceux de ce zip.
+2. Ne touche pas à /images, /realisations ni au CV : les chemins sont identiques.
+3. Déploie sur Netlify (glisser-déposer du dossier complet).
 
-LIENS PROJETS CONFIGURÉS :
-- Canneo        → http://sc2molo8065.universe.wf/sea4/
-- Chaufelec     → http://sc2molo8065.universe.wf/Mehadji/
-- Valmoré       → https://nassimmehadji25.wixsite.com/my-site-6
-- Bouge Ton Talent → https://instagram.com/bougetontalent_
-- École Jean Trubert → https://www.ecole-jean-trubert.com
-- Ligue 60      → https://www.ligue60.fr
+NOUVEAUTÉS
+- Design sombre éditorial (noir graphite / papier / orange signal)
+- Loader d'intro (1re visite), transitions de page en rideau, curseur personnalisé
+- Titres révélés mot à mot, texte « surligné » au scroll, compteurs animés
+- Timeline horizontale épinglée (accueil), cartes d'expérience empilées
+- Aperçu d'image qui suit la souris sur la liste des projets, boutons magnétiques
+- Animations désactivées automatiquement si « réduire les animations » est activé
 
-SECTION RÉALISATIONS :
-5 panneaux placeholder avec images Unsplash thématiques + infos génériques.
-À remplacer plus tard par tes vraies réalisations (dans projets.html, 
-bloc .realisations-panels — remplacer background-image + titre + description).
+À PERSONNALISER
+- experiences.html : ajoute le nom de ton entreprise d'alternance dans la
+  première carte (ligne « Alternance · Master GPLA — Senlis », repère le
+  commentaire « Astuce » juste au-dessus).
+- contact.html : remplace VOTRE_ID dans l'action Formspree pour recevoir
+  réellement les messages.
+- Pense à mettre à jour le CV PDF (il indique encore « 3e année de BUT »).
+
+Librairies (CDN) : GSAP 3.12 + ScrollTrigger, Lenis 1.1, Font Awesome 6.5.

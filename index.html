@@ -1,272 +1,303 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-loader="1">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nassim Mehadji — Marketing Digital, E-Business & Entrepreneuriat</title>
-    <meta name="description" content="Étudiant en marketing digital, créateur de sites internet, monteur de projets e-commerce et passionné d'entrepreneuriat.">
-    <link rel="stylesheet" href="style.css">
+    <title>Nassim Mehadji — Master GPLA · Marketing Industriel & Communication</title>
+    <meta name="description" content="Portfolio de Nassim Mehadji, étudiant en Master GPLA (Gestion de Production, Logistique, Achats), parcours Marketing Industriel & Communication à Senlis, en alternance.">
+    <meta name="theme-color" content="#0a0a0b">
+    <meta property="og:title" content="Nassim Mehadji — Master GPLA · Marketing Industriel & Communication">
+    <meta property="og:description" content="Portfolio de Nassim Mehadji, étudiant en Master GPLA (Gestion de Production, Logistique, Achats), parcours Marketing Industriel & Communication à Senlis, en alternance.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ff5a1f'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-style='italic' font-size='34' text-anchor='middle' fill='%230a0a0b'%3EN%3C/text%3E%3C/svg%3E">
+    <script>(function(h){h.classList.add('js');try{if(h.dataset.loader&&!sessionStorage.getItem('nm-loaded'))h.classList.add('show-loader')}catch(e){}setTimeout(function(){if(!window.__ready){h.classList.add('no-anim');h.classList.remove('show-loader')}},4000)})(document.documentElement)</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css?v=7">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body data-page="index">
+    <a class="skip" href="#main">Aller au contenu</a>
+
+    <div class="guides" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="progress" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor-label">Voir</span></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="curtain" aria-hidden="true"><span class="curtain-label">Accueil</span></div>
 
     <header class="site-header">
         <div class="header-inner">
-            <a href="index.html" class="logo">Nassim<span>.M</span></a>
-            <nav class="nav-desktop">
-                <a href="index.html" class="nav-link active">Accueil</a>
-                <a href="formations.html" class="nav-link">Formations</a>
-                <a href="competences.html" class="nav-link">Compétences</a>
-                <a href="experiences.html" class="nav-link">Expériences</a>
-                <a href="projets.html" class="nav-link">Projets</a>
-                <a href="interets.html" class="nav-link">Intérêts</a>
-                <a href="bilan.html" class="nav-link">Bilan</a>
-                <a href="contact.html" class="nav-cta">Contact</a>
+            <a href="index.html" class="logo" data-label="Accueil" aria-label="Accueil — Nassim Mehadji">
+                <span class="logo-mark">N</span>
+                <span>Nassim Mehadji<small>Master GPLA · Senlis</small></span>
+            </a>
+            <nav class="nav-desktop" aria-label="Navigation principale">
+                <a href="index.html" class="nav-link active"><span class="roll"><span data-text="Accueil">Accueil</span></span></a><a href="formations.html" class="nav-link"><span class="roll"><span data-text="Formations">Formations</span></span></a><a href="competences.html" class="nav-link"><span class="roll"><span data-text="Compétences">Compétences</span></span></a><a href="experiences.html" class="nav-link"><span class="roll"><span data-text="Expériences">Expériences</span></span></a><a href="projets.html" class="nav-link"><span class="roll"><span data-text="Projets">Projets</span></span></a><a href="interets.html" class="nav-link"><span class="roll"><span data-text="Intérêts">Intérêts</span></span></a><a href="bilan.html" class="nav-link"><span class="roll"><span data-text="Bilan">Bilan</span></span></a>
+                <a href="contact.html" class="nav-cta" data-magnetic="0.3"><i></i><span>Contact</span></a>
             </nav>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            </button>
+            <div class="header-meta"><span class="pulse"></span>En alternance · <span data-clock>--:--</span> Paris</div>
+            <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span>Menu</span><span class="bars"><span></span><span></span></span></button>
         </div>
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
-            <a href="index.html" class="logo">Nassim<span>.M</span></a>
-            <button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark"></i></button>
+            <a href="index.html" class="logo"><span class="logo-mark">N</span><span>Nassim Mehadji</span></a>
+            <button class="mobile-close" id="mobileClose">Fermer ✕</button>
         </div>
-        <nav class="mobile-nav">
-            <a href="index.html" class="active">Accueil</a>
-            <a href="formations.html">Formations</a>
-            <a href="competences.html">Compétences</a>
-            <a href="experiences.html">Expériences</a>
-            <a href="projets.html">Projets</a>
-            <a href="interets.html">Centres d'intérêt</a>
-            <a href="bilan.html">Bilan</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <nav class="mobile-nav" aria-label="Navigation mobile"><a href="index.html" class="active"><span>Accueil</span><small>01</small></a><a href="formations.html"><span>Formations</span><small>02</small></a><a href="competences.html"><span>Compétences</span><small>03</small></a><a href="experiences.html"><span>Expériences</span><small>04</small></a><a href="projets.html"><span>Projets</span><small>05</small></a><a href="interets.html"><span>Intérêts</span><small>06</small></a><a href="bilan.html"><span>Bilan</span><small>07</small></a><a href="contact.html"><span>Contact</span><small>08</small></a></nav>
+        <div class="mobile-foot"><span>nassim.mehadji25@gmail.com</span><span>Master GPLA · Senlis</span></div>
     </div>
 
-    <!-- HERO exactement comme shape-landing-hero -->
+    <main id="main">
+    <div class="loader" aria-hidden="true">
+        <div class="loader-top"><span>Portfolio — v7</span><span>Master GPLA · 2026 → 2028</span></div>
+        <div class="loader-name"><span>N</span><span>a</span><span>s</span><span>s</span><span>i</span><span>m</span><span>&nbsp;</span><span>M</span><span>.</span></div>
+        <div class="loader-bottom"><span>Marketing industriel &amp; communication</span><span class="loader-count">000</span></div>
+        <div class="loader-bar"></div>
+    </div>
+    <div class="hover-preview" aria-hidden="true"></div>
+
     <section class="hero">
-        <!-- Ambient gradient wash -->
-        <div style="position:absolute; inset:0; background:linear-gradient(to bottom right, rgba(99,102,241,0.05), transparent, rgba(244,63,94,0.05)); filter:blur(60px); z-index:0;"></div>
-
-        <!-- Floating shapes -->
-        <div class="shapes-bg">
-            <div class="elegant-shape shape-indigo"
-                 style="--delay:0.3s; --rotate-from:-3deg; --rotate-to:12deg; width:600px; height:140px; left:-10%; top:15%;"></div>
-            <div class="elegant-shape shape-rose"
-                 style="--delay:0.5s; --rotate-from:-30deg; --rotate-to:-15deg; width:500px; height:120px; right:-5%; top:70%;"></div>
-            <div class="elegant-shape shape-violet"
-                 style="--delay:0.4s; --rotate-from:-23deg; --rotate-to:-8deg; width:300px; height:80px; left:5%; bottom:5%;"></div>
-            <div class="elegant-shape shape-amber"
-                 style="--delay:0.6s; --rotate-from:5deg; --rotate-to:20deg; width:200px; height:60px; right:15%; top:10%;"></div>
-            <div class="elegant-shape shape-cyan"
-                 style="--delay:0.7s; --rotate-from:-40deg; --rotate-to:-25deg; width:150px; height:40px; left:20%; top:5%;"></div>
+        <div class="hero-orb" aria-hidden="true"></div>
+        <div class="hero-orb two" aria-hidden="true"></div>
+        <div class="hero-ring" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><defs><path id="circ" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs>
+                <text><textPath href="#circ">Master GPLA ✦ Marketing industriel ✦ Communication ✦ Alternance ✦ </textPath></text></svg>
+            <div class="core">26→28</div>
         </div>
-
-        <div class="container hero-inner">
-            <div class="hero-badge reveal">
-                <span class="hero-badge-dot"></span>
-                <span>Disponible · Master 2026</span>
+        <div class="container" style="display:flex; flex-direction:column; flex:1;">
+            <div class="hero-top">
+                <div class="hero-badge" data-reveal data-hero><span class="chip">Nouveau</span><span><b>Master GPLA</b> — Marketing Industriel &amp; Communication · en alternance</span></div>
             </div>
-
-            <h1 class="hero-title reveal reveal-d1">
-                <span class="hero-title-main">Marketing digital,</span><br>
-                <span class="hero-title-gradient">E-Business &amp; Entrepreneuriat</span>
+            <h1 class="hero-title" data-split aria-label="Nassim Mehadji">
+                <span class="row">Nassim</span>
+                <span class="row r2"><em>Mehadji</em><span class="accent">.</span></span>
             </h1>
-
-            <p class="hero-desc reveal reveal-d2">
-                Je suis <strong>Nassim</strong> — étudiant en marketing digital. Je conçois des <strong>stratégies</strong>, je crée des <strong>sites internet</strong> et je monte des projets <strong>e-commerce</strong> avec une obsession : transformer des idées en résultats mesurables.
-            </p>
-
-            <div class="hero-cta-group reveal reveal-d3">
-                <a href="projets.html" class="btn btn-primary">
-                    Voir mes projets
-                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-                <a href="contact.html" class="btn btn-outline">
-                    Me contacter
-                </a>
-            </div>
-
-            <div class="hero-stats reveal reveal-d4">
-                <div>
-                    <div class="hero-stat-num"><span data-count="10">10</span><span class="plus">+</span></div>
-                    <div class="hero-stat-label">Projets livrés</div>
+            <div class="hero-bottom">
+                <p class="lead" data-reveal data-hero>Étudiant en <strong>Master Gestion de Production, Logistique, Achats</strong>, parcours <strong>Marketing Industriel &amp; Communication</strong> à Senlis, en alternance. Je relie l'usine, la supply chain et la marque — pour que l'industrie communique aussi bien qu'elle produit.</p>
+                <div class="hero-actions" data-reveal data-hero>
+                    <a href="projets.html" class="btn btn-primary" data-magnetic="0.25"><span>Voir mes projets</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+                    <a href="formations.html" class="btn btn-ghost" data-magnetic="0.25"><span>Le Master</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
                 </div>
-                <div>
-                    <div class="hero-stat-num"><span data-count="3">3</span></div>
-                    <div class="hero-stat-label">Années de formation</div>
-                </div>
-                <div>
-                    <div class="hero-stat-num"><span data-count="4">4</span></div>
-                    <div class="hero-stat-label">Expériences pro</div>
-                </div>
-                <div>
-                    <div class="hero-stat-num"><span>∞</span></div>
-                    <div class="hero-stat-label">Ambition</div>
-                </div>
+                <div class="scroll-hint" data-reveal data-hero><span>Scroll</span><span class="track"></span></div>
             </div>
         </div>
-
-        <!-- Vignette top/bottom -->
-        <div class="vignette"></div>
     </section>
 
-    <!-- MARQUEE -->
-    <div class="marquee">
-        <div class="marquee-track">
-            <div class="marquee-item">Marketing Digital</div>
-            <div class="marquee-item">E-Commerce</div>
-            <div class="marquee-item">Stratégie de marque</div>
-            <div class="marquee-item">Création web</div>
-            <div class="marquee-item">Entrepreneuriat</div>
-            <div class="marquee-item">Social Media</div>
-            <div class="marquee-item">IA &amp; Automatisation</div>
-            <div class="marquee-item">Marketing Digital</div>
-            <div class="marquee-item">E-Commerce</div>
-            <div class="marquee-item">Stratégie de marque</div>
-            <div class="marquee-item">Création web</div>
-            <div class="marquee-item">Entrepreneuriat</div>
-            <div class="marquee-item">Social Media</div>
-            <div class="marquee-item">IA &amp; Automatisation</div>
-        </div>
-    </div>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><div class="marquee-group"><span class="marquee-item">Marketing industriel</span><span class="marquee-item">B2B</span><span class="marquee-item">Communication</span><span class="marquee-item">Supply chain</span><span class="marquee-item">Achats</span><span class="marquee-item">Stratégie de marque</span><span class="marquee-item">Contenu &amp; vidéo</span><span class="marquee-item">Création web</span><span class="marquee-item">IA &amp; automatisation</span><span class="marquee-item">Production</span></div><div class="marquee-group"><span class="marquee-item">Marketing industriel</span><span class="marquee-item">B2B</span><span class="marquee-item">Communication</span><span class="marquee-item">Supply chain</span><span class="marquee-item">Achats</span><span class="marquee-item">Stratégie de marque</span><span class="marquee-item">Contenu &amp; vidéo</span><span class="marquee-item">Création web</span><span class="marquee-item">IA &amp; automatisation</span><span class="marquee-item">Production</span></div></div></div>
 
-    <!-- ABOUT -->
     <section class="section">
         <div class="container">
-            <div class="about-block">
-                <div class="about-label reveal">À propos · 01</div>
-                <div class="about-text reveal reveal-d1">
-                    <p>Étudiant en <em>marketing digital</em>, je conçois des stratégies, je crée des <em>sites internet</em> et je monte des projets <em>e-commerce</em> — toujours avec une vision entrepreneuriale.</p>
-                    <p>Aujourd'hui en 3ème année de BUT Techniques de Commercialisation, je mets mes compétences au service de projets qui allient création, performance et vision long-terme. Mon objectif : transformer chaque idée en un produit digital qui fonctionne, se ressent, se mesure.</p>
+            <div class="statement-wrap">
+                <div class="statement-side" data-reveal>
+                    <span class="num">(01) — À propos</span>
+                    <div class="portrait-card" data-tilt>
+                        <span class="mono">NM / 2026</span>
+                        <span class="init">N.</span>
+                        <span class="mono">Senlis · Oise</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="statement" data-highlight>Trois ans de marketing digital m'ont appris à faire parler une marque. Aujourd'hui, j'apprends ce qu'il y a derrière — <em>la production, la logistique, les achats</em> — pour raconter l'industrie avec justesse et impact.</p>
+                    <div style="margin-top:48px;" data-reveal><a href="bilan.html" class="btn btn-ghost" data-magnetic="0.25"><span>Mon parcours en bref</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="section" style="padding-top:40px;">
+    <section class="section-sm" style="padding-top:0;">
         <div class="container">
-            <div style="text-align:center;">
-                <span class="section-label reveal">Ce que je fais</span>
-                <h2 class="section-title reveal reveal-d1">Expertises &amp; <em>savoir-faire</em></h2>
-                <p class="section-desc reveal reveal-d2">Trois piliers qui structurent ma vision du digital aujourd'hui.</p>
-            </div>
-
-            <div class="services-grid stagger">
-                <div class="service-card">
-                    <span class="service-num">→ 01</span>
-                    <div class="service-icon"><i class="fa-solid fa-chess-knight"></i></div>
-                    <h3>Stratégie digitale</h3>
-                    <p>De l'étude de marché au plan d'action : positionnement, ciblage, parcours client et pilotage de la performance.</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-num">→ 02</span>
-                    <div class="service-icon"><i class="fa-solid fa-code"></i></div>
-                    <h3>Création de sites web</h3>
-                    <p>Sites vitrines, landing pages et boutiques e-commerce. Shopify, WordPress, HTML — selon le besoin et l'ambition.</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-num">→ 03</span>
-                    <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
-                    <h3>Entrepreneuriat &amp; e-commerce</h3>
-                    <p>Monter des projets, poser des fondations solides, itérer vite. Du prototype à la mise en marché.</p>
+            <div class="master" data-reveal>
+                <div class="master-letters" aria-hidden="true" data-speed="0.3">GPLA</div>
+                <div class="master-grid">
+                    <div>
+                        <div class="eyebrow">Nouveau chapitre · <b>Rentrée 2026</b></div>
+                        <h2>Master <em>GPLA</em>,<br>marketing industriel &amp; communication.</h2>
+                        <p>Après un BUT orienté marketing digital, j'ai choisi de comprendre l'autre côté du produit : comment il est conçu, fabriqué, acheté et acheminé. Un double regard — technique et marketing — pour communiquer avec crédibilité auprès des acteurs de l'industrie.</p>
+                        <div class="master-meta">
+                            <div><span>Diplôme</span><strong>Master GPLA</strong></div>
+                            <div><span>Parcours</span><strong>Marketing Industriel &amp; Com.</strong></div>
+                            <div><span>Campus</span><strong>Senlis (60) · PROMEO</strong></div>
+                            <div><span>Rythme</span><strong>Alternance · 2026 → 2028</strong></div>
+                        </div>
+                    </div>
+                    <div class="pillars" data-stagger>
+                        <div class="pillar"><span class="p-ico"><i class="fa-solid fa-industry"></i></span><div><h4>Production</h4><p>Comprendre les contraintes et la performance des flux</p></div><span class="p-num">01</span></div>
+                        <div class="pillar"><span class="p-ico"><i class="fa-solid fa-truck-fast"></i></span><div><h4>Logistique</h4><p>Supply chain, flux physiques et d'information</p></div><span class="p-num">02</span></div>
+                        <div class="pillar"><span class="p-ico"><i class="fa-solid fa-handshake"></i></span><div><h4>Achats</h4><p>Fournisseurs, sourcing et négociation</p></div><span class="p-num">03</span></div>
+                        <div class="pillar"><span class="p-ico"><i class="fa-solid fa-bullhorn"></i></span><div><h4>Marketing &amp; communication</h4><p>Marque, B2B et valorisation de l'offre industrielle</p></div><span class="p-num">04</span></div>
+                        <div style="margin-top:14px;"><a href="formations.html" class="btn btn-primary" data-magnetic="0.25" style="background:#0a0a0b;color:#efebe3;"><span>Découvrir la formation</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
+    <section class="hs">
+        <div class="container hs-head">
+            <div class="section-head" style="margin-bottom:0;">
+                <div>
+                    <div class="eyebrow" data-reveal>(02) — Parcours</div>
+                    <h2 class="h-lg" data-split>De la marque <em>à l'usine.</em></h2>
+                </div>
+                <p class="lead" data-reveal>Cinq étapes, une même ligne directrice : apprendre sur le terrain et monter en compétences, projet après projet.</p>
+            </div>
+        </div>
+        <div class="hs-pin">
+            <div class="hs-track">
+                <div class="hs-panel">
+                    <span class="idx">01 / 05</span>
+                    <div class="yr">2023<small>Baccalauréat général</small></div>
+                    <div><h3>Lycée Jules Uhry, Creil</h3><p>Spécialités SES et HGGSP : premiers repères sur les mécanismes économiques et les enjeux du monde.</p></div>
+                </div>
+                <div class="hs-panel">
+                    <span class="idx">02 / 05</span>
+                    <div class="yr">23<em>—</em>26<small>BUT Techniques de Commercialisation</small></div>
+                    <div><h3>Marketing Digital, E-Business &amp; Entrepreneuriat</h3><p>IUT de l'Oise, Creil. Stratégie, communication commerciale, e-commerce et création d'entreprise.</p></div>
+                </div>
+                <div class="hs-panel">
+                    <span class="idx">03 / 05</span>
+                    <div class="yr">2025<small>Le terrain</small></div>
+                    <div><h3>Bouge Ton Talent &amp; École Jean Trubert</h3><p>Communication événementielle, community management, tournage et montage de reels.</p></div>
+                </div>
+                <div class="hs-panel">
+                    <span class="idx">04 / 05</span>
+                    <div class="yr">2026<small>Stage de fin d'études</small></div>
+                    <div><h3>Ligue de l'enseignement de l'Oise</h3><p>16 semaines, 13 missions : rapport d'activité, stratégie Instagram, campagnes B2B et supports print.</p></div>
+                </div>
+                <div class="hs-panel now">
+                    <span class="idx">05 / 05</span>
+                    <div class="yr">26<em>→</em>28<small>Master GPLA · Alternance</small></div>
+                    <div><h3>Marketing Industriel &amp; Communication</h3><p>Campus de Senlis. Production, logistique, achats et marketing — en alternance sur deux ans.</p><div class="tags" style="margin-top:16px;"><span class="tag">Aujourd'hui</span><span class="tag">Alternance</span><span class="tag">Senlis</span></div></div>
+                </div>
+            </div>
+            <div class="hs-progress"><span></span></div>
+        </div>
+    </section>
+
     <section class="section">
         <div class="container">
-            <div style="text-align:center;">
-                <span class="section-label reveal">Sélection récente</span>
-                <h2 class="section-title reveal reveal-d1">Projets <em>marquants</em></h2>
+            <div class="section-head">
+                <div>
+                    <div class="eyebrow" data-reveal>(03) — Savoir-faire</div>
+                    <h2 class="h-lg" data-split>Ce que <em>j'apporte.</em></h2>
+                </div>
+                <p class="lead" data-reveal>Une culture digitale solide, désormais adossée à la compréhension des métiers industriels.</p>
             </div>
-
-            <div class="featured-list">
-                <a href="projets.html" class="featured-row">
-                    <span class="featured-num">01</span>
-                    <span class="featured-title">La Ligue de l'enseignement</span>
-                    <span class="featured-tag">Stage · Communication · 2026</span>
-                    <span class="featured-arrow">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                    </span>
-                </a>
-                <a href="projets.html" class="featured-row">
-                    <span class="featured-num">02</span>
-                    <span class="featured-title">Canneo</span>
-                    <span class="featured-tag">E-commerce · 2026</span>
-                    <span class="featured-arrow">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                    </span>
-                </a>
-                <a href="projets.html" class="featured-row">
-                    <span class="featured-num">03</span>
-                    <span class="featured-title">Valmoré</span>
-                    <span class="featured-tag">Branding · CRO</span>
-                    <span class="featured-arrow">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                    </span>
-                </a>
-                <a href="projets.html" class="featured-row">
-                    <span class="featured-num">04</span>
-                    <span class="featured-title">Bouge Ton Talent</span>
-                    <span class="featured-tag">Social · Événement</span>
-                    <span class="featured-arrow">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                    </span>
-                </a>
-                <a href="projets.html" class="featured-row">
-                    <span class="featured-num">05</span>
-                    <span class="featured-title">École Jean Trubert</span>
-                    <span class="featured-tag">Vidéo · Reels</span>
-                    <span class="featured-arrow">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                    </span>
-                </a>
-            </div>
-
-            <div class="reveal" style="text-align:center; margin-top:56px;">
-                <a href="projets.html" class="btn btn-outline">
-                    Voir tous les projets
-                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
+            <div class="services" data-stagger>
+                <div class="service"><span class="s-num">→ 01</span><i class="fa-solid fa-gears s-ico"></i><h3>Marketing industriel &amp; B2B</h3><p>Analyse de marché, proposition de valeur et argumentaire adaptés à des cibles professionnelles et techniques.</p></div>
+                <div class="service"><span class="s-num">→ 02</span><i class="fa-solid fa-pen-nib s-ico"></i><h3>Communication &amp; contenus</h3><p>Identité visuelle, print, vidéo et réseaux sociaux : des supports qui rendent l'offre claire et désirable.</p></div>
+                <div class="service"><span class="s-num">→ 03</span><i class="fa-solid fa-code s-ico"></i><h3>Web &amp; e-commerce</h3><p>Sites vitrines, landing pages et boutiques — WordPress, Shopify, HTML — pensés pour convertir.</p></div>
+                <div class="service"><span class="s-num">→ 04</span><i class="fa-solid fa-boxes-stacked s-ico"></i><h3>Vision supply chain</h3><p>Production, logistique, achats : comprendre les flux pour mieux piloter la promesse client.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- CTA BLOCK -->
-    <section class="section" style="padding-top:0;">
+    <section class="section-sm" style="padding-top:0;">
         <div class="container">
-            <div class="cta-block reveal">
-                <h2>Un projet ?<br>Parlons-en <em>maintenant.</em></h2>
-                <p>Ouvert aux opportunités d'alternance, stage et collaborations. Disponible dès la rentrée 2026.</p>
-                <a href="contact.html" class="btn btn-primary">
-                    Me contacter
-                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
+            <div class="stats" data-stagger>
+                <div class="stat"><div class="n"><span data-count="10">10</span><sup>+</sup></div><p>Projets livrés</p></div>
+                <div class="stat"><div class="n"><span data-count="13">13</span></div><p>Missions menées à la Ligue 60</p></div>
+                <div class="stat"><div class="n"><span data-count="92">92</span><sup>%</sup></div><p>Remplissage BAFA (vs 40 %)</p></div>
+                <div class="stat"><div class="n"><span data-count="2">2</span><sup>ans</sup></div><p>D'alternance en Master</p></div>
             </div>
         </div>
     </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <div class="eyebrow" data-reveal>(04) — Sélection</div>
+                    <h2 class="h-lg" data-split>Projets <em>marquants.</em></h2>
+                </div>
+                <p class="lead" data-reveal>Stage, e-commerce, événementiel, vidéo, étude B2B : une sélection de réalisations concrètes.</p>
+            </div>
+            <div class="feat-list" data-stagger>
+                <a href="projets.html" class="feat-row" data-img="images/Logo_Ligue_CMJN.jpg" data-label="Projets" data-cursor="Voir">
+                    <span class="f-num">01</span>
+                    <span class="f-title">La Ligue de l'enseignement</span>
+                    <span class="f-meta">Stage · Communication · 2026</span>
+                    <span class="f-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                </a><a href="projets.html" class="feat-row" data-img="images/canneo.png" data-label="Projets" data-cursor="Voir">
+                    <span class="f-num">02</span>
+                    <span class="f-title">Canneo</span>
+                    <span class="f-meta">E-commerce · SAÉ 6.01 · 2026</span>
+                    <span class="f-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                </a><a href="projets.html" class="feat-row" data-img="images/valmore.png" data-label="Projets" data-cursor="Voir">
+                    <span class="f-num">03</span>
+                    <span class="f-title">Valmoré</span>
+                    <span class="f-meta">Branding · CRO · 2025</span>
+                    <span class="f-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                </a><a href="projets.html" class="feat-row" data-img="images/bouge-ton-talent.png" data-cover data-label="Projets" data-cursor="Voir">
+                    <span class="f-num">04</span>
+                    <span class="f-title">Bouge Ton Talent</span>
+                    <span class="f-meta">Social · Événement · 2025</span>
+                    <span class="f-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                </a><a href="projets.html" class="feat-row" data-img="images/ecole-jean-trubert.jpg" data-cover data-label="Projets" data-cursor="Voir">
+                    <span class="f-num">05</span>
+                    <span class="f-title">École Jean Trubert</span>
+                    <span class="f-meta">Vidéo · Reels · 2025</span>
+                    <span class="f-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                </a><a href="projets.html" class="feat-row" data-img="images/chaufelec.jpg" data-cover data-label="Projets" data-cursor="Voir">
+                    <span class="f-num">06</span>
+                    <span class="f-title">Chaufelec</span>
+                    <span class="f-meta">B2B · Étude de marché · 2024</span>
+                    <span class="f-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                </a>
+            </div>
+            <div class="center mt-l" data-reveal><a href="projets.html" class="btn btn-ghost" data-magnetic="0.25"><span>Tous les projets</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a></div>
+        </div>
+    </section>
+
+    <section class="big-cta">
+        <div class="container">
+            <div class="eyebrow" data-reveal>(05) — Échangeons</div>
+            <h2 class="h-xl" data-split>Un projet <em>industriel</em> ?<br>Parlons-en.</h2>
+            <div class="big-cta-actions" data-reveal>
+                <a href="contact.html" class="btn btn-primary" data-magnetic="0.25"><span>Me contacter</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+                <a href="NASSIM_MEHADJI_CV.pdf" class="btn btn-ghost" data-magnetic="0.25" target="_blank" rel="noopener"><span>Télécharger le CV</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+            </div>
+        </div>
+    </section>
+    </main>
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-inner">
-                <span class="footer-copy">© <span data-year>2026</span> Nassim Mehadji — Tous droits réservés</span>
-                <div class="footer-links">
-                    <a href="projets.html">Projets</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="https://www.linkedin.com/in/nassim-mehadji-774a1826b/" target="_blank">LinkedIn</a>
+            <div class="footer-top">
+                <div>
+                    <h5>Nassim Mehadji</h5>
+                    <p class="f-lead">Marketing industriel, communication &amp; <em>idées qui tiennent la route.</em></p>
                 </div>
+                <div>
+                    <h5>Navigation</h5>
+                    <a href="index.html">Accueil</a><a href="formations.html">Formations</a><a href="competences.html">Compétences</a><a href="experiences.html">Expériences</a><a href="projets.html">Projets</a><a href="interets.html">Intérêts</a><a href="bilan.html">Bilan</a><a href="contact.html">Contact</a>
+                </div>
+                <div>
+                    <h5>Contact</h5>
+                    <a href="mailto:nassim.mehadji25@gmail.com">nassim.mehadji25@gmail.com</a>
+                    <a href="tel:+33769190632">07 69 19 06 32</a>
+                    <p>Nogent-sur-Oise · Senlis</p>
+                </div>
+                <div>
+                    <h5>Ailleurs</h5>
+                    <a href="https://www.linkedin.com/in/nassim-mehadji-774a1826b/" target="_blank" rel="noopener">LinkedIn ↗</a>
+                    <a href="https://instagram.com/bougetontalent_" target="_blank" rel="noopener">Instagram ↗</a>
+                    <a href="NASSIM_MEHADJI_CV.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
+                </div>
+            </div>
+            <div class="footer-name" aria-hidden="true">Mehadji<em>.</em></div>
+            <div class="footer-bottom">
+                <span>© <span data-year>2026</span> Nassim Mehadji — Tous droits réservés</span>
+                <span>Senlis / Oise — <span data-clock>--:--</span></span>
+                <a href="#" class="to-top" data-top>Retour en haut ↑</a>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="main.js?v=7"></script>
 </body>
 </html>

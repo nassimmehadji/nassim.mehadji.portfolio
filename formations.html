@@ -4,125 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formations — Nassim Mehadji</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Master GPLA parcours Marketing Industriel & Communication (Senlis, alternance), BUT TC Marketing Digital, E-Business & Entrepreneuriat.">
+    <meta name="theme-color" content="#0a0a0b">
+    <meta property="og:title" content="Formations — Nassim Mehadji">
+    <meta property="og:description" content="Master GPLA parcours Marketing Industriel & Communication (Senlis, alternance), BUT TC Marketing Digital, E-Business & Entrepreneuriat.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ff5a1f'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-style='italic' font-size='34' text-anchor='middle' fill='%230a0a0b'%3EN%3C/text%3E%3C/svg%3E">
+    <script>(function(h){h.classList.add('js');try{if(h.dataset.loader&&!sessionStorage.getItem('nm-loaded'))h.classList.add('show-loader')}catch(e){}setTimeout(function(){if(!window.__ready){h.classList.add('no-anim');h.classList.remove('show-loader')}},4000)})(document.documentElement)</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css?v=7">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body data-page="formations">
+    <a class="skip" href="#main">Aller au contenu</a>
+
+    <div class="guides" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="progress" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor-label">Voir</span></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="curtain" aria-hidden="true"><span class="curtain-label">Formations</span></div>
 
     <header class="site-header">
         <div class="header-inner">
-            <a href="index.html" class="logo">Nassim<span>.M</span></a>
-            <nav class="nav-desktop">
-                <a href="index.html" class="nav-link">Accueil</a>
-                <a href="formations.html" class="nav-link active">Formations</a>
-                <a href="competences.html" class="nav-link">Compétences</a>
-                <a href="experiences.html" class="nav-link">Expériences</a>
-                <a href="projets.html" class="nav-link">Projets</a>
-                <a href="interets.html" class="nav-link">Intérêts</a>
-                <a href="bilan.html" class="nav-link">Bilan</a>
-                <a href="contact.html" class="nav-cta">Contact</a>
+            <a href="index.html" class="logo" data-label="Accueil" aria-label="Accueil — Nassim Mehadji">
+                <span class="logo-mark">N</span>
+                <span>Nassim Mehadji<small>Master GPLA · Senlis</small></span>
+            </a>
+            <nav class="nav-desktop" aria-label="Navigation principale">
+                <a href="index.html" class="nav-link"><span class="roll"><span data-text="Accueil">Accueil</span></span></a><a href="formations.html" class="nav-link active"><span class="roll"><span data-text="Formations">Formations</span></span></a><a href="competences.html" class="nav-link"><span class="roll"><span data-text="Compétences">Compétences</span></span></a><a href="experiences.html" class="nav-link"><span class="roll"><span data-text="Expériences">Expériences</span></span></a><a href="projets.html" class="nav-link"><span class="roll"><span data-text="Projets">Projets</span></span></a><a href="interets.html" class="nav-link"><span class="roll"><span data-text="Intérêts">Intérêts</span></span></a><a href="bilan.html" class="nav-link"><span class="roll"><span data-text="Bilan">Bilan</span></span></a>
+                <a href="contact.html" class="nav-cta" data-magnetic="0.3"><i></i><span>Contact</span></a>
             </nav>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            </button>
+            <div class="header-meta"><span class="pulse"></span>En alternance · <span data-clock>--:--</span> Paris</div>
+            <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span>Menu</span><span class="bars"><span></span><span></span></span></button>
         </div>
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
-            <a href="index.html" class="logo">Nassim<span>.M</span></a>
-            <button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark"></i></button>
+            <a href="index.html" class="logo"><span class="logo-mark">N</span><span>Nassim Mehadji</span></a>
+            <button class="mobile-close" id="mobileClose">Fermer ✕</button>
         </div>
-        <nav class="mobile-nav">
-            <a href="index.html">Accueil</a>
-            <a href="formations.html" class="active">Formations</a>
-            <a href="competences.html">Compétences</a>
-            <a href="experiences.html">Expériences</a>
-            <a href="projets.html">Projets</a>
-            <a href="interets.html">Centres d'intérêt</a>
-            <a href="bilan.html">Bilan</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <nav class="mobile-nav" aria-label="Navigation mobile"><a href="index.html"><span>Accueil</span><small>01</small></a><a href="formations.html" class="active"><span>Formations</span><small>02</small></a><a href="competences.html"><span>Compétences</span><small>03</small></a><a href="experiences.html"><span>Expériences</span><small>04</small></a><a href="projets.html"><span>Projets</span><small>05</small></a><a href="interets.html"><span>Intérêts</span><small>06</small></a><a href="bilan.html"><span>Bilan</span><small>07</small></a><a href="contact.html"><span>Contact</span><small>08</small></a></nav>
+        <div class="mobile-foot"><span>nassim.mehadji25@gmail.com</span><span>Master GPLA · Senlis</span></div>
     </div>
 
+    <main id="main">
     <section class="page-hero">
-        <div style="position:absolute; inset:0; background:linear-gradient(to bottom right, rgba(99,102,241,0.05), transparent, rgba(244,63,94,0.05)); filter:blur(60px); z-index:0;"></div>
-        <div class="shapes-bg">
-            <div class="elegant-shape shape-indigo" style="--delay:0.3s; --rotate-from:-3deg; --rotate-to:12deg; width:500px; height:120px; left:-10%; top:20%;"></div>
-            <div class="elegant-shape shape-rose" style="--delay:0.5s; --rotate-from:-30deg; --rotate-to:-15deg; width:400px; height:100px; right:-5%; top:60%;"></div>
-            <div class="elegant-shape shape-violet" style="--delay:0.4s; --rotate-from:-23deg; --rotate-to:-8deg; width:250px; height:70px; left:8%; bottom:10%;"></div>
-            <div class="elegant-shape shape-amber" style="--delay:0.6s; --rotate-from:5deg; --rotate-to:20deg; width:180px; height:50px; right:18%; top:15%;"></div>
-        </div>
-        <div class="container" style="position:relative; z-index:10;">
-            <span class="section-label reveal">Parcours académique</span>
-            <h1 class="section-title reveal reveal-d1">Mes <em>formations</em></h1>
-            <p class="section-desc reveal reveal-d2">Un parcours construit avec détermination, de la découverte du digital à la maîtrise des stratégies marketing et e-business.</p>
-        </div>
-        <div class="vignette"></div>
-    </section>
-
-    <section class="page-section">
+        <div class="hero-orb" aria-hidden="true"></div>
         <div class="container">
-            <div class="formation-grid stagger">
-
-                <div class="formation-card">
-                    <div class="formation-year">2023<br><span style="font-size:0.6em; opacity:0.5;">↓</span><br>2026</div>
-                    <div class="formation-info">
-                        <h3>BUT Techniques de Commercialisation</h3>
-                        <div class="formation-school"><i class="fa-solid fa-graduation-cap"></i> UPJV — I.U.T. de l'Oise, Creil</div>
-                        <p class="formation-desc"><strong>Parcours :</strong> Marketing Digital, E-Business &amp; Entrepreneuriat (MDEE)</p>
-                        <p class="formation-desc" style="margin-top:10px;">Formation complète aux enjeux du commerce, du marketing et du digital. Développement de compétences en stratégie marketing, communication commerciale, gestion de projets e-commerce et création d'entreprise.</p>
-                        <div class="formation-tags">
-                            <span class="tag tag-accent">Marketing Digital</span>
-                            <span class="tag tag-accent">E-Business</span>
-                            <span class="tag tag-accent">Entrepreneuriat</span>
-                            <span class="tag">Gestion de projet</span>
-                            <span class="tag">Stratégie commerciale</span>
-                        </div>
-                    </div>
+            <div class="page-hero-grid">
+                <div>
+                    <div class="eyebrow" data-reveal>(02) — Parcours académique</div>
+                    <h1 class="h-xl" data-split>Mes <em>formations.</em></h1>
+                    <p class="lead" data-reveal data-delay=".2">Du marketing digital au marketing industriel : un parcours construit pour comprendre à la fois la marque et ce qui la fait tenir — le produit, les flux et les achats.</p>
                 </div>
-
-                <div class="formation-card">
-                    <div class="formation-year">2020<br><span style="font-size:0.6em; opacity:0.5;">↓</span><br>2023</div>
-                    <div class="formation-info">
-                        <h3>Baccalauréat Général</h3>
-                        <div class="formation-school"><i class="fa-solid fa-graduation-cap"></i> Lycée Jules Uhry — Creil</div>
-                        <p class="formation-desc">Obtention du baccalauréat général avec les spécialités SES et HGGSP. Premiers pas vers la compréhension des enjeux économiques, sociaux et géopolitiques.</p>
-                        <div class="formation-tags">
-                            <span class="tag">Spécialité SES</span>
-                            <span class="tag">Spécialité HGGSP</span>
-                        </div>
-                    </div>
-                </div>
-
+                <div class="page-index" aria-hidden="true">02</div>
             </div>
-
-            <div class="cta-block reveal" style="margin-top:100px;">
-                <span class="section-label" style="margin-bottom:16px;">Et après ?</span>
-                <h2>Un <em>Master</em> en<br>alternance dès 2026.</h2>
-                <p>Je poursuis en Master Marketing Industriel &amp; Communication à la rentrée 2026, en alternance — dans la continuité de mon stage à la Ligue de l'enseignement de l'Oise.</p>
-                <a href="contact.html" class="btn btn-primary">
-                    Échangeons
-                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-            </div>
-
+            <div class="page-hero-foot" data-reveal data-delay=".35"><span>3 diplômes</span><span>Creil → Senlis</span><span>2020 — 2028</span></div>
         </div>
     </section>
+
+    <section class="section-sm" style="padding-top:20px;">
+        <div class="container">
+            <article class="edu-feature" data-reveal>
+                <div class="edu-bg" aria-hidden="true" data-speed="0.25">M</div>
+                <div>
+                    <span class="status"><i></i>En cours</span>
+                    <div class="edu-years">2026<em>→ 2028</em></div>
+                </div>
+                <div>
+                    <h2>Master <em>GPLA</em> — Gestion de Production, Logistique, Achats</h2>
+                    <div class="school">
+                        <span><i class="fa-solid fa-route"></i> Parcours Marketing Industriel &amp; Communication</span>
+                        <span><i class="fa-solid fa-building-columns"></i> Université Paris-Panthéon-Assas × PROMEO</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Campus de Senlis (60)</span>
+                        <span><i class="fa-solid fa-briefcase"></i> Alternance</span>
+                    </div>
+                    <p>Un master qui forme aux métiers situés à l'interface de <strong>l'industrie et du marché</strong>. Le tronc GPLA apporte la compréhension des flux — production, logistique, achats — et le parcours <strong>Marketing Industriel &amp; Communication</strong> transforme cette expertise en stratégie : positionner, valoriser et faire connaître une offre industrielle.</p>
+                    <p>En <strong>alternance sur deux ans</strong>, j'applique directement en entreprise ce que j'apprends à Senlis — avec l'avantage d'une solide base en marketing digital, contenus et communication acquise en BUT.</p>
+                    <div class="edu-axes" data-stagger>
+                        <div class="edu-axe"><i class="fa-solid fa-industry"></i><strong>Production</strong><span>Flux, planification, performance</span></div>
+                        <div class="edu-axe"><i class="fa-solid fa-truck-ramp-box"></i><strong>Logistique</strong><span>Supply chain &amp; distribution</span></div>
+                        <div class="edu-axe"><i class="fa-solid fa-handshake"></i><strong>Achats</strong><span>Sourcing &amp; relation fournisseurs</span></div>
+                        <div class="edu-axe"><i class="fa-solid fa-bullhorn"></i><strong>Marketing industriel</strong><span>B2B, marque &amp; communication</span></div>
+                    </div>
+                    <div class="tags" style="margin-top:26px;"><span class="tag tag-accent">Alternance</span><span class="tag">Marketing B2B</span><span class="tag">Supply chain</span><span class="tag">Achats</span><span class="tag">Communication</span></div>
+                </div>
+            </article>
+
+            <div class="edu-list">
+                <article class="edu-item" data-reveal>
+                    <div class="yrs">2023 — 2026</div>
+                    <div>
+                        <h3>BUT Techniques de Commercialisation</h3>
+                        <div class="school">UPJV — IUT de l'Oise, Creil</div>
+                        <p><strong>Parcours :</strong> Marketing Digital, E-Business &amp; Entrepreneuriat (MDEE). Stratégie marketing, communication commerciale, gestion de projets e-commerce et création d'entreprise — conclu par un stage de 16 semaines à la Ligue de l'enseignement de l'Oise.</p>
+                        <div class="tags"><span class="tag tag-accent">Marketing digital</span><span class="tag">E-business</span><span class="tag">Entrepreneuriat</span><span class="tag">Gestion de projet</span></div>
+                    </div>
+                    <span class="badge">Diplômé</span>
+                </article>
+                <article class="edu-item" data-reveal>
+                    <div class="yrs">2020 — 2023</div>
+                    <div>
+                        <h3>Baccalauréat Général</h3>
+                        <div class="school">Lycée Jules Uhry — Creil</div>
+                        <p>Spécialités <strong>SES</strong> et <strong>HGGSP</strong> : premiers pas dans la compréhension des enjeux économiques, sociaux et géopolitiques.</p>
+                        <div class="tags"><span class="tag">SES</span><span class="tag">HGGSP</span></div>
+                    </div>
+                    <span class="badge">Obtenu</span>
+                </article>
+            </div>
+        </div>
+    </section>
+        <section class="big-cta">
+            <div class="container">
+                <div class="eyebrow" data-reveal>Page suivante</div>
+                <h2 class="h-xl" data-split>Et côté <em>savoir-faire</em> ?</h2>
+                <div class="big-cta-actions" data-reveal><a href="competences.html" class="btn btn-primary" data-magnetic="0.25"><span>Compétences</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="contact.html" class="btn btn-ghost" data-magnetic="0.25"><span>Me contacter</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a></div>
+            </div>
+        </section>
+    </main>
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-inner">
-                <span class="footer-copy">© <span data-year>2026</span> Nassim Mehadji — Tous droits réservés</span>
-                <div class="footer-links">
-                    <a href="competences.html">Compétences →</a>
-                    <a href="contact.html">Contact</a>
+            <div class="footer-top">
+                <div>
+                    <h5>Nassim Mehadji</h5>
+                    <p class="f-lead">Marketing industriel, communication &amp; <em>idées qui tiennent la route.</em></p>
                 </div>
+                <div>
+                    <h5>Navigation</h5>
+                    <a href="index.html">Accueil</a><a href="formations.html">Formations</a><a href="competences.html">Compétences</a><a href="experiences.html">Expériences</a><a href="projets.html">Projets</a><a href="interets.html">Intérêts</a><a href="bilan.html">Bilan</a><a href="contact.html">Contact</a>
+                </div>
+                <div>
+                    <h5>Contact</h5>
+                    <a href="mailto:nassim.mehadji25@gmail.com">nassim.mehadji25@gmail.com</a>
+                    <a href="tel:+33769190632">07 69 19 06 32</a>
+                    <p>Nogent-sur-Oise · Senlis</p>
+                </div>
+                <div>
+                    <h5>Ailleurs</h5>
+                    <a href="https://www.linkedin.com/in/nassim-mehadji-774a1826b/" target="_blank" rel="noopener">LinkedIn ↗</a>
+                    <a href="https://instagram.com/bougetontalent_" target="_blank" rel="noopener">Instagram ↗</a>
+                    <a href="NASSIM_MEHADJI_CV.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
+                </div>
+            </div>
+            <div class="footer-name" aria-hidden="true">Mehadji<em>.</em></div>
+            <div class="footer-bottom">
+                <span>© <span data-year>2026</span> Nassim Mehadji — Tous droits réservés</span>
+                <span>Senlis / Oise — <span data-clock>--:--</span></span>
+                <a href="#" class="to-top" data-top>Retour en haut ↑</a>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="main.js?v=7"></script>
 </body>
 </html>

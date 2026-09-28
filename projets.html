@@ -4,273 +4,248 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projets — Nassim Mehadji</title>
-    <link rel="stylesheet" href="style.css?v=6">
+    <meta name="description" content="Canneo, Ligue de l'enseignement de l'Oise, Valmoré, Bouge Ton Talent, École Jean Trubert, Chaufelec.">
+    <meta name="theme-color" content="#0a0a0b">
+    <meta property="og:title" content="Projets — Nassim Mehadji">
+    <meta property="og:description" content="Canneo, Ligue de l'enseignement de l'Oise, Valmoré, Bouge Ton Talent, École Jean Trubert, Chaufelec.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ff5a1f'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-style='italic' font-size='34' text-anchor='middle' fill='%230a0a0b'%3EN%3C/text%3E%3C/svg%3E">
+    <script>(function(h){h.classList.add('js');try{if(h.dataset.loader&&!sessionStorage.getItem('nm-loaded'))h.classList.add('show-loader')}catch(e){}setTimeout(function(){if(!window.__ready){h.classList.add('no-anim');h.classList.remove('show-loader')}},4000)})(document.documentElement)</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css?v=7">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body data-page="projets">
+    <a class="skip" href="#main">Aller au contenu</a>
+
+    <div class="guides" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="progress" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor-label">Voir</span></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="curtain" aria-hidden="true"><span class="curtain-label">Projets</span></div>
 
     <header class="site-header">
         <div class="header-inner">
-            <a href="index.html" class="logo">Nassim<span>.M</span></a>
-            <nav class="nav-desktop">
-                <a href="index.html" class="nav-link">Accueil</a>
-                <a href="formations.html" class="nav-link">Formations</a>
-                <a href="competences.html" class="nav-link">Compétences</a>
-                <a href="experiences.html" class="nav-link">Expériences</a>
-                <a href="projets.html" class="nav-link active">Projets</a>
-                <a href="interets.html" class="nav-link">Intérêts</a>
-                <a href="bilan.html" class="nav-link">Bilan</a>
-                <a href="contact.html" class="nav-cta">Contact</a>
+            <a href="index.html" class="logo" data-label="Accueil" aria-label="Accueil — Nassim Mehadji">
+                <span class="logo-mark">N</span>
+                <span>Nassim Mehadji<small>Master GPLA · Senlis</small></span>
+            </a>
+            <nav class="nav-desktop" aria-label="Navigation principale">
+                <a href="index.html" class="nav-link"><span class="roll"><span data-text="Accueil">Accueil</span></span></a><a href="formations.html" class="nav-link"><span class="roll"><span data-text="Formations">Formations</span></span></a><a href="competences.html" class="nav-link"><span class="roll"><span data-text="Compétences">Compétences</span></span></a><a href="experiences.html" class="nav-link"><span class="roll"><span data-text="Expériences">Expériences</span></span></a><a href="projets.html" class="nav-link active"><span class="roll"><span data-text="Projets">Projets</span></span></a><a href="interets.html" class="nav-link"><span class="roll"><span data-text="Intérêts">Intérêts</span></span></a><a href="bilan.html" class="nav-link"><span class="roll"><span data-text="Bilan">Bilan</span></span></a>
+                <a href="contact.html" class="nav-cta" data-magnetic="0.3"><i></i><span>Contact</span></a>
             </nav>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            </button>
+            <div class="header-meta"><span class="pulse"></span>En alternance · <span data-clock>--:--</span> Paris</div>
+            <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span>Menu</span><span class="bars"><span></span><span></span></span></button>
         </div>
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
-            <a href="index.html" class="logo">Nassim<span>.M</span></a>
-            <button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark"></i></button>
+            <a href="index.html" class="logo"><span class="logo-mark">N</span><span>Nassim Mehadji</span></a>
+            <button class="mobile-close" id="mobileClose">Fermer ✕</button>
         </div>
-        <nav class="mobile-nav">
-            <a href="index.html">Accueil</a>
-            <a href="formations.html">Formations</a>
-            <a href="competences.html">Compétences</a>
-            <a href="experiences.html">Expériences</a>
-            <a href="projets.html" class="active">Projets</a>
-            <a href="interets.html">Centres d'intérêt</a>
-            <a href="bilan.html">Bilan</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <nav class="mobile-nav" aria-label="Navigation mobile"><a href="index.html"><span>Accueil</span><small>01</small></a><a href="formations.html"><span>Formations</span><small>02</small></a><a href="competences.html"><span>Compétences</span><small>03</small></a><a href="experiences.html"><span>Expériences</span><small>04</small></a><a href="projets.html" class="active"><span>Projets</span><small>05</small></a><a href="interets.html"><span>Intérêts</span><small>06</small></a><a href="bilan.html"><span>Bilan</span><small>07</small></a><a href="contact.html"><span>Contact</span><small>08</small></a></nav>
+        <div class="mobile-foot"><span>nassim.mehadji25@gmail.com</span><span>Master GPLA · Senlis</span></div>
     </div>
 
+    <main id="main">
     <section class="page-hero">
-        <div style="position:absolute; inset:0; background:linear-gradient(to bottom right, rgba(99,102,241,0.05), transparent, rgba(244,63,94,0.05)); filter:blur(60px); z-index:0;"></div>
-        <div class="shapes-bg">
-            <div class="elegant-shape shape-indigo" style="--delay:0.3s; --rotate-from:-3deg; --rotate-to:12deg; width:500px; height:120px; left:-10%; top:20%;"></div>
-            <div class="elegant-shape shape-rose" style="--delay:0.5s; --rotate-from:-30deg; --rotate-to:-15deg; width:400px; height:100px; right:-5%; top:60%;"></div>
-            <div class="elegant-shape shape-violet" style="--delay:0.4s; --rotate-from:-23deg; --rotate-to:-8deg; width:250px; height:70px; left:8%; bottom:10%;"></div>
-            <div class="elegant-shape shape-amber" style="--delay:0.6s; --rotate-from:5deg; --rotate-to:20deg; width:180px; height:50px; right:18%; top:15%;"></div>
-        </div>
-        <div class="container" style="position:relative; z-index:10;">
-            <span class="section-label reveal">Réalisations</span>
-            <h1 class="section-title reveal reveal-d1">Mes <em>projets</em></h1>
-            <p class="section-desc reveal reveal-d2">Une sélection de projets académiques, professionnels et personnels reflétant mes compétences en marketing digital, e-commerce, production de contenu et entrepreneuriat.</p>
-        </div>
-        <div class="vignette"></div>
-    </section>
-
-    <section class="page-section">
+        <div class="hero-orb" aria-hidden="true"></div>
         <div class="container">
-
-            <div style="display:flex; justify-content:center;">
-                <div class="filter-bar reveal">
-                    <button class="filter-btn active" data-filter="all">Tous</button>
-                    <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
-                    <button class="filter-btn" data-filter="video">Vidéo</button>
-                    <button class="filter-btn" data-filter="social">Social</button>
-                    <button class="filter-btn" data-filter="event">Événementiel</button>
-                    <button class="filter-btn" data-filter="study">Études</button>
+            <div class="page-hero-grid">
+                <div>
+                    <div class="eyebrow" data-reveal>(05) — Réalisations</div>
+                    <h1 class="h-xl" data-split>Mes <em>projets.</em></h1>
+                    <p class="lead" data-reveal data-delay=".2">Projets académiques, professionnels et personnels : marketing digital, e-commerce, contenu, événementiel et études B2B.</p>
                 </div>
+                <div class="page-index" aria-hidden="true">05</div>
             </div>
-
-            <div class="proj-grid" style="margin-top:48px;">
-
-                <a class="proj-card" data-category="ecommerce study" href="http://sc2molo8065.universe.wf/sea4/" target="_blank" rel="noopener">
-                    <div class="proj-thumb contain"><img src="images/canneo.png" alt="Canneo" loading="lazy"></div>
-                    <div class="proj-info">
-                        <span class="proj-cat">E-commerce · SAÉ 6.01 · 2026</span>
-                        <h3>Canneo</h3>
-                        <p>Projet e-commerce autour du CBD : de l'étude de marché au positionnement de marque, puis du choix de la plateforme au prototype de boutique en ligne — piloté en équipe.</p>
-                        <div class="proj-tags">
-                            <span class="tag tag-accent">E-commerce</span>
-                            <span class="tag">Shopify</span>
-                            <span class="tag">Branding</span>
-                        </div>
-                        <span class="proj-link">Voir le site
-                            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </span>
-                    </div>
-                </a>
-
-                <a class="proj-card" data-category="ecommerce" href="https://nassimmehadji25.wixsite.com/my-site-6" target="_blank" rel="noopener">
-                    <div class="proj-thumb contain"><img src="images/valmore.png" alt="Valmoré" loading="lazy"></div>
-                    <div class="proj-info">
-                        <span class="proj-cat">E-commerce · Branding · 2025</span>
-                        <h3>Valmoré</h3>
-                        <p>Refonte de l'identité visuelle et optimisation du tunnel de conversion d'une marque e-commerce : audit UX, nouvelle charte, fiches produits, upsells et tests A/B.</p>
-                        <div class="proj-tags">
-                            <span class="tag tag-accent">E-commerce</span>
-                            <span class="tag">Branding</span>
-                            <span class="tag">CRO</span>
-                        </div>
-                        <span class="proj-link">Voir le site
-                            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </span>
-                    </div>
-                </a>
-
-                <a class="proj-card" data-category="social event" href="https://instagram.com/bougetontalent_" target="_blank" rel="noopener">
-                    <div class="proj-thumb"><img src="images/bouge-ton-talent.png" alt="Bouge Ton Talent" loading="lazy"></div>
-                    <div class="proj-info">
-                        <span class="proj-cat">Social · Événement · 2025</span>
-                        <h3>Bouge Ton Talent</h3>
-                        <p>Gestion des réseaux sociaux et organisation du salon de l'association : création de contenu, programmation éditoriale, animation Instagram et coordination de l'événement.</p>
-                        <div class="proj-tags">
-                            <span class="tag tag-accent">Social Media</span>
-                            <span class="tag">Événement</span>
-                            <span class="tag">Communication</span>
-                        </div>
-                        <span class="proj-link">Voir l'Instagram
-                            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </span>
-                    </div>
-                </a>
-
-                <a class="proj-card" data-category="video social" href="https://www.ecole-jean-trubert.com" target="_blank" rel="noopener">
-                    <div class="proj-thumb"><img src="images/ecole-jean-trubert.jpg" alt="École Jean Trubert" loading="lazy"></div>
-                    <div class="proj-info">
-                        <span class="proj-cat">Vidéo · Communication · 2025</span>
-                        <h3>École Jean Trubert</h3>
-                        <p>Production de contenu vidéo en stage : tournage et montage de reels, couverture des Journées Portes Ouvertes et formats sociaux pour développer la notoriété de l'école.</p>
-                        <div class="proj-tags">
-                            <span class="tag tag-accent">Vidéo</span>
-                            <span class="tag">Reels</span>
-                            <span class="tag">JPO</span>
-                        </div>
-                        <span class="proj-link">Voir le site
-                            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </span>
-                    </div>
-                </a>
-
-                <a class="proj-card" data-category="study" href="http://sc2molo8065.universe.wf/Mehadji/" target="_blank" rel="noopener">
-                    <div class="proj-thumb"><img src="images/chaufelec.jpg" alt="Chaufelec" loading="lazy"></div>
-                    <div class="proj-info">
-                        <span class="proj-cat">B2B · Étude de marché · 2024</span>
-                        <h3>Chaufelec</h3>
-                        <p>Étude de marché B2B : analyse concurrentielle, enquête clients, cartographie des opportunités et recommandations stratégiques pour renforcer la présence digitale de la marque.</p>
-                        <div class="proj-tags">
-                            <span class="tag tag-accent">B2B</span>
-                            <span class="tag">Étude de marché</span>
-                            <span class="tag">Stratégie</span>
-                        </div>
-                        <span class="proj-link">Voir le site
-                            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </span>
-                    </div>
-                </a>
-
-                <a class="proj-card" data-category="social event study" href="https://www.laligue60.fr" target="_blank" rel="noopener">
-                    <div class="proj-thumb contain"><img src="images/Logo_Ligue_CMJN.jpg" alt="La Ligue de l'enseignement de l'Oise" loading="lazy"></div>
-                    <div class="proj-info">
-                        <span class="proj-cat">Stage · Communication · 2026</span>
-                        <h3>La Ligue de l'enseignement</h3>
-                        <p>Stage de fin d'études (16 semaines, 13 missions) comme chargé de communication &amp; Community Manager : refonte du Rapport d'Activité 2025, réactivation d'Instagram @laligue60, campagnes B2B (425 employeurs « berceaux », BAFA de 40 à 92 %) et supports print.</p>
-                        <div class="proj-tags">
-                            <span class="tag tag-accent">Community Management</span>
-                            <span class="tag">Direction artistique</span>
-                            <span class="tag">Marketing B2B</span>
-                        </div>
-                        <span class="proj-link">Voir le site de la Ligue 60
-                            <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                        </span>
-                    </div>
-                </a>
-
-            </div>
+            <div class="page-hero-foot" data-reveal data-delay=".35"><span>6 projets</span><span>11 livrables Ligue 60</span><span>2024 — 2026</span></div>
         </div>
     </section>
 
-    <section class="page-section" style="padding-top:0;">
+    <section class="section-sm" style="padding-top:20px;">
         <div class="container">
-            <div style="text-align:center; max-width:700px; margin:0 auto 48px;">
-                <span class="section-label reveal">Stage 2026 · La Ligue de l'enseignement de l'Oise</span>
-                <h2 class="section-title reveal reveal-d1" style="margin-bottom:18px;">Réalisations <em>Ligue 60</em></h2>
-                <p class="section-desc reveal reveal-d2">Une sélection de livrables réels produits pendant mon stage de chargé de communication : rapport d'activité, affiches, dépliants, campagnes et maquettes web interactives.</p>
+            <div class="filter-bar" data-reveal>
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                <button class="filter-btn" data-filter="video">Vidéo</button>
+                <button class="filter-btn" data-filter="social">Social</button>
+                <button class="filter-btn" data-filter="event">Événementiel</button>
+                <button class="filter-btn" data-filter="study">Études</button>
             </div>
-
+            <div class="proj-grid">
+                <a class="proj" data-category="ecommerce study" href="http://sc2molo8065.universe.wf/sea4/" target="_blank" rel="noopener" data-cursor="Ouvrir" data-reveal>
+                    <div class="proj-thumb contain"><span class="proj-year">2026</span><img src="images/canneo.png" alt="Canneo" loading="lazy"></div>
+                    <div class="proj-info">
+                        <span class="proj-cat">E-commerce · SAÉ 6.01</span>
+                        <h3>Canneo</h3>
+                        <span class="proj-go"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                        <p>Projet e-commerce autour du CBD : de l'étude de marché au positionnement de marque, puis du choix de la plateforme au prototype de boutique en ligne — piloté en équipe.</p>
+                        <div class="tags"><span class="tag tag-accent">E-commerce</span><span class="tag">Shopify</span><span class="tag">Branding</span></div>
+                    </div>
+                </a>
+                <a class="proj" data-category="social event study" href="https://www.laligue60.fr" target="_blank" rel="noopener" data-cursor="Ouvrir" data-reveal>
+                    <div class="proj-thumb contain"><span class="proj-year">2026</span><img src="images/Logo_Ligue_CMJN.jpg" alt="La Ligue de l'enseignement" loading="lazy"></div>
+                    <div class="proj-info">
+                        <span class="proj-cat">Stage · Communication</span>
+                        <h3>La Ligue de l'enseignement</h3>
+                        <span class="proj-go"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                        <p>Stage de fin d'études (16 semaines, 13 missions) : refonte du Rapport d'Activité 2025, réactivation d'Instagram @laligue60, campagnes B2B et supports print.</p>
+                        <div class="tags"><span class="tag tag-accent">Community management</span><span class="tag">Direction artistique</span><span class="tag">Marketing B2B</span></div>
+                    </div>
+                </a>
+                <a class="proj" data-category="ecommerce" href="https://nassimmehadji25.wixsite.com/my-site-6" target="_blank" rel="noopener" data-cursor="Ouvrir" data-reveal>
+                    <div class="proj-thumb contain"><span class="proj-year">2025</span><img src="images/valmore.png" alt="Valmoré" loading="lazy"></div>
+                    <div class="proj-info">
+                        <span class="proj-cat">E-commerce · Branding</span>
+                        <h3>Valmoré</h3>
+                        <span class="proj-go"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                        <p>Refonte de l'identité visuelle et optimisation du tunnel de conversion : audit UX, nouvelle charte, fiches produits, upsells et tests A/B.</p>
+                        <div class="tags"><span class="tag tag-accent">E-commerce</span><span class="tag">Branding</span><span class="tag">CRO</span></div>
+                    </div>
+                </a>
+                <a class="proj" data-category="social event" href="https://instagram.com/bougetontalent_" target="_blank" rel="noopener" data-cursor="Ouvrir" data-reveal>
+                    <div class="proj-thumb"><span class="proj-year">2025</span><img src="images/bouge-ton-talent.png" alt="Bouge Ton Talent" loading="lazy"></div>
+                    <div class="proj-info">
+                        <span class="proj-cat">Social · Événement</span>
+                        <h3>Bouge Ton Talent</h3>
+                        <span class="proj-go"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                        <p>Réseaux sociaux et organisation du salon : création de contenu, programmation éditoriale, animation Instagram et coordination de l'événement.</p>
+                        <div class="tags"><span class="tag tag-accent">Social media</span><span class="tag">Événement</span><span class="tag">Communication</span></div>
+                    </div>
+                </a>
+                <a class="proj" data-category="video social" href="https://www.ecole-jean-trubert.com" target="_blank" rel="noopener" data-cursor="Ouvrir" data-reveal>
+                    <div class="proj-thumb"><span class="proj-year">2025</span><img src="images/ecole-jean-trubert.jpg" alt="École Jean Trubert" loading="lazy"></div>
+                    <div class="proj-info">
+                        <span class="proj-cat">Vidéo · Communication</span>
+                        <h3>École Jean Trubert</h3>
+                        <span class="proj-go"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                        <p>Production vidéo en stage : tournage et montage de reels, couverture des Journées Portes Ouvertes et formats sociaux pour la notoriété de l'école.</p>
+                        <div class="tags"><span class="tag tag-accent">Vidéo</span><span class="tag">Reels</span><span class="tag">JPO</span></div>
+                    </div>
+                </a>
+                <a class="proj" data-category="study" href="http://sc2molo8065.universe.wf/Mehadji/" target="_blank" rel="noopener" data-cursor="Ouvrir" data-reveal>
+                    <div class="proj-thumb"><span class="proj-year">2024</span><img src="images/chaufelec.jpg" alt="Chaufelec" loading="lazy"></div>
+                    <div class="proj-info">
+                        <span class="proj-cat">B2B · Étude de marché</span>
+                        <h3>Chaufelec</h3>
+                        <span class="proj-go"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                        <p>Étude de marché B2B : analyse concurrentielle, enquête clients, cartographie des opportunités et recommandations pour renforcer la présence digitale.</p>
+                        <div class="tags"><span class="tag tag-accent">B2B</span><span class="tag">Étude de marché</span><span class="tag">Stratégie</span></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <div class="eyebrow" data-reveal>Stage 2026 · Ligue de l'enseignement de l'Oise</div>
+                    <h2 class="h-lg" data-split>Réalisations <em>Ligue 60.</em></h2>
+                </div>
+                <p class="lead" data-reveal>Livrables réels produits pendant mon stage : rapport d'activité, affiches, dépliants, campagnes et maquettes web interactives.</p>
+            </div>
             <div class="real-gallery">
-
-                <figure class="real-item">
-                    <div class="real-thumb"><img src="images/ligue/rapport_activite_2025.jpg" alt="Rapport d'Activité 2025 de la Ligue 60" loading="lazy"></div>
+                <figure class="real-item" data-reveal>
+                    <div class="real-thumb"><img src="images/ligue/rapport_activite_2025.jpg" alt="Rapport d'Activité 2025" loading="lazy"></div>
                     <figcaption><strong>Rapport d'Activité 2025</strong><span>Refonte complète : 72 → 64 pages, format magazine</span></figcaption>
                 </figure>
-
-                <figure class="real-item">
-                    <div class="real-thumb"><img src="images/ligue/affiche_colos_amiens.jpg" alt="Affiche Colonies d'été 2026 — séjour Amiens" loading="lazy"></div>
+                <figure class="real-item" data-reveal>
+                    <div class="real-thumb"><img src="images/ligue/affiche_colos_amiens.jpg" alt="Affiche Colos Été 2026" loading="lazy"></div>
                     <figcaption><strong>Affiche Colos Été 2026</strong><span>Visuel séjour Amiens — Service Vacances</span></figcaption>
                 </figure>
-
-                <figure class="real-item">
-                    <div class="real-thumb"><img src="images/ligue/depliant_ligue60.jpg" alt="Dépliant institutionnel Ligue 60" loading="lazy"></div>
+                <figure class="real-item" data-reveal>
+                    <div class="real-thumb"><img src="images/ligue/depliant_ligue60.jpg" alt="Dépliant Ligue 60" loading="lazy"></div>
                     <figcaption><strong>Dépliant Ligue 60</strong><span>Refonte institutionnelle des 7 pôles d'action</span></figcaption>
                 </figure>
-
-                <figure class="real-item">
+                <figure class="real-item" data-reveal>
                     <div class="real-thumb"><img src="images/ligue/depliant_berceaux.jpg" alt="Dépliant Crèche Inter-Entreprises" loading="lazy"></div>
                     <figcaption><strong>Dépliant Crèche Inter-Entreprises</strong><span>Campagne B2B « berceaux » — 425 entreprises</span></figcaption>
                 </figure>
-
-                <figure class="real-item">
-                    <div class="real-thumb"><img src="images/ligue/affiche_chantier_meru.jpg" alt="Affiche Chantier Jeunes Méru" loading="lazy"></div>
-                    <figcaption><strong>Chantier Jeunes Méru</strong><span>Projet « Île au Partage » — Espaces verts &amp; biodiversité</span></figcaption>
+                <figure class="real-item" data-reveal>
+                    <div class="real-thumb"><img src="images/ligue/affiche_chantier_meru.jpg" alt="Chantier Jeunes Méru" loading="lazy"></div>
+                    <figcaption><strong>Chantier Jeunes Méru</strong><span>Projet « Île au Partage » — espaces verts &amp; biodiversité</span></figcaption>
                 </figure>
-
-                <figure class="real-item">
-                    <div class="real-thumb"><img src="images/ligue/affiche_bafa.jpg" alt="Affiche BAFA session Baignade" loading="lazy"></div>
+                <figure class="real-item" data-reveal>
+                    <div class="real-thumb"><img src="images/ligue/affiche_bafa.jpg" alt="Affiche BAFA Baignade" loading="lazy"></div>
                     <figcaption><strong>Affiche BAFA Baignade</strong><span>Promotion B2B — remplissage de 40 à 92 %</span></figcaption>
                 </figure>
-
-                <figure class="real-item">
-                    <div class="real-thumb"><img src="images/ligue/pjp_visuel.jpg" alt="Visuel Prix Jeunesse de la Presse 2026" loading="lazy"></div>
+                <figure class="real-item" data-reveal>
+                    <div class="real-thumb"><img src="images/ligue/pjp_visuel.jpg" alt="Prix Jeunesse de la Presse" loading="lazy"></div>
                     <figcaption><strong>Prix Jeunesse de la Presse</strong><span>Visuel officiel 8ᵉ édition — 150 élèves</span></figcaption>
                 </figure>
-
-                <figure class="real-item">
-                    <div class="real-thumb"><img src="images/ligue/pjp_invitation.jpg" alt="Invitation Prix Jeunesse de la Presse" loading="lazy"></div>
+                <figure class="real-item" data-reveal>
+                    <div class="real-thumb"><img src="images/ligue/pjp_invitation.jpg" alt="Invitation PJP — refonte" loading="lazy"></div>
                     <figcaption><strong>Invitation PJP — refonte</strong><span>Cérémonie du 10 avril 2026 — Creil</span></figcaption>
                 </figure>
-
-                <figure class="real-item">
-                    <div class="real-thumb fit-contain"><img src="images/ligue/carte_slimane.jpg" alt="Carte de visite Ligue 60 — Slimane BOURAYA" loading="lazy"></div>
+                <figure class="real-item" data-reveal>
+                    <div class="real-thumb fit-contain"><img src="images/ligue/carte_slimane.jpg" alt="Cartes de visite Ligue 60" loading="lazy"></div>
                     <figcaption><strong>Cartes de visite Ligue 60</strong><span>12 designs harmonisés — charte fédérale</span></figcaption>
                 </figure>
-
-                <a class="real-item" href="realisations/capeduc-app.html" target="_blank" rel="noopener">
+                <a class="real-item" href="realisations/capeduc-app.html" target="_blank" rel="noopener" data-cursor="Ouvrir" data-reveal>
                     <div class="real-thumb cap-frame">
                         <iframe src="realisations/capeduc-app.html" loading="lazy" scrolling="no" tabindex="-1" title="Maquette application CAPEDUC"></iframe>
                         <span class="cap-open">Ouvrir ↗</span>
                     </div>
                     <figcaption><strong>Application CAPEDUC</strong><span>Maquette PWA interactive — réseau d'animateurs BAFA</span></figcaption>
                 </a>
-
-                <a class="real-item" href="realisations/capeduc-instagram.html" target="_blank" rel="noopener">
+                <a class="real-item" href="realisations/capeduc-instagram.html" target="_blank" rel="noopener" data-cursor="Ouvrir" data-reveal>
                     <div class="real-thumb cap-frame">
                         <iframe src="realisations/capeduc-instagram.html" loading="lazy" scrolling="no" tabindex="-1" title="Maquette Instagram CAPEDUC"></iframe>
                         <span class="cap-open">Ouvrir ↗</span>
                     </div>
                     <figcaption><strong>Maquette Instagram CAPEDUC</strong><span>Proposition éditoriale — 3 posts de lancement</span></figcaption>
                 </a>
-
             </div>
         </div>
     </section>
+        <section class="big-cta">
+            <div class="container">
+                <div class="eyebrow" data-reveal>Page suivante</div>
+                <h2 class="h-xl" data-split>Et en dehors <em>du travail</em> ?</h2>
+                <div class="big-cta-actions" data-reveal><a href="interets.html" class="btn btn-primary" data-magnetic="0.25"><span>Intérêts</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="contact.html" class="btn btn-ghost" data-magnetic="0.25"><span>Me contacter</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a></div>
+            </div>
+        </section>
+    </main>
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-inner">
-                <span class="footer-copy">© <span data-year>2026</span> Nassim Mehadji — Tous droits réservés</span>
-                <div class="footer-links">
-                    <a href="interets.html">Intérêts →</a>
-                    <a href="contact.html">Contact</a>
+            <div class="footer-top">
+                <div>
+                    <h5>Nassim Mehadji</h5>
+                    <p class="f-lead">Marketing industriel, communication &amp; <em>idées qui tiennent la route.</em></p>
                 </div>
+                <div>
+                    <h5>Navigation</h5>
+                    <a href="index.html">Accueil</a><a href="formations.html">Formations</a><a href="competences.html">Compétences</a><a href="experiences.html">Expériences</a><a href="projets.html">Projets</a><a href="interets.html">Intérêts</a><a href="bilan.html">Bilan</a><a href="contact.html">Contact</a>
+                </div>
+                <div>
+                    <h5>Contact</h5>
+                    <a href="mailto:nassim.mehadji25@gmail.com">nassim.mehadji25@gmail.com</a>
+                    <a href="tel:+33769190632">07 69 19 06 32</a>
+                    <p>Nogent-sur-Oise · Senlis</p>
+                </div>
+                <div>
+                    <h5>Ailleurs</h5>
+                    <a href="https://www.linkedin.com/in/nassim-mehadji-774a1826b/" target="_blank" rel="noopener">LinkedIn ↗</a>
+                    <a href="https://instagram.com/bougetontalent_" target="_blank" rel="noopener">Instagram ↗</a>
+                    <a href="NASSIM_MEHADJI_CV.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
+                </div>
+            </div>
+            <div class="footer-name" aria-hidden="true">Mehadji<em>.</em></div>
+            <div class="footer-bottom">
+                <span>© <span data-year>2026</span> Nassim Mehadji — Tous droits réservés</span>
+                <span>Senlis / Oise — <span data-clock>--:--</span></span>
+                <a href="#" class="to-top" data-top>Retour en haut ↑</a>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="main.js?v=7"></script>
 </body>
 </html>

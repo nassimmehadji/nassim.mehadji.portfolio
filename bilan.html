@@ -4,148 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bilan — Nassim Mehadji</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Bilan du BUT TC et perspectives : Master GPLA Marketing Industriel & Communication en alternance.">
+    <meta name="theme-color" content="#0a0a0b">
+    <meta property="og:title" content="Bilan — Nassim Mehadji">
+    <meta property="og:description" content="Bilan du BUT TC et perspectives : Master GPLA Marketing Industriel & Communication en alternance.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ff5a1f'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-style='italic' font-size='34' text-anchor='middle' fill='%230a0a0b'%3EN%3C/text%3E%3C/svg%3E">
+    <script>(function(h){h.classList.add('js');try{if(h.dataset.loader&&!sessionStorage.getItem('nm-loaded'))h.classList.add('show-loader')}catch(e){}setTimeout(function(){if(!window.__ready){h.classList.add('no-anim');h.classList.remove('show-loader')}},4000)})(document.documentElement)</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css?v=7">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body data-page="bilan">
+    <a class="skip" href="#main">Aller au contenu</a>
+
+    <div class="guides" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="progress" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor-label">Voir</span></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="curtain" aria-hidden="true"><span class="curtain-label">Bilan</span></div>
 
     <header class="site-header">
         <div class="header-inner">
-            <a href="index.html" class="logo">Nassim<span>.M</span></a>
-            <nav class="nav-desktop">
-                <a href="index.html" class="nav-link">Accueil</a>
-                <a href="formations.html" class="nav-link">Formations</a>
-                <a href="competences.html" class="nav-link">Compétences</a>
-                <a href="experiences.html" class="nav-link">Expériences</a>
-                <a href="projets.html" class="nav-link">Projets</a>
-                <a href="interets.html" class="nav-link">Intérêts</a>
-                <a href="bilan.html" class="nav-link active">Bilan</a>
-                <a href="contact.html" class="nav-cta">Contact</a>
+            <a href="index.html" class="logo" data-label="Accueil" aria-label="Accueil — Nassim Mehadji">
+                <span class="logo-mark">N</span>
+                <span>Nassim Mehadji<small>Master GPLA · Senlis</small></span>
+            </a>
+            <nav class="nav-desktop" aria-label="Navigation principale">
+                <a href="index.html" class="nav-link"><span class="roll"><span data-text="Accueil">Accueil</span></span></a><a href="formations.html" class="nav-link"><span class="roll"><span data-text="Formations">Formations</span></span></a><a href="competences.html" class="nav-link"><span class="roll"><span data-text="Compétences">Compétences</span></span></a><a href="experiences.html" class="nav-link"><span class="roll"><span data-text="Expériences">Expériences</span></span></a><a href="projets.html" class="nav-link"><span class="roll"><span data-text="Projets">Projets</span></span></a><a href="interets.html" class="nav-link"><span class="roll"><span data-text="Intérêts">Intérêts</span></span></a><a href="bilan.html" class="nav-link active"><span class="roll"><span data-text="Bilan">Bilan</span></span></a>
+                <a href="contact.html" class="nav-cta" data-magnetic="0.3"><i></i><span>Contact</span></a>
             </nav>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            </button>
+            <div class="header-meta"><span class="pulse"></span>En alternance · <span data-clock>--:--</span> Paris</div>
+            <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span>Menu</span><span class="bars"><span></span><span></span></span></button>
         </div>
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
-            <a href="index.html" class="logo">Nassim<span>.M</span></a>
-            <button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark"></i></button>
+            <a href="index.html" class="logo"><span class="logo-mark">N</span><span>Nassim Mehadji</span></a>
+            <button class="mobile-close" id="mobileClose">Fermer ✕</button>
         </div>
-        <nav class="mobile-nav">
-            <a href="index.html">Accueil</a>
-            <a href="formations.html">Formations</a>
-            <a href="competences.html">Compétences</a>
-            <a href="experiences.html">Expériences</a>
-            <a href="projets.html">Projets</a>
-            <a href="interets.html">Centres d'intérêt</a>
-            <a href="bilan.html" class="active">Bilan</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <nav class="mobile-nav" aria-label="Navigation mobile"><a href="index.html"><span>Accueil</span><small>01</small></a><a href="formations.html"><span>Formations</span><small>02</small></a><a href="competences.html"><span>Compétences</span><small>03</small></a><a href="experiences.html"><span>Expériences</span><small>04</small></a><a href="projets.html"><span>Projets</span><small>05</small></a><a href="interets.html"><span>Intérêts</span><small>06</small></a><a href="bilan.html" class="active"><span>Bilan</span><small>07</small></a><a href="contact.html"><span>Contact</span><small>08</small></a></nav>
+        <div class="mobile-foot"><span>nassim.mehadji25@gmail.com</span><span>Master GPLA · Senlis</span></div>
     </div>
 
+    <main id="main">
     <section class="page-hero">
-        <div style="position:absolute; inset:0; background:linear-gradient(to bottom right, rgba(99,102,241,0.05), transparent, rgba(244,63,94,0.05)); filter:blur(60px); z-index:0;"></div>
-        <div class="shapes-bg">
-            <div class="elegant-shape shape-indigo" style="--delay:0.3s; --rotate-from:-3deg; --rotate-to:12deg; width:500px; height:120px; left:-10%; top:20%;"></div>
-            <div class="elegant-shape shape-rose" style="--delay:0.5s; --rotate-from:-30deg; --rotate-to:-15deg; width:400px; height:100px; right:-5%; top:60%;"></div>
-            <div class="elegant-shape shape-violet" style="--delay:0.4s; --rotate-from:-23deg; --rotate-to:-8deg; width:250px; height:70px; left:8%; bottom:10%;"></div>
-            <div class="elegant-shape shape-amber" style="--delay:0.6s; --rotate-from:5deg; --rotate-to:20deg; width:180px; height:50px; right:18%; top:15%;"></div>
-        </div>
-        <div class="container" style="position:relative; z-index:10;">
-            <span class="section-label reveal">Rétrospective</span>
-            <h1 class="section-title reveal reveal-d1">Bilan des <em>3 années</em></h1>
-            <p class="section-desc reveal reveal-d2">Un regard sur mon parcours, mes apprentissages et ma vision pour la suite.</p>
-        </div>
-        <div class="vignette"></div>
-    </section>
-
-    <section class="page-section">
-        <div class="container" style="max-width:960px;">
-
-            <div class="stats-bar stagger">
-                <div class="stat-card">
-                    <div class="stat-num"><span data-count="3">3</span></div>
-                    <p>Années de formation</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-num"><span data-count="10" data-suffix="+">10+</span></div>
-                    <p>Projets réalisés</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-num"><span data-count="6" data-suffix="+">6+</span></div>
-                    <p>Compétences clés</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-num">∞</div>
-                    <p>Motivation</p>
-                </div>
-            </div>
-
-            <div class="bilan-block reveal">
-                <span class="bilan-label">01 · Apprentissages</span>
+        <div class="hero-orb" aria-hidden="true"></div>
+        <div class="container">
+            <div class="page-hero-grid">
                 <div>
-                    <h3>Ce que j'ai appris</h3>
-                    <p>Au cours de ces trois années en Marketing Digital &amp; E-Business, j'ai développé une compréhension profonde des mécanismes du digital. De la stratégie de contenu au référencement, en passant par la gestion de projets e-commerce, chaque expérience a renforcé ma conviction : le digital est un levier puissant quand il est maîtrisé avec méthode et créativité.</p>
-                    <p>J'ai appris à analyser des marchés, concevoir des stratégies adaptées et produire des contenus qui engagent. Mais surtout, j'ai compris l'importance de travailler en équipe et de s'adapter en permanence.</p>
+                    <div class="eyebrow" data-reveal>(07) — Rétrospective</div>
+                    <h1 class="h-xl" data-split>Bilan &amp; <em>perspectives.</em></h1>
+                    <p class="lead" data-reveal data-delay=".2">Trois années de BUT, un stage déterminant — et un nouveau chapitre qui commence à Senlis.</p>
                 </div>
+                <div class="page-index" aria-hidden="true">07</div>
             </div>
-
-            <div class="bilan-block reveal">
-                <span class="bilan-label">02 · Savoir-faire</span>
-                <div>
-                    <h3>Mes compétences développées</h3>
-                    <p>Maîtrise des outils de création (Adobe Suite, Canva, Figma), pilotage de campagnes publicitaires (Google Ads, Meta Ads), intégration de l'IA dans les workflows, gestion de projets e-commerce (Shopify, WordPress).</p>
-                    <p>Au-delà des compétences techniques, j'ai développé des soft skills essentielles : gestion du temps, communication, capacité d'adaptation, travail sous pression et esprit d'initiative.</p>
-                </div>
-            </div>
-
-            <div class="bilan-block reveal">
-                <span class="bilan-label">03 · Temps forts</span>
-                <div>
-                    <h3>Les moments marquants</h3>
-                    <p>Parmi les moments qui ont marqué ces trois années : l'organisation du salon Bouge Ton Talent, la production vidéo pour l'École Jean Trubert qui a révélé ma passion pour le montage, le projet e-commerce Canneo en SAÉ 6.01, et surtout mon stage de fin d'études à la Ligue de l'enseignement de l'Oise — 16 semaines, 13 missions menées en parallèle et une proposition d'alternance reçue à mi-parcours.</p>
-                </div>
-            </div>
-
-            <div class="bilan-block reveal">
-                <span class="bilan-label">04 · Vision</span>
-                <div>
-                    <h3>Mon avenir professionnel</h3>
-                    <p>Je souhaite continuer à évoluer dans un environnement où l'innovation digitale est au cœur de la stratégie. Mon objectif : devenir un acteur clé dans la transformation digitale des entreprises, en alliant data, créativité, IA et performance.</p>
-                    <p>À plus long terme, je veux lancer ma propre agence web marketing spécialisée en création de sites, contenus visuels/vidéos et marketing intégrant l'IA.</p>
-                </div>
-            </div>
-
-            <div class="bilan-quote reveal">
-                <p>Le succès, c'est d'aller d'échec en échec sans perdre son enthousiasme.</p>
-                <span class="author">— Winston Churchill</span>
-            </div>
-
-            <div class="reveal" style="text-align:center; margin-top:60px;">
-                <a href="contact.html" class="btn btn-primary">
-                    Discutons ensemble
-                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-            </div>
-
+            <div class="page-hero-foot" data-reveal data-delay=".35"><span>BUT 2023 — 2026</span><span>Master 2026 — 2028</span></div>
         </div>
     </section>
+
+    <section class="section-sm" style="padding-top:20px;">
+        <div class="container">
+            <div class="stats" data-stagger>
+                <div class="stat"><div class="n"><span data-count="3">3</span><sup>ans</sup></div><p>De BUT TC</p></div>
+                <div class="stat"><div class="n"><span data-count="10">10</span><sup>+</sup></div><p>Projets réalisés</p></div>
+                <div class="stat"><div class="n"><span data-count="4">4</span></div><p>Expériences terrain</p></div>
+                <div class="stat"><div class="n">∞</div><p>Motivation</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="section-sm">
+        <div class="container">
+            <div class="bilan-row">
+                <div class="b-lab" data-reveal><div class="n">01</div><span>Apprentissages</span></div>
+                <div data-reveal>
+                    <h3>Ce que <em>j'ai appris.</em></h3>
+                    <p>Trois années en Marketing Digital, E-Business &amp; Entrepreneuriat m'ont donné une compréhension concrète des mécanismes du digital : stratégie de contenu, référencement, gestion de projets e-commerce. Le digital est un levier puissant quand il est maîtrisé avec méthode et créativité.</p>
+                    <p>J'ai appris à analyser des marchés, concevoir des stratégies adaptées et produire des contenus qui engagent — et surtout à travailler en équipe et à m'adapter en permanence.</p>
+                </div>
+            </div>
+            <div class="bilan-row">
+                <div class="b-lab" data-reveal><div class="n">02</div><span>Savoir-faire</span></div>
+                <div data-reveal>
+                    <h3>Mes compétences <em>développées.</em></h3>
+                    <p>Outils de création (Adobe, Canva, Figma), campagnes publicitaires (Google Ads, Meta Ads), IA dans les workflows, projets e-commerce (Shopify, WordPress).</p>
+                    <p>Et des soft skills essentielles : gestion du temps, communication, capacité d'adaptation, travail sous pression, esprit d'initiative.</p>
+                </div>
+            </div>
+            <div class="bilan-row">
+                <div class="b-lab" data-reveal><div class="n">03</div><span>Temps forts</span></div>
+                <div data-reveal>
+                    <h3>Les moments <em>marquants.</em></h3>
+                    <p>L'organisation du salon Bouge Ton Talent, la production vidéo pour l'École Jean Trubert, le projet e-commerce Canneo en SAÉ 6.01 — et surtout mon stage de fin d'études à la Ligue de l'enseignement de l'Oise : <strong>16 semaines, 13 missions menées en parallèle</strong> et une proposition d'alternance reçue à mi-parcours.</p>
+                </div>
+            </div>
+            <div class="bilan-row">
+                <div class="b-lab" data-reveal><div class="n">04</div><span>Vision</span></div>
+                <div data-reveal>
+                    <h3>Mon avenir <em>professionnel.</em></h3>
+                    <p>Allier une double culture — <strong>digitale et industrielle</strong> — pour piloter le marketing et la communication d'entreprises B2B, là où la compréhension du produit et des flux fait la différence.</p>
+                    <p>À plus long terme : lancer ma propre agence de marketing et de communication, avec une vraie expertise des secteurs industriels.</p>
+                </div>
+            </div>
+            <div class="bilan-row next" data-reveal>
+                <div class="b-lab"><div class="n">05</div><span>Nouveau chapitre</span></div>
+                <div>
+                    <h3>Pourquoi le <em>Master GPLA</em> ?</h3>
+                    <p>Le marketing industriel demande plus que de bons visuels : il faut comprendre <strong>comment un produit est fabriqué, acheté et livré</strong> pour en parler avec crédibilité. Le Master Gestion de Production, Logistique, Achats — parcours Marketing Industriel &amp; Communication — m'apporte exactement ce socle.</p>
+                    <p>En alternance à Senlis de 2026 à 2028, je transforme mon profil digital en un profil hybride, capable de dialoguer avec la production, les achats et le marché.</p>
+                    <div style="margin-top:28px;"><a href="formations.html" class="btn btn-primary" data-magnetic="0.25" style="background:#0a0a0b;color:#efebe3;"><span>Voir la formation</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="quote">
+        <div class="container">
+            <blockquote data-split>« Le succès, c'est d'aller d'échec en échec <em>sans perdre son enthousiasme.</em> »</blockquote>
+            <cite data-reveal>— Winston Churchill</cite>
+        </div>
+    </section>
+        <section class="big-cta">
+            <div class="container">
+                <div class="eyebrow" data-reveal>Page suivante</div>
+                <h2 class="h-xl" data-split>On en <em>discute</em> ?</h2>
+                <div class="big-cta-actions" data-reveal><a href="contact.html" class="btn btn-primary" data-magnetic="0.25"><span>Contact</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="contact.html" class="btn btn-ghost" data-magnetic="0.25"><span>Me contacter</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a></div>
+            </div>
+        </section>
+    </main>
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-inner">
-                <span class="footer-copy">© <span data-year>2026</span> Nassim Mehadji — Tous droits réservés</span>
-                <div class="footer-links">
-                    <a href="contact.html">Contact →</a>
-                    <a href="index.html">Accueil</a>
+            <div class="footer-top">
+                <div>
+                    <h5>Nassim Mehadji</h5>
+                    <p class="f-lead">Marketing industriel, communication &amp; <em>idées qui tiennent la route.</em></p>
                 </div>
+                <div>
+                    <h5>Navigation</h5>
+                    <a href="index.html">Accueil</a><a href="formations.html">Formations</a><a href="competences.html">Compétences</a><a href="experiences.html">Expériences</a><a href="projets.html">Projets</a><a href="interets.html">Intérêts</a><a href="bilan.html">Bilan</a><a href="contact.html">Contact</a>
+                </div>
+                <div>
+                    <h5>Contact</h5>
+                    <a href="mailto:nassim.mehadji25@gmail.com">nassim.mehadji25@gmail.com</a>
+                    <a href="tel:+33769190632">07 69 19 06 32</a>
+                    <p>Nogent-sur-Oise · Senlis</p>
+                </div>
+                <div>
+                    <h5>Ailleurs</h5>
+                    <a href="https://www.linkedin.com/in/nassim-mehadji-774a1826b/" target="_blank" rel="noopener">LinkedIn ↗</a>
+                    <a href="https://instagram.com/bougetontalent_" target="_blank" rel="noopener">Instagram ↗</a>
+                    <a href="NASSIM_MEHADJI_CV.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
+                </div>
+            </div>
+            <div class="footer-name" aria-hidden="true">Mehadji<em>.</em></div>
+            <div class="footer-bottom">
+                <span>© <span data-year>2026</span> Nassim Mehadji — Tous droits réservés</span>
+                <span>Senlis / Oise — <span data-clock>--:--</span></span>
+                <a href="#" class="to-top" data-top>Retour en haut ↑</a>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="main.js?v=7"></script>
 </body>
 </html>

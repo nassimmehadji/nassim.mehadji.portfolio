@@ -4,155 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centres d'intérêt — Nassim Mehadji</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Sport, voyages, création de contenu, lecture, art, cinéma, musique, entrepreneuriat.">
+    <meta name="theme-color" content="#0a0a0b">
+    <meta property="og:title" content="Centres d'intérêt — Nassim Mehadji">
+    <meta property="og:description" content="Sport, voyages, création de contenu, lecture, art, cinéma, musique, entrepreneuriat.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ff5a1f'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-style='italic' font-size='34' text-anchor='middle' fill='%230a0a0b'%3EN%3C/text%3E%3C/svg%3E">
+    <script>(function(h){h.classList.add('js');try{if(h.dataset.loader&&!sessionStorage.getItem('nm-loaded'))h.classList.add('show-loader')}catch(e){}setTimeout(function(){if(!window.__ready){h.classList.add('no-anim');h.classList.remove('show-loader')}},4000)})(document.documentElement)</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css?v=7">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body data-page="interets">
+    <a class="skip" href="#main">Aller au contenu</a>
+
+    <div class="guides" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="progress" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor-label">Voir</span></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="curtain" aria-hidden="true"><span class="curtain-label">Intérêts</span></div>
 
     <header class="site-header">
         <div class="header-inner">
-            <a href="index.html" class="logo">Nassim<span>.M</span></a>
-            <nav class="nav-desktop">
-                <a href="index.html" class="nav-link">Accueil</a>
-                <a href="formations.html" class="nav-link">Formations</a>
-                <a href="competences.html" class="nav-link">Compétences</a>
-                <a href="experiences.html" class="nav-link">Expériences</a>
-                <a href="projets.html" class="nav-link">Projets</a>
-                <a href="interets.html" class="nav-link active">Intérêts</a>
-                <a href="bilan.html" class="nav-link">Bilan</a>
-                <a href="contact.html" class="nav-cta">Contact</a>
+            <a href="index.html" class="logo" data-label="Accueil" aria-label="Accueil — Nassim Mehadji">
+                <span class="logo-mark">N</span>
+                <span>Nassim Mehadji<small>Master GPLA · Senlis</small></span>
+            </a>
+            <nav class="nav-desktop" aria-label="Navigation principale">
+                <a href="index.html" class="nav-link"><span class="roll"><span data-text="Accueil">Accueil</span></span></a><a href="formations.html" class="nav-link"><span class="roll"><span data-text="Formations">Formations</span></span></a><a href="competences.html" class="nav-link"><span class="roll"><span data-text="Compétences">Compétences</span></span></a><a href="experiences.html" class="nav-link"><span class="roll"><span data-text="Expériences">Expériences</span></span></a><a href="projets.html" class="nav-link"><span class="roll"><span data-text="Projets">Projets</span></span></a><a href="interets.html" class="nav-link active"><span class="roll"><span data-text="Intérêts">Intérêts</span></span></a><a href="bilan.html" class="nav-link"><span class="roll"><span data-text="Bilan">Bilan</span></span></a>
+                <a href="contact.html" class="nav-cta" data-magnetic="0.3"><i></i><span>Contact</span></a>
             </nav>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            </button>
+            <div class="header-meta"><span class="pulse"></span>En alternance · <span data-clock>--:--</span> Paris</div>
+            <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span>Menu</span><span class="bars"><span></span><span></span></span></button>
         </div>
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
-            <a href="index.html" class="logo">Nassim<span>.M</span></a>
-            <button class="mobile-menu-close" id="mobileClose"><i class="fa-solid fa-xmark"></i></button>
+            <a href="index.html" class="logo"><span class="logo-mark">N</span><span>Nassim Mehadji</span></a>
+            <button class="mobile-close" id="mobileClose">Fermer ✕</button>
         </div>
-        <nav class="mobile-nav">
-            <a href="index.html">Accueil</a>
-            <a href="formations.html">Formations</a>
-            <a href="competences.html">Compétences</a>
-            <a href="experiences.html">Expériences</a>
-            <a href="projets.html">Projets</a>
-            <a href="interets.html" class="active">Centres d'intérêt</a>
-            <a href="bilan.html">Bilan</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <nav class="mobile-nav" aria-label="Navigation mobile"><a href="index.html"><span>Accueil</span><small>01</small></a><a href="formations.html"><span>Formations</span><small>02</small></a><a href="competences.html"><span>Compétences</span><small>03</small></a><a href="experiences.html"><span>Expériences</span><small>04</small></a><a href="projets.html"><span>Projets</span><small>05</small></a><a href="interets.html" class="active"><span>Intérêts</span><small>06</small></a><a href="bilan.html"><span>Bilan</span><small>07</small></a><a href="contact.html"><span>Contact</span><small>08</small></a></nav>
+        <div class="mobile-foot"><span>nassim.mehadji25@gmail.com</span><span>Master GPLA · Senlis</span></div>
     </div>
 
+    <main id="main">
     <section class="page-hero">
-        <div style="position:absolute; inset:0; background:linear-gradient(to bottom right, rgba(99,102,241,0.05), transparent, rgba(244,63,94,0.05)); filter:blur(60px); z-index:0;"></div>
-        <div class="shapes-bg">
-            <div class="elegant-shape shape-indigo" style="--delay:0.3s; --rotate-from:-3deg; --rotate-to:12deg; width:500px; height:120px; left:-10%; top:20%;"></div>
-            <div class="elegant-shape shape-rose" style="--delay:0.5s; --rotate-from:-30deg; --rotate-to:-15deg; width:400px; height:100px; right:-5%; top:60%;"></div>
-            <div class="elegant-shape shape-violet" style="--delay:0.4s; --rotate-from:-23deg; --rotate-to:-8deg; width:250px; height:70px; left:8%; bottom:10%;"></div>
+        <div class="hero-orb" aria-hidden="true"></div>
+        <div class="container">
+            <div class="page-hero-grid">
+                <div>
+                    <div class="eyebrow" data-reveal>(06) — Passions</div>
+                    <h1 class="h-xl" data-split>Centres d'<em>intérêt.</em></h1>
+                    <p class="lead" data-reveal data-delay=".2">Ce qui m'anime en dehors du travail. Le sport, la culture et la création font partie de mon ADN.</p>
+                </div>
+                <div class="page-index" aria-hidden="true">06</div>
+            </div>
+            <div class="page-hero-foot" data-reveal data-delay=".35"><span>8 passions</span><span>Sport · Culture · Création</span></div>
         </div>
-        <div class="container" style="position:relative; z-index:10;">
-            <span class="section-label reveal">Passions</span>
-            <h1 class="section-title reveal reveal-d1">Centres d'<em>intérêt</em></h1>
-            <p class="section-desc reveal reveal-d2">Ce qui me passionne en dehors du digital. Le sport, la culture et la création font partie de mon ADN.</p>
-        </div>
-        <div class="vignette"></div>
     </section>
 
-    <section class="page-section">
+    <section class="section-sm" style="padding-top:20px;">
         <div class="container">
-            <div class="interests-grid stagger">
-
-                <div class="interest-card interest-featured">
-                    <div class="interest-bg">
-                        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1400&q=80" alt="Sport">
-                    </div>
-                    <div class="interest-icon"><i class="fa-solid fa-person-running"></i></div>
+            <div class="bento" data-stagger>
+                <div class="int int-xl">
+                    <div class="int-bg"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&amp;fit=crop&amp;w=1200&amp;q=75" alt="" loading="lazy" data-speed="0.12"></div>
+                    <span class="int-ico"><i class="fa-solid fa-person-running"></i></span>
                     <h3>Sport</h3>
-                    <p>Le sport fait partie de mon quotidien. Il m'a appris la discipline, le dépassement de soi et la persévérance — des qualités que j'applique dans chacun de mes projets professionnels.</p>
+                    <p>Le sport fait partie de mon quotidien : discipline, dépassement de soi et persévérance — des qualités que j'applique dans chacun de mes projets.</p>
                 </div>
-
-                <div class="interest-card interest-lg">
-                    <div class="interest-bg">
-                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80" alt="Voyages">
-                    </div>
-                    <div class="interest-icon"><i class="fa-solid fa-earth-americas"></i></div>
+                <div class="int int-lg">
+                    <div class="int-bg"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&amp;fit=crop&amp;w=1200&amp;q=75" alt="" loading="lazy" data-speed="0.12"></div>
+                    <span class="int-ico"><i class="fa-solid fa-earth-americas"></i></span>
                     <h3>Voyages</h3>
-                    <p>Explorer de nouvelles cultures nourrit ma créativité et ma vision du monde. Chaque voyage est une source d'inspiration pour mes projets marketing.</p>
+                    <p>Explorer de nouvelles cultures nourrit ma créativité et ma vision du monde.</p>
                 </div>
-
-                <div class="interest-card interest-md">
-                    <div class="interest-bg">
-                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80" alt="Création de contenu">
-                    </div>
-                    <div class="interest-icon"><i class="fa-solid fa-video"></i></div>
+                <div class="int int-md">
+                    <div class="int-bg"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&amp;fit=crop&amp;w=1200&amp;q=75" alt="" loading="lazy" data-speed="0.12"></div>
+                    <span class="int-ico"><i class="fa-solid fa-video"></i></span>
                     <h3>Création de contenu</h3>
                     <p>Montage vidéo, photo et réseaux sociaux — créer est une passion.</p>
                 </div>
-
-                <div class="interest-card interest-md">
-                    <div class="interest-bg">
-                        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=80" alt="Lecture">
-                    </div>
-                    <div class="interest-icon"><i class="fa-solid fa-book-open"></i></div>
+                <div class="int int-md">
+                    <div class="int-bg"><img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&amp;fit=crop&amp;w=1200&amp;q=75" alt="" loading="lazy" data-speed="0.12"></div>
+                    <span class="int-ico"><i class="fa-solid fa-book-open"></i></span>
                     <h3>Lecture</h3>
-                    <p>Développement personnel, stratégie et fiction — chaque livre nourrit ma réflexion.</p>
+                    <p>Développement personnel, stratégie et fiction.</p>
                 </div>
-
-                <div class="interest-card interest-md">
-                    <div class="interest-bg">
-                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=80" alt="Art">
-                    </div>
-                    <div class="interest-icon"><i class="fa-solid fa-palette"></i></div>
+                <div class="int int-md">
+                    <div class="int-bg"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&amp;fit=crop&amp;w=1200&amp;q=75" alt="" loading="lazy" data-speed="0.12"></div>
+                    <span class="int-ico"><i class="fa-solid fa-palette"></i></span>
                     <h3>Art</h3>
-                    <p>Peinture, photographie, design — l'art aiguise ma sensibilité visuelle.</p>
+                    <p>Peinture, photographie, design : l'art aiguise mon regard.</p>
                 </div>
-
-                <div class="interest-card interest-sm">
-                    <div class="interest-bg">
-                        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80" alt="Cinéma">
-                    </div>
-                    <div class="interest-icon"><i class="fa-solid fa-clapperboard"></i></div>
+                <div class="int int-md">
+                    <div class="int-bg"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&amp;fit=crop&amp;w=1200&amp;q=75" alt="" loading="lazy" data-speed="0.12"></div>
+                    <span class="int-ico"><i class="fa-solid fa-clapperboard"></i></span>
                     <h3>Cinéma</h3>
-                    <p>Le 7ème art nourrit mon regard créatif au quotidien.</p>
+                    <p>Le 7ᵉ art nourrit mon regard créatif au quotidien.</p>
                 </div>
-
-                <div class="interest-card interest-sm">
-                    <div class="interest-bg">
-                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=80" alt="Musique">
-                    </div>
-                    <div class="interest-icon"><i class="fa-solid fa-music"></i></div>
+                <div class="int int-md">
+                    <div class="int-bg"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&amp;fit=crop&amp;w=1200&amp;q=75" alt="" loading="lazy" data-speed="0.12"></div>
+                    <span class="int-ico"><i class="fa-solid fa-music"></i></span>
                     <h3>Musique</h3>
-                    <p>La musique accompagne ma créativité dans tous mes projets.</p>
+                    <p>La bande-son de tous mes projets.</p>
                 </div>
-
-                <div class="interest-card interest-sm">
-                    <div class="interest-bg">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=900&q=80" alt="Entrepreneuriat">
-                    </div>
-                    <div class="interest-icon"><i class="fa-solid fa-rocket"></i></div>
+                <div class="int int-md">
+                    <div class="int-bg"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&amp;fit=crop&amp;w=1200&amp;q=75" alt="" loading="lazy" data-speed="0.12"></div>
+                    <span class="int-ico"><i class="fa-solid fa-rocket"></i></span>
                     <h3>Entrepreneuriat</h3>
                     <p>Construire, itérer, challenger le statu quo — ma source d'énergie.</p>
                 </div>
-
             </div>
         </div>
     </section>
+        <section class="big-cta">
+            <div class="container">
+                <div class="eyebrow" data-reveal>Page suivante</div>
+                <h2 class="h-xl" data-split>Le mot de <em>la fin.</em></h2>
+                <div class="big-cta-actions" data-reveal><a href="bilan.html" class="btn btn-primary" data-magnetic="0.25"><span>Bilan</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="contact.html" class="btn btn-ghost" data-magnetic="0.25"><span>Me contacter</span><span class="btn-ico"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a></div>
+            </div>
+        </section>
+    </main>
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-inner">
-                <span class="footer-copy">© <span data-year>2026</span> Nassim Mehadji — Tous droits réservés</span>
-                <div class="footer-links">
-                    <a href="bilan.html">Bilan →</a>
-                    <a href="contact.html">Contact</a>
+            <div class="footer-top">
+                <div>
+                    <h5>Nassim Mehadji</h5>
+                    <p class="f-lead">Marketing industriel, communication &amp; <em>idées qui tiennent la route.</em></p>
                 </div>
+                <div>
+                    <h5>Navigation</h5>
+                    <a href="index.html">Accueil</a><a href="formations.html">Formations</a><a href="competences.html">Compétences</a><a href="experiences.html">Expériences</a><a href="projets.html">Projets</a><a href="interets.html">Intérêts</a><a href="bilan.html">Bilan</a><a href="contact.html">Contact</a>
+                </div>
+                <div>
+                    <h5>Contact</h5>
+                    <a href="mailto:nassim.mehadji25@gmail.com">nassim.mehadji25@gmail.com</a>
+                    <a href="tel:+33769190632">07 69 19 06 32</a>
+                    <p>Nogent-sur-Oise · Senlis</p>
+                </div>
+                <div>
+                    <h5>Ailleurs</h5>
+                    <a href="https://www.linkedin.com/in/nassim-mehadji-774a1826b/" target="_blank" rel="noopener">LinkedIn ↗</a>
+                    <a href="https://instagram.com/bougetontalent_" target="_blank" rel="noopener">Instagram ↗</a>
+                    <a href="NASSIM_MEHADJI_CV.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a>
+                </div>
+            </div>
+            <div class="footer-name" aria-hidden="true">Mehadji<em>.</em></div>
+            <div class="footer-bottom">
+                <span>© <span data-year>2026</span> Nassim Mehadji — Tous droits réservés</span>
+                <span>Senlis / Oise — <span data-clock>--:--</span></span>
+                <a href="#" class="to-top" data-top>Retour en haut ↑</a>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="main.js?v=7"></script>
 </body>
 </html>
